@@ -379,7 +379,6 @@ Functions for manipulating memory and strings are very useful... But soon you wi
 
 You will need to use the following structure to represent a node of your list. Add the declaration to your libft.h file:
 
-```c
 typedef struct s_list
 {
     void *content;
