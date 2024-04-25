@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 22:53:21 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/11 16:35:26 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:04:11 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,12 @@ void	*ft_memcpy(void *dst, const void *src, t_size n)
 	}
 	return (dst);
 }
+
+/* Copies n bytes from memory area src to memory area dst.
+The memory areas must not overlap.
+Parameters:
+- dst: Pointer to the destination memory area.
+- src: Pointer to the source memory area.
+- n: Number of bytes to copy.
+Returns:
+- Pointer to the destination memory area (dst). */

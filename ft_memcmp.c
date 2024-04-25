@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:43:57 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/18 18:57:41 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:02:58 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,13 @@ int	ft_memcmp(const void *s1, const void *s2, t_size n)
 	}
 	return (0);
 }
+
+/* Compares the first n bytes of the memory areas s1 and s2.
+Parameters:
+- s1: Pointer to the first memory area.
+- s2: Pointer to the second memory area.
+- n: Number of bytes to compare.
+Returns:
+- An integer less than, equal to, or greater than zero if the first n bytes of s1
+are found, respectively, to be less than, to match, or be greater than
+the first n bytes of s2. */

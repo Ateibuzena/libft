@@ -40,4 +40,5 @@ fclean: clean
 # Rule to rebuild the project from scratch
 re: fclean all
 
+# Rule to unsderstand that those words are comands
 .PHONY: clean fclean all re norme

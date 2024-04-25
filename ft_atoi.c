@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:29:18 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/21 22:06:27 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 14:58:34 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,20 @@ int	ft_atoi(const char *str)
 	}
 	return (num * sign_index.sign);
 }
+
+/* The function converts a string of characters into an integer.
+Declaration of local variables.
+Stores the converted number.
+Structure containing the sign and the index of the string.
+Initialization of the structure to store the sign and index.
+Initialization of the number to 0.
+Function to ignore leading spaces and symbols in the string.
+If no number is found after ignoring spaces and symbols,
+it returns 0 or the corresponding sign if it's a plus or minus sign.
+If the first character is a plus sign, the index is incremented.
+If the first character is a minus sign, the sign is multiplied by -1
+and the index is incremented.
+Converts the string into an integer.
+Converts the character to its numeric value and adds it to the existing number.
+Advances to the next character.
+Returns the number multiplied by the corresponding sign. */

@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/24 15:57:20 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:29:49 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Start file
+// This header file contains declarations for various 
+// functions and types defined in the "libft" library.
 #ifndef LIBFT_H
 # define LIBFT_H
 
+// Definition of type t_size if not defined
 # ifndef T_SIZE
 #  define T_SIZE
 
@@ -24,6 +26,7 @@ typedef unsigned int	t_size;
 # ifndef SIGN_INDEX
 #  define SIGN_INDEX
 
+// Definition of type t_Sign_Index if not defined
 typedef struct Sign_Index
 {
 	int	sign;
@@ -33,13 +36,13 @@ typedef struct Sign_Index
 
 # endif
 
-//Call function
+// Function declarations
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);
 int				ft_isascii(int c);
 int				ft_isalnum(int c);
 int				ft_isprint(int c);
-int				ft_strlen(const char *s);
+t_size			ft_strlen(const char *s);
 void			*ft_memset(void *array, int value, t_size len);
 void			ft_bzero(void *array, t_size len);
 void			*ft_memcpy(void *dst, const void *src, t_size n);
@@ -60,6 +63,7 @@ t_Sign_Index	ft_spacesymbols(const char *str, t_Sign_Index *sign_index);
 void			*ft_calloc(t_size count, t_size size);
 char			*ft_strdup(const char *s1);
 char			*ft_substr(char const *s, unsigned int start, t_size len);
+char			*ft_strjoin(const char *s1, const char *s2);
 
-//End file
+// End of LIBFT_H
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 21:09:03 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/11 14:15:36 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:28:27 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,3 +40,14 @@ t_size	ft_strlcpy(char *dst, const char *src, t_size dstsize)
 	dst[i] = '\0';
 	return (srclen);
 }
+
+/* Copies the NUL-terminated string src to dst 
+(including the NUL terminator)
+up to a maximum of dstsize - 1 characters.
+Parameters:
+- dst: Pointer to the destination string.
+- src: Pointer to the source string.
+- dstsize: Size of the destination buffer.
+Returns:
+- Total length of the string that would have been created 
+if there was enough space, excluding the NUL terminator. */

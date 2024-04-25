@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_structure.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:35:07 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/21 22:02:17 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:29:00 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,3 +21,10 @@ t_Sign_Index	ft_structure(void)
 	sign_index.n = 1;
 	return (sign_index);
 }
+
+/* Initializes and returns a structure of type 
+t_Sign_Index with default values.
+Returns:
+- Structure of type t_Sign_Index with the index 
+initialized to 0, the sign set to 1,
+and the n flag set to 1. */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_spacesymbols.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:28:49 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/21 22:02:35 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:26:49 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,3 +38,11 @@ t_Sign_Index	ft_spacesymbols(const char *str, t_Sign_Index *dic)
 	}
 	return (*dic);
 }
+
+/* Skips leading space and symbol characters in the string 
+and updates the structure containing the sign and index.
+Parameters:
+- str: Pointer to the string.
+- dic: Pointer to the structure containing the sign and index.
+Returns:
+- Updated structure containing the sign and index. */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:32:13 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/18 18:42:18 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:02:27 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,13 @@ void	*ft_memchr(const void *s, int c, t_size n)
 	}
 	return (0);
 }
+
+/* Searches for the first occurrence of the character c (interpreted as an
+unsigned char) in the first n bytes of the memory area pointed to by s.
+Parameters:
+- s: Pointer to the memory area to be searched.
+- c: The character to be searched for.
+- n: Number of bytes to be searched.
+Returns:
+- Pointer to the first occurrence of c in the memory area pointed to by s,
+or NULL if the character is not found within the first n bytes. */

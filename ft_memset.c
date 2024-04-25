@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 19:57:54 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/10 13:22:23 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:26:42 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,3 +27,12 @@ void	*ft_memset(void *array, int value, t_size len)
 	}
 	return (array);
 }
+
+/* Fills the first len bytes of the memory area 
+pointed to by array with the constant byte value.
+Parameters:
+- array: Pointer to the memory area to be filled.
+- value: Value to be set (interpreted as an unsigned char).
+- len: Number of bytes to be set to the value.
+Returns:
+- Pointer to the memory area (array). */

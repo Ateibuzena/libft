@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:42:11 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/24 22:05:07 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:24:35 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,22 @@ char	*ft_substr(char const *s, unsigned int start, t_size len)
 
 	if (!s)
 		return (NULL);
-	if ((unsigned int)ft_strlen(s) < start)
+	if (ft_strlen(s) < start)
 		return (ft_strdup(""));
-	if ((t_size)ft_strlen(s + start) < len)
-		len = (t_size)ft_strlen(s + start);
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
 	ptr = malloc((len + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
 	ft_strlcpy(ptr, s + start, len + 1);
 	return (ptr);
 }
+
+/* Allocates and returns a substring of the string s.
+The substring begins at index start and is of maximum size len.
+Parameters:
+- s: Pointer to the string.
+- start: Index of the starting character of the substring.
+- len: Maximum length of the substring.
+Returns:
+- Pointer to the newly allocated substring, or NULL if allocation fails. */
