@@ -1,0 +1,2 @@
+# Libft
+CREA TU PROPIA LIBRERÍA EN C
