@@ -6,13 +6,13 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 21:28:49 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/25 15:26:49 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/27 20:19:18 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_Sign_Index	ft_spacesymbols(const char *str, t_Sign_Index *dic)
+t_Counters	ft_spacesymbols(const char *str, t_Counters *dic)
 {
 	while ((str[dic->i] >= 10 && str[dic->i] < 14)
 		|| (str[dic->i] == 32) || (str[dic->i] == '\t'))

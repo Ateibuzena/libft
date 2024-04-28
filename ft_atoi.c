@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:29:18 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/25 14:58:34 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/27 22:18:35 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_atoi(const char *str)
 {
-	int				num;
-	t_Sign_Index	sign_index;
+	int			num;
+	t_Counters	sign_index;
 
-	sign_index = ft_structure();
+	sign_index = ft_structure(0, 1, 1, 0);
 	num = 0;
 	ft_spacesymbols(str, &sign_index);
 	if (sign_index.n == 0)

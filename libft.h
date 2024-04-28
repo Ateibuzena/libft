@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/25 15:29:49 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/28 21:08:59 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,28 @@ typedef unsigned int	t_size;
 
 # endif
 
-# ifndef SIGN_INDEX
-#  define SIGN_INDEX
+# ifndef COUNTERS
+#  define COUNTERS
 
-// Definition of type t_Sign_Index if not defined
-typedef struct Sign_Index
+typedef struct Counters
 {
-	int	sign;
-	int	i;
-	int	n;
-}	t_Sign_Index;
+	t_size	i;
+	t_size	sign;
+	t_size	n;
+	t_size	words;
+	t_size	count;
+}	t_Counters;
+
+# endif
+
+# ifndef POINTERS
+#  define POINTERS
+
+typedef struct Pointers
+{
+	char		**ptr;
+	char		*temp;
+}	t_Pointers;
 
 # endif
 
@@ -58,12 +70,18 @@ void			*ft_memchr(const void *s, int c, t_size n);
 int				ft_memcmp(const void *s1, const void *s2, t_size n);
 char			*ft_strnstr(const char *hay, const char *need, t_size len);
 int				ft_atoi(const char *str);
-t_Sign_Index	ft_structure(void);
-t_Sign_Index	ft_spacesymbols(const char *str, t_Sign_Index *sign_index);
+t_Counters		ft_structure(t_size one, t_size two, t_size three, t_size four);
+t_Counters		ft_spacesymbols(const char *str, t_Counters *sign_index);
 void			*ft_calloc(t_size count, t_size size);
 char			*ft_strdup(const char *s1);
 char			*ft_substr(char const *s, unsigned int start, t_size len);
 char			*ft_strjoin(const char *s1, const char *s2);
+char			*ft_strtrim(char const *s1, char const *set);
+char			**ft_split(char const *s, char c);
+t_size			ft_wordscount(char const *s, char c);
+char			**ft_nullcase_split(char **pointer);
+void			ft_freedoble(char **ptr);
+char			**ft_nullcase_split(char **pointer);
 
 // End of LIBFT_H
 #endif
