@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/28 21:08:59 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/02 21:24:27 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct Counters
 	t_size	sign;
 	t_size	n;
 	t_size	words;
-	t_size	count;
 }	t_Counters;
 
 # endif
@@ -45,6 +44,19 @@ typedef struct Pointers
 	char		**ptr;
 	char		*temp;
 }	t_Pointers;
+
+# endif
+
+# ifndef ITOA
+#  define ITOA
+
+typedef struct Itoa
+{
+	long	i;
+	char	*ptr;
+	char	*temp;
+	int		index;
+}	t_Itoa;
 
 # endif
 
@@ -82,6 +94,11 @@ t_size			ft_wordscount(char const *s, char c);
 char			**ft_nullcase_split(char **pointer);
 void			ft_freedoble(char **ptr);
 char			**ft_nullcase_split(char **pointer);
+char			*ft_itoa(int n);
+int				ft_digitcount(int n);
+char			ft_f(unsigned int n, char c);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 // End of LIBFT_H
 #endif

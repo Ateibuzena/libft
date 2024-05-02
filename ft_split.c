@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:31:55 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/28 21:13:05 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/02 20:59:38 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**ft_split(char const *s, char c)
 	t_Counters	counters;
 
 	counters = ft_structure(0, 0, 0, ft_wordscount(s, c));
-	pointers.ptr = (char **)malloc((counters.words + 1) * sizeof(char *));
+	pointers.ptr = malloc((counters.words + 1) * sizeof(char *));
 	if (pointers.ptr == NULL)
 		return (NULL);
 	while (counters.words--)
@@ -29,7 +29,7 @@ char	**ft_split(char const *s, char c)
 		counters.n = 0;
 		while (s[counters.n] != '\0' && s[counters.n] != c)
 			counters.n++;
-		pointers.temp = (char *)malloc((counters.n + 1) * sizeof(char));
+		pointers.temp = malloc((counters.n + 1) * sizeof(char));
 		if (pointers.temp == NULL)
 			return (ft_nullcase_split(pointers.ptr));
 		ft_strlcpy(pointers.temp, s, counters.n + 1);
@@ -53,5 +53,6 @@ int main(void)
 	{
 		printf("%s\n", puntero[i]);
 	}
+	printf("%s", ptr);
 	return (0);
 }*/
