@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_f.c                                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:11:14 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/04 15:38:47 by azubieta         ###   ########.fr       */
+/*   Created: 2024/05/04 15:29:19 by azubieta          #+#    #+#             */
+/*   Updated: 2024/05/04 16:04:28 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_f(unsigned int n, char c)
-{
-	char	caracter;
+#include "libft.h"
 
-	if (c == ' ')
-		caracter = '_';
-	else
-		caracter = n + 48;
-	return (caracter);
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*sublist;
+
+	sublist = *lst;
+	if (!sublist)
+	{
+		*lst = new;
+		return ;
+	}
+	while (sublist->next)
+		sublist = sublist->next;
+	sublist->next = new;
 }

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:22:51 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/02 21:36:14 by azubieta         ###   ########.fr       */
+/*   Created: 2024/05/04 16:43:18 by azubieta          #+#    #+#             */
+/*   Updated: 2024/05/04 21:11:37 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	i;
+	t_list	*nodo;
+	void	*temp;
+	t_list	*sublist;
+	t_list	*new_list;
 
-	i = 0;
-	while (s[i] != '\0')
+	sublist = lst;
+	new_list = 0;
+	if (!lst)
+		return (0);
+	while (sublist)
 	{
-		f(i, &s[i]);
-		i++;
+		temp = f(sublist->content);
+		nodo = ft_lstnew(temp);
+		if (!nodo)
+		{
+			ft_lstclear(&new_list, del);
+			return (0);
+		}
+		ft_lstadd_back(&new_list, nodo);
+		sublist = sublist->next;
 	}
+	return (new_list);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	s[20] = "hola";
-	ft_striteri(s, ft_ff);
-	printf("%s", s);
-	return (0);
-}*/

@@ -1,22 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_f.c                                             :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:11:14 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/04 15:38:47 by azubieta         ###   ########.fr       */
+/*   Created: 2024/05/03 17:08:29 by azubieta          #+#    #+#             */
+/*   Updated: 2024/05/03 17:18:06 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_f(unsigned int n, char c)
-{
-	char	caracter;
+#include "libft.h"
 
-	if (c == ' ')
-		caracter = '_';
-	else
-		caracter = n + 48;
-	return (caracter);
+int	ft_lstsize(t_list *lst)
+{
+	int		i;
+	t_list	*sublist;
+
+	i = 0;
+	sublist = lst;
+	while (sublist)
+	{
+		i++;
+		sublist = sublist->next;
+	}
+	return (i);
 }

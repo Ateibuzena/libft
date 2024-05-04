@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_structure.c                                     :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/21 21:35:07 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/27 22:17:38 by azubieta         ###   ########.fr       */
+/*   Created: 2024/05/04 16:29:53 by azubieta          #+#    #+#             */
+/*   Updated: 2024/05/04 16:36:49 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_Counters	ft_structure(t_size one, t_size two, t_size three, t_size four)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_Counters	sign_index;
+	t_list	*buffer;
 
-	sign_index.i = one;
-	sign_index.sign = two;
-	sign_index.n = three;
-	sign_index.words = four;
-	return (sign_index);
+	while (*lst)
+	{
+		buffer = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = buffer;
+	}
 }
-
-/* Initializes and returns a structure of type 
-t_Sign_Index with default values.
-Returns:
-- Structure of type t_Sign_Index with the index 
-initialized to 0, the sign set to 1,
-and the n flag set to 1. */

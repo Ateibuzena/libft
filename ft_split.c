@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:31:55 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/02 20:59:38 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/04 21:35:10 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	**ft_split(char const *s, char c)
 	t_Pointers	pointers;
 	t_Counters	counters;
 
-	counters = ft_structure(0, 0, 0, ft_wordscount(s, c));
+	counters = ft_struct(0, 0, 0, ft_wordscount(s, c));
 	pointers.ptr = malloc((counters.words + 1) * sizeof(char *));
 	if (pointers.ptr == NULL)
 		return (NULL);

@@ -1,35 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_struct.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:22:51 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/02 21:36:14 by azubieta         ###   ########.fr       */
+/*   Created: 2024/04/21 21:35:07 by azubieta          #+#    #+#             */
+/*   Updated: 2024/05/04 21:35:43 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+t_Counters	ft_struct(t_size one, t_size two, t_size three, t_size four)
 {
-	int	i;
+	t_Counters	sign_index;
 
-	i = 0;
-	while (s[i] != '\0')
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	sign_index.i = one;
+	sign_index.sign = two;
+	sign_index.n = three;
+	sign_index.words = four;
+	return (sign_index);
 }
 
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	s[20] = "hola";
-	ft_striteri(s, ft_ff);
-	printf("%s", s);
-	return (0);
-}*/
+/* Initializes and returns a structure of type 
+t_Sign_Index with default values.
+Returns:
+- Structure of type t_Sign_Index with the index 
+initialized to 0, the sign set to 1,
+and the n flag set to 1. */

@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 20:54:50 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/02 21:19:03 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:38:21 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 #include <stdio.h>
 int main(void)
 {
-	char	ptr[20] = "hola";
+	char	ptr[20] = "hola ana que tal";
 	char	*temp;
 
 	temp = ft_strmapi(ptr, ft_f);

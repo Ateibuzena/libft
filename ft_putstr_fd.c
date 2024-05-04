@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_f.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:11:14 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/04 15:38:47 by azubieta         ###   ########.fr       */
+/*   Created: 2024/05/02 21:46:22 by azubieta          #+#    #+#             */
+/*   Updated: 2024/05/02 21:48:43 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_f(unsigned int n, char c)
-{
-	char	caracter;
+#include "libft.h"
+#include <unistd.h>
 
-	if (c == ' ')
-		caracter = '_';
-	else
-		caracter = n + 48;
-	return (caracter);
+void	ft_putstr_fd(char *s, int fd)
+{
+	write(fd, s, ft_strlen(s));
 }
