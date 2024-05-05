@@ -7,13 +7,14 @@ Your library will have a bunch of general-purpose functions.
 
 # Table of Contents
 
-I. [Introduction](#introduction) 2
-II. [General Instructions](#general-instructions) 3
-III. [Mandatory Part](#mandatory-part) 5
-   III.1. [Technical Considerations](#technical-considerations) 5
-   III.2. [Part 1 - Libc Functions](#part-1-libc-functions) 6
-   III.3. [Part 2 - Additional Functions](#part-2-additional-functions) 7
-IV. [Bonus Part](#bonus-part) 12
+I. [Introduction](#introduction)
+II. [General Instructions](#general-instructions)
+III. [Mandatory Part](#mandatory-part)
+   III.1. [Technical Considerations](#technical-considerations)
+   III.2. [Part 1 - Libc Functions](#part-1-libc-functions)
+   III.3. [Part 2 - Additional Functions](#part-2-additional-functions)
+IV. [Bonus Part](#bonus-part)
+V. [Detailed explanation of the functions](#detailed-explanation-of-the-functions)
 
 # Chapter I
 ## Introduction
@@ -468,5 +469,296 @@ In your Makefile, add a rule `make bonus` that incorporates the bonus functions 
   - NULL if memory allocation fails.
 - **Authorized Functions:** malloc, free
 - **Description:** Iterates over the list 'lst' and applies the function 'f' to the content of each node. Creates a resulting list from the correct and successive application of the 'f' function to each node. The 'del' function is used to delete the content of a node, if necessary.
+
+### Chapter V
+
+## Explanation of `ft_isalpha` function
+
+This function checks whether a character `c` is an alphabetic character (a-z or A-Z). Here's a breakdown of what each part of the function does:
+
+1. **`if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))`**: Checks if the ASCII value of `c` corresponds to an uppercase letter (between 65 and 90) or a lowercase letter (between 97 and 122). 
+
+2. **`return (1);`**: If the condition in the `if` statement is true, meaning `c` is an alphabetic character, the function returns `1`, indicating true.
+
+3. **`return (0);`**: If the condition in the `if` statement is false, meaning `c` is not an alphabetic character, the function returns `0`, indicating false.
+
+In summary, this function determines whether a character `c` is an alphabetic character (a-z or A-Z) and returns `1` if it is, or `0` otherwise.
+
+## Explanation of `ft_isdigit` function
+
+This function checks whether a character `c` is a digit character (0-9). Here's a breakdown of what each part of the function does:
+
+1. **`if (c >= 48 && c <= 57)`**: Checks if the ASCII value of `c` corresponds to a digit character (between 48 and 57).
+
+2. **`return (1);`**: If the condition in the `if` statement is true, meaning `c` is a digit character, the function returns `1`, indicating true.
+
+3. **`return (0);`**: If the condition in the `if` statement is false, meaning `c` is not a digit character, the function returns `0`, indicating false.
+
+In summary, this function determines whether a character `c` is a digit character (0-9) and returns `1` if it is, or `0` otherwise.
+
+## Explanation of `ft_isalnum` function
+
+This function checks whether a character `c` is an alphanumeric character (a-z, A-Z, or 0-9). Here's a breakdown of what each part of the function does:
+
+1. **`if (ft_isalpha(c) != 0 || ft_isdigit(c) != 0)`**: Calls the functions `ft_isalpha` and `ft_isdigit` to check if `c` is either an alphabetic character or a digit character.
+
+2. **`return (1);`**: If either `ft_isalpha(c)` or `ft_isdigit(c)` returns a non-zero value (indicating that `c` is an alphabetic or digit character), the function returns `1`, indicating true.
+
+3. **`return (0);`**: If both `ft_isalpha(c)` and `ft_isdigit(c)` return `0` (indicating that `c` is neither an alphabetic nor a digit character), the function returns `0`, indicating false.
+
+In summary, this function determines whether a character `c` is an alphanumeric character (a-z, A-Z, or 0-9) and returns `1` if it is, or `0` otherwise.
+
+## Explanation of `ft_isascii` function
+
+This function, `ft_isascii`, checks whether a character `c` is a valid ASCII character. It returns `1` if `c` is a valid ASCII character (with an ASCII value between 0 and 127), otherwise it returns `0`.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`if (c >= 0 && c <= 127)`**: This condition checks if the ASCII value of `c` falls within the range of valid ASCII characters, which is between 0 and 127 inclusive.
+
+2. **`return (1);`**: If the condition in the `if` statement is true, meaning `c` is a valid ASCII character, the function returns `1`, indicating true.
+
+3. **`return (0);`**: If the condition in the `if` statement is false, meaning `c` is not a valid ASCII character, the function returns `0`, indicating false.
+
+In summary, this function determines whether a character `c` is a valid ASCII character and returns `1` if it is, or `0` otherwise.
+
+## Explanation of `ft_isprint` function
+
+This function, `ft_isprint`, checks whether a character `c` is a printable character. It returns `1` if `c` is a printable character (with an ASCII value between 32 and 126 inclusive), otherwise it returns `0`.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`if (ft_isascii(c) != 0)`**: This condition checks if `c` is a valid ASCII character using the `ft_isascii` function. If `c` is not a valid ASCII character, the function returns `0`.
+
+2. **`if (c >= 32 && c <= 126)`**: This nested condition checks if `c` falls within the range of printable ASCII characters, which is between 32 and 126 inclusive.
+
+3. **`return (1);`**: If both conditions are true, meaning `c` is a valid ASCII character and falls within the range of printable characters, the function returns `1`, indicating true.
+
+4. **`return (0);`**: If either of the conditions is false, meaning `c` is not a valid ASCII character or does not fall within the range of printable characters, the function returns `0`, indicating false.
+
+In summary, this function determines whether a character `c` is a printable character and returns `1` if it is, or `0` otherwise.
+
+## Explanation of `ft_strlen` function
+
+This function, `ft_strlen`, calculates the length of a null-terminated string `s`. It iterates through the characters of the string until it encounters the null terminator `'\0'`, and counts the number of characters encountered.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`int i;`**: Declares an integer variable `i` to use as an index for iterating through the characters of the string.
+
+2. **`i = 0;`**: Initializes the index variable `i` to 0 before starting the iteration.
+
+3. **`while (s[i] != '\0')`**: This loop iterates through the characters of the string `s` until it encounters the null terminator `'\0'`.
+
+4. **`i++;`**: Inside the loop, increments the index variable `i` to move to the next character in the string.
+
+5. **`return (i);`**: After the loop finishes, the function returns the final value of `i`, which represents the length of the string `s` (excluding the null terminator).
+
+In summary, this function calculates the length of a null-terminated string `s` by iterating through its characters until it reaches the null terminator, and returns the count of characters encountered.
+
+## Explanation of `ft_memset` function
+
+This function, `ft_memset`, sets each byte of a memory block `array` to the specified `value`. It iterates through the memory block and assigns the `value` to each byte until the specified `len` is reached.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`t_size i;`**: Declares a variable `i` of type `t_size` to use as an index for iterating through the memory block.
+
+2. **`unsigned char *ptr;`**: Declares a pointer `ptr` of type `unsigned char *` to point to the memory block `array`. Using an unsigned char pointer allows for byte-wise manipulation of the memory block.
+
+3. **`ptr = (unsigned char *)array;`**: Assigns the starting address of the memory block `array` to the pointer `ptr`. Casting `array` to an `unsigned char *` ensures that byte-wise operations can be performed on the memory block.
+
+4. **`i = 0;`**: Initializes the index variable `i` to 0 before starting the iteration.
+
+5. **`while (i < len)`**: This loop iterates through the memory block until the specified length `len` is reached.
+
+6. **`*ptr = (unsigned char)value;`**: Sets the value of the byte pointed to by `ptr` to the specified `value`. Since `value` is of type `int`, it is cast to `unsigned char` to ensure that only the least significant byte is assigned to the memory block.
+
+7. **`i++;`**: Increments the index variable `i` to move to the next byte in the memory block.
+
+8. **`ptr++;`**: Increments the pointer `ptr` to point to the next byte in the memory block.
+
+9. **`return (array);`**: After setting each byte in the memory block, the function returns a pointer to the modified memory block `array`.
+
+In summary, this function sets each byte of a memory block `array` to the specified `value` by iterating through the memory block and assigning the `value` to each byte until the specified `len` is reached.
+
+## Explanation of `ft_bzero` function
+
+This function, `ft_bzero`, sets the first `len` bytes of the memory block pointed to by `array` to zero. It achieves this by calling the `ft_memset` function with the specified `array`, `value` of 0, and `len`.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`ft_memset(array, 0, len);`**: Calls the `ft_memset` function to set the first `len` bytes of the memory block pointed to by `array` to zero. The `ft_memset` function is responsible for performing the byte-wise zeroing operation.
+
+In summary, this function serves as a wrapper for the `ft_memset` function, specifically designed to zero out a memory block by setting its bytes to zero.
+
+## Explanation of `ft_memcpy` function
+
+This function, `ft_memcpy`, copies `n` bytes from the memory area pointed to by `src` to the memory area pointed to by `dst`. It performs the byte-wise copy operation by iterating through the memory areas and copying each byte from `src` to `dst`.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`t_size i;`**: Declares a variable `i` of type `t_size` to use as an index for iterating through the memory areas.
+
+2. **`unsigned char *pdst;`**: Declares a pointer `pdst` of type `unsigned char *` to point to the destination memory area `dst`. Using an unsigned char pointer allows for byte-wise manipulation of the memory areas.
+
+3. **`const unsigned char *psrc;`**: Declares a pointer `psrc` of type `const unsigned char *` to point to the source memory area `src`. Using a const unsigned char pointer ensures that the source memory area is treated as read-only.
+
+4. **`pdst = (unsigned char *)dst;`**: Assigns the starting address of the destination memory area `dst` to the pointer `pdst`. Casting `dst` to an `unsigned char *` ensures that byte-wise operations can be performed on the destination memory area.
+
+5. **`psrc = (const unsigned char *)src;`**: Assigns the starting address of the source memory area `src` to the pointer `psrc`. Casting `src` to a `const unsigned char *` ensures that byte-wise operations can be performed on the source memory area, while also enforcing read-only access.
+
+6. **`if (pdst == 0 && psrc == 0)`**: Checks if both the destination and source pointers are null. If either pointer is null, indicating a null pointer was passed as an argument, the function returns null.
+
+7. **`while (i < n)`**: This loop iterates through the memory areas until the specified number of bytes `n` is reached.
+
+8. **`pdst[i] = psrc[i];`**: Copies the byte from the source memory area `psrc` at index `i` to the destination memory area `pdst` at index `i`.
+
+9. **`i++;`**: Increments the index variable `i` to move to the next byte in the memory areas.
+
+10. **`return (dst);`**: After copying `n` bytes from the source to the destination memory area, the function returns a pointer to the destination memory area `dst`.
+
+In summary, this function copies `n` bytes from the memory area pointed to by `src` to the memory area pointed to by `dst` by performing a byte-wise copy operation.
+
+## Explanation of `ft_memmove` function
+
+This function, `ft_memmove`, copies `len` bytes from the memory area pointed to by `src` to the memory area pointed to by `dst`. Unlike `ft_memcpy`, `ft_memmove` can handle overlapping memory areas correctly by copying the bytes in the correct order.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`unsigned char *pdst;` and `unsigned char *psrc;`**: Declare pointers `pdst` and `psrc` of type `unsigned char *` to point to the destination and source memory areas `dst` and `src` respectively. Using unsigned char pointers allows for byte-wise manipulation of the memory areas.
+
+2. **`pdst = (unsigned char *)dst;` and `psrc = (unsigned char *)src;`**: Assign the starting addresses of the destination and source memory areas `dst` and `src` respectively to the pointers `pdst` and `psrc`. Casting `dst` and `src` to `unsigned char *` ensures that byte-wise operations can be performed on the memory areas.
+
+3. **`if (pdst == 0 && psrc == 0)`**: Check if both the destination and source pointers are null. If either pointer is null, indicating a null pointer was passed as an argument, the function returns null.
+
+4. **`if (pdst > psrc)`**: Check if the destination pointer `pdst` is greater than the source pointer `psrc`. If so, it means that the memory areas overlap and the copying operation needs to be performed in reverse order.
+
+   - **`psrc += len;` and `pdst += len;`**: Adjust the source and destination pointers to point to the end of their respective memory areas.
+
+   - **`while (len--)`**: Iterate through the memory areas in reverse order, copying each byte from the source memory area `psrc` to the destination memory area `pdst`.
+
+     - **`*(--pdst) = *(--psrc);`**: Copy the byte pointed to by `psrc` to the byte pointed to by `pdst`, then decrement both pointers to move to the previous byte.
+
+5. **`else if (pdst < psrc)`**: If the destination pointer `pdst` is less than the source pointer `psrc`, it means that the memory areas do not overlap and the copying operation can be performed in forward order.
+
+   - **`while (len--)`**: Iterate through the memory areas in forward order, copying each byte from the source memory area `psrc` to the destination memory area `pdst`.
+
+     - **`*(pdst++) = *(psrc++);`**: Copy the byte pointed to by `psrc` to the byte pointed to by `pdst`, then increment both pointers to move to the next byte.
+
+6. **`return (dst);`**: After copying `len` bytes from the source to the destination memory area, the function returns a pointer to the destination memory area `dst`.
+
+In summary, this function copies `len` bytes from the memory area pointed to by `src` to the memory area pointed to by `dst`, handling overlapping memory areas correctly by copying the bytes in the appropriate order.
+
+## Explanation of `ft_strlcpy` function
+
+This function, `ft_strlcpy`, copies a null-terminated string `src` to the destination string `dst`, while ensuring that no more than `dstsize - 1` bytes are copied to `dst` to ensure null-termination. It returns the length of the source string `src`.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`t_size i;` and `t_size srclen;`**: Declare variables `i` and `srclen` of type `t_size` to use as indices and to store the length of the source string `src` respectively.
+
+2. **`i = 0;`**: Initialize the index variable `i` to 0 before starting the iteration.
+
+3. **`srclen = ft_strlen(src);`**: Calculate the length of the source string `src` using the `ft_strlen` function and store it in the variable `srclen`.
+
+4. **`if (dstsize == 0)`**: Check if `dstsize` is 0. If so, return the length of the source string `src`.
+
+5. **`if (dstsize <= srclen)`**: Check if `dstsize` is less than or equal to the length of the source string `src`. If so, copy at most `dstsize - 1` bytes from `src` to `dst`.
+
+   - **`while (src[i] != '\0' && i < dstsize - 1)`**: Iterate through the characters of the source string `src` until either a null terminator is encountered or `dstsize - 1` characters have been copied. Copy each character from `src` to `dst`.
+
+6. **`else`**: If `dstsize` is greater than the length of the source string `src`, copy the entire source string `src` to `dst`.
+
+   - **`while (src[i] != '\0')`**: Iterate through the characters of the source string `src` until a null terminator is encountered. Copy each character from `src` to `dst`.
+
+7. **`dst[i] = '\0';`**: Ensure that the destination string `dst` is null-terminated by appending a null character at the end.
+
+8. **`return (srclen);`**: Return the length of the source string `src`.
+
+In summary, this function copies a null-terminated string `src` to the destination string `dst`, ensuring that no more than `dstsize - 1` bytes are copied to `dst` to ensure null-termination. It returns the length of the source string `src`.
+
+## Explanation of `ft_strlcat` function
+
+This function, `ft_strlcat`, appends the null-terminated string `src` to the end of the null-terminated string `dst`, while ensuring that no more than `dstsize - dstlen - 1` bytes are appended to `dst` to ensure null-termination. It returns the total length of the concatenated strings `dst` and `src`.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`t_size i;`, `t_size dstlen;`, and `t_size srclen;`**: Declare variables `i`, `dstlen`, and `srclen` of type `t_size` to use as indices and to store the lengths of the destination string `dst` and the source string `src` respectively.
+
+2. **`i = 0;`**: Initialize the index variable `i` to 0 before starting the iteration.
+
+3. **`dstlen = ft_strlen(dst);`** and **`srclen = ft_strlen(src);`**: Calculate the lengths of the destination string `dst` and the source string `src` using the `ft_strlen` function and store them in the variables `dstlen` and `srclen` respectively.
+
+4. **`if (dstlen >= dstsize)`**: Check if the length of the destination string `dst` is greater than or equal to `dstsize`. If so, it means that there is no space left in `dst` to append `src`, so the function returns the sum of `dstsize` and `srclen`.
+
+5. **`while (src[i] != '\0' && i < dstsize - dstlen - 1)`**: Iterate through the characters of the source string `src` until either a null terminator is encountered or the maximum number of bytes that can be appended to `dst` while ensuring null-termination (`dstsize - dstlen - 1`) is reached. Append each character from `src` to `dst`.
+
+6. **`dst[dstlen + i] = '\0';`**: Ensure that the concatenated string `dst` is null-terminated by appending a null character at the end.
+
+7. **`return (dstlen + srclen);`**: Return the total length of the concatenated strings `dst` and `src`.
+
+In summary, this function appends the null-terminated string `src` to the end of the null-terminated string `dst`, while ensuring null-termination and preventing buffer overflow by not appending more than `dstsize - dstlen - 1` bytes to `dst`. It returns the total length of the concatenated strings `dst` and `src`.
+
+## Explanation of `ft_toupper` function
+
+This function, `ft_toupper`, converts a lowercase letter to its corresponding uppercase letter. If the character `c` is a lowercase letter (as determined by `ft_isalpha` function) and its ASCII value falls within the range of lowercase letters (97 to 122), it subtracts 32 from the ASCII value to convert it to its uppercase equivalent.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`if (ft_isalpha(c) == 1 && (c >= 97 && c <= 122))`**: Check if the character `c` is an alphabet character and is a lowercase letter.
+
+   - **`ft_isalpha(c) == 1`**: This condition checks if `c` is an alphabet character using the `ft_isalpha` function.
+
+   - **`(c >= 97 && c <= 122)`**: This condition checks if the ASCII value of `c` falls within the range of lowercase letters.
+
+2. **`return (c - 32);`**: If `c` is a lowercase letter, subtract 32 from its ASCII value to convert it to uppercase, and return the result.
+
+3. **`return (c);`**: If `c` is not a lowercase letter, simply return `c` unchanged.
+
+In summary, this function converts a lowercase letter to its corresponding uppercase letter by subtracting 32 from its ASCII value. If `c` is not a lowercase letter, it returns `c` unchanged.
+
+## Explanation of `ft_tolower` function
+
+This function, `ft_tolower`, converts an uppercase letter to its corresponding lowercase letter. If the character `c` is an uppercase letter (as determined by `ft_isalpha` function) and its ASCII value falls within the range of uppercase letters (65 to 90), it adds 32 to the ASCII value to convert it to its lowercase equivalent.
+
+Here's a breakdown of what each part of the function does:
+
+1. **`if (ft_isalpha(c) == 1 && (c >= 65 && c <= 90))`**: Check if the character `c` is an alphabet character and is an uppercase letter.
+
+   - **`ft_isalpha(c) == 1`**: This condition checks if `c` is an alphabet character using the `ft_isalpha` function.
+
+   - **`(c >= 65 && c <= 90)`**: This condition checks if the ASCII value of `c` falls within the range of uppercase letters.
+
+2. **`return (c + 32);`**: If `c` is an uppercase letter, add 32 to its ASCII value to convert it to lowercase, and return the result.
+
+3. **`return (c);`**: If `c` is not an uppercase letter, simply return `c` unchanged.
+
+In summary, this function converts an uppercase letter to its corresponding lowercase letter by adding 32 to its ASCII value. If `c` is not an uppercase letter, it returns `c` unchanged.
+
+
+
+## Explanation of `ft_digitcount` function
+
+This function counts the number of digits in an integer `n`. Here's a breakdown of what each part of the function does:
+
+1. **`long nb;`**: Declares a variable `nb` of type `long` to store the absolute value of the integer `n`. `long` is used instead of `int` to handle larger integers without overflow.
+
+2. **`int count;`**: Declares a variable `count` of type `int` to keep track of the number of digits in `n`.
+
+3. **`nb = n;`**: Assigns the value of `n` to `nb` to manipulate it without modifying the original value.
+
+4. **`count = 0;`**: Initializes `count` to 0 before starting to count the digits.
+
+5. **`if (nb < 0) { nb = -nb; count++; }`**: If `nb` is negative, changes its sign to positive by multiplying it by `-1`. Also increments `count` by 1 to account for the negative sign of the number.
+
+6. **`while (nb / 10 != 0) { nb = nb / 10; count++; }`**: Uses a `while` loop to repeatedly divide `nb` by 10 until `nb` becomes equal to 0 (i.e., until there are no more digits to count). In each iteration of the loop, divides `nb` by 10 and increments `count` by 1 to count the digit.
+
+7. **`count++;`**: After exiting the `while` loop, increments `count` by 1 more to count the last digit.
+
+8. **`return (count);`**: The function returns the value of `count`, which represents the total number of digits in `n`, including the sign if `n` is negative.
+
+In summary, this function calculates the number of digits in an integer `n`, including the sign if `n` is negative, using a `while` loop to repeatedly divide the absolute value of `n` by 10 until there are no more digits left.
+
 
 # Ana Zubieta
