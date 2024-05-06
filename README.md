@@ -736,7 +736,580 @@ Here's a breakdown of what each part of the function does:
 
 In summary, this function converts an uppercase letter to its corresponding lowercase letter by adding 32 to its ASCII value. If `c` is not an uppercase letter, it returns `c` unchanged.
 
+## Explanation of `ft_strchr` function
 
+This function, `ft_strchr`, searches for the first occurrence of a character `c` in a given string `str`.
+
+1. **Initialization**: 
+   - It initializes variables `i` and `len`. `i` is an index used for iterating through the characters of the string, and `len` is the length of the string calculated using `ft_strlen` function.
+
+2. **Character Comparison**:
+   - It iterates through each character of the string using a `while` loop until it reaches the end of the string (`len`).
+
+3. **Matching Character**:
+   - If a match is found, it assigns the address of that character to a pointer `ptr` and returns it. This pointer points to the first occurrence of the character `c` in the string.
+
+4. **No Match Found**:
+   - If no match is found after iterating through the entire string, it assigns `ptr` to `0` (NULL) and returns it, indicating that the character `c` was not found in the string.
+
+5. **Return Value**:
+   - Returns a pointer to the first occurrence of `c` in `str` if found, otherwise returns NULL.
+
+This function is commonly used in C programming for string manipulation tasks.
+
+## Explanation of `ft_strrchr` function
+
+This function, `ft_strrchr`, searches for the last occurrence of a character `c` in a given string `str`.
+
+1. **Initialization**: 
+   - It initializes variables `len` and `ptr`. `len` stores the length of the string calculated using `ft_strlen` function. `ptr` is initially set to NULL.
+
+2. **Character Comparison**:
+   - It iterates through each character of the string using a `while` loop in reverse order, starting from the end of the string.
+
+3. **Matching Character**:
+   - If a match is found, it assigns the address of that character to a pointer `ptr` and returns it. This pointer points to the last occurrence of the character `c` in the string.
+
+4. **No Match Found**:
+   - If no match is found after iterating through the entire string, `ptr` remains NULL.
+
+5. **Return Value**:
+   - Returns a pointer to the last occurrence of `c` in `str` if found, otherwise returns NULL. If `c` is '\0', returns a pointer to the null terminator of the string.
+
+This function is commonly used in C programming for string manipulation tasks.
+
+## Explanation of `ft_strncmp` function
+
+This function, `ft_strncmp`, compares the first `n` characters of two strings `s1` and `s2`.
+
+1. **Initialization**: 
+   - It initializes variables `i`, `ptrs1`, and `ptrs2`. `i` is used as an index to iterate through the characters of the strings. `ptrs1` and `ptrs2` are pointers to unsigned characters representing the strings `s1` and `s2`, respectively.
+
+2. **Character Comparison**:
+   - It iterates through the characters of the strings using a `while` loop until it reaches the end of either string or `n` characters, whichever comes first.
+
+3. **Comparison**:
+   - It compares each character of the strings at the corresponding positions.
+   - If a difference is found, it returns the difference between the ASCII values of the characters at the current position.
+
+4. **Equality**:
+   - If the loop completes without finding any differences, it returns 0, indicating that both strings are equal up to the first `n` characters.
+
+5. **Return Value**:
+   - Returns a negative value if the first differing character in `s1` is less than the corresponding character in `s2`.
+   - Returns a positive value if the first differing character in `s1` is greater than the corresponding character in `s2`.
+   - Returns 0 if both strings are equal up to the first `n` characters.
+
+This function is commonly used in C programming for comparing strings with a limited length.
+
+## Explanation of `ft_memchr` function
+
+This function, `ft_memchr`, searches for the first occurrence of a byte `c` in the first `n` bytes of the memory block pointed to by `s`.
+
+1. **Initialization**: 
+   - It initializes variables `ptr` and `i`. `ptr` is a pointer to an unsigned char representing the memory block `s`. `i` is used as a counter to iterate through the memory block.
+
+2. **Byte Comparison**:
+   - It iterates through the memory block using a `while` loop until it reaches the end of the block or `n` bytes, whichever comes first.
+   - It compares each byte of the memory block with the byte `c`.
+
+3. **Matching Byte**:
+   - If a match is found, it returns a pointer to the location of the first occurrence of the byte `c` in the memory block.
+
+4. **No Match Found**:
+   - If no match is found after iterating through the entire memory block, it returns NULL.
+
+5. **Return Value**:
+   - Returns a pointer to the first occurrence of the byte `c` in the memory block `s` if found, otherwise returns NULL.
+
+This function is commonly used in C programming for searching for a specific byte in a memory block.
+
+## Explanation of `ft_memcmp` function
+
+This function, `ft_memcmp`, compares the first `n` bytes of two memory blocks `s1` and `s2`.
+
+1. **Initialization**: 
+   - It initializes variables `i`, `ptrs1`, and `ptrs2`. `ptrs1` and `ptrs2` are pointers to unsigned characters representing the memory blocks `s1` and `s2`, respectively. `i` is used as a counter to iterate through the memory blocks.
+
+2. **Byte Comparison**:
+   - It iterates through the memory blocks using a `while` loop until it reaches the end of either block or `n` bytes, whichever comes first.
+   - It compares each byte of the memory blocks at the corresponding positions.
+
+3. **Comparison**:
+   - If a difference is found between the bytes at the current positions, it returns the difference between the values of the bytes.
+
+4. **Equality**:
+   - If the loop completes without finding any differences, it returns 0, indicating that both memory blocks are equal up to the first `n` bytes.
+
+5. **Return Value**:
+   - Returns a negative value if the first differing byte in `s1` is less than the corresponding byte in `s2`.
+   - Returns a positive value if the first differing byte in `s1` is greater than the corresponding byte in `s2`.
+   - Returns 0 if both memory blocks are equal up to the first `n` bytes.
+
+This function is commonly used in C programming for comparing memory blocks with a limited length.
+
+## Explanation of `ft_strnstr` function
+
+This function, `ft_strnstr`, searches for the first occurrence of the substring `need` in the string `hay`, where the search is limited to the first `len` characters of `hay`.
+
+1. **Initialization**: 
+   - It initializes variable `i` to 0.
+
+2. **Adjusting Length**:
+   - If `len` is set to -1, it means the entire length of `hay` should be considered. So, it adjusts `len` to the length of `hay`.
+   
+3. **Boundary Check**:
+   - If `need` is an empty string, it returns a pointer to the beginning of `hay`.
+
+4. **Substring Search**:
+   - It iterates through the characters of `hay` using a `while` loop until it reaches the end of `hay` or the specified `len`.
+   - If the current character of `hay` matches the first character of `need`, it performs a comparison using `ft_strncmp` to check if the substring `need` is found starting from the current position of `hay`.
+
+5. **Return Value**:
+   - If the substring `need` is found within the first `len` characters of `hay`, it returns a pointer to the beginning of the substring within `hay`.
+   - If the substring is not found, it returns NULL.
+
+This function is commonly used in C programming for searching for substrings within strings with a limited length.
+
+## Explanation of `ft_atoi` function
+
+This function, `ft_atoi`, converts a string `str` to an integer.
+
+1. **Initialization**: 
+   - It initializes variables `num` and `sign_index`.
+   - `num` stores the final integer value.
+   - `sign_index` is a structure containing counters and sign information.
+
+2. **Skip Leading Whitespace and Symbols**:
+   - It skips leading whitespace and symbols by calling the `ft_spacesymbols` function and updating the `sign_index`.
+
+3. **Check Sign**:
+   - It checks if the number is positive or negative based on the presence of a leading '+' or '-' sign. 
+   - If a '-' sign is encountered, it updates the sign multiplier accordingly.
+
+4. **Convert Characters to Integer**:
+   - It iterates through the characters of the string after the optional sign.
+   - For each digit character, it multiplies the current `num` by 10 and adds the numerical value of the character.
+
+5. **Return Value**:
+   - Returns the final integer value, considering the sign.
+
+This function is commonly used in C programming for converting strings to integers.
+
+## Explanation of `ft_calloc` function
+
+This function, `ft_calloc`, allocates memory for an array of `count` elements, each of size `size` bytes, and initializes all the bytes to zero.
+
+1. **Memory Allocation**:
+   - It allocates memory for the array using `malloc`, with the total size calculated as `size * count`.
+   
+2. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+3. **Memory Initialization**:
+   - It initializes all the bytes of the allocated memory to zero using `ft_memset`.
+
+4. **Return Value**:
+   - Returns a pointer to the allocated and initialized memory block.
+
+This function is commonly used in C programming for dynamic memory allocation and initialization of memory blocks.
+
+## Explanation of `ft_strdup` function
+
+This function, `ft_strdup`, duplicates a string `s1` by allocating memory for a new string and copying the content of `s1` into it.
+
+1. **Memory Allocation**:
+   - It allocates memory for the new string using `malloc`, with the size calculated as `ft_strlen(s1) + 1` to accommodate the null terminator.
+
+2. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+3. **String Copy**:
+   - It copies the content of the original string `s1` into the newly allocated memory using `ft_memcpy`.
+
+4. **Null Termination**:
+   - It ensures that the duplicated string is properly null-terminated by adding a null terminator at the end.
+
+5. **Return Value**:
+   - Returns a pointer to the duplicated string.
+
+This function is commonly used in C programming for duplicating strings dynamically.
+
+## Explanation of `ft_substr` function
+
+This function, `ft_substr`, extracts a substring from the string `s`, starting from the index `start` and of length `len`.
+
+1. **Boundary Checks**:
+   - It checks if the input string `s` is NULL. If so, it returns NULL.
+   - It checks if the starting index `start` exceeds the length of `s`. If so, it returns an empty string by calling `ft_strdup("")`.
+
+2. **Adjusting Length**:
+   - It adjusts the length `len` to ensure that it does not exceed the length of the substring starting from index `start`.
+
+3. **Memory Allocation**:
+   - It allocates memory for the substring using `malloc`, with the size calculated as `(len + 1) * sizeof(char)` to accommodate the null terminator.
+
+4. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+5. **Substring Copy**:
+   - It copies the substring starting from index `start` of the original string `s` into the newly allocated memory using `ft_strlcpy`.
+
+6. **Null Termination**:
+   - It ensures that the substring is properly null-terminated by adding a null terminator at the end.
+
+7. **Return Value**:
+   - Returns a pointer to the allocated substring.
+
+This function is commonly used in C programming for extracting substrings from strings.
+
+## Explanation of `ft_strjoin` function
+
+This function, `ft_strjoin`, concatenates two strings `s1` and `s2` into a newly allocated string.
+
+1. **Memory Allocation**:
+   - It allocates memory for the concatenated string using `malloc`, with the size calculated as the sum of the lengths of `s1` and `s2`, plus one for the null terminator.
+
+2. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+3. **Boundary Checks**:
+   - It checks if both `s1` and `s2` are NULL. If so, it returns NULL.
+
+4. **Concatenation**:
+   - It iterates through the characters of `s1` and copies them into the `join` string.
+   - Then, it iterates through the characters of `s2` and appends them to the end of the `join` string.
+
+5. **Null Termination**:
+   - It adds a null terminator at the end of the concatenated string to ensure proper termination.
+
+6. **Return Value**:
+   - Returns a pointer to the concatenated string.
+
+This function is commonly used in C programming for concatenating strings dynamically.
+
+## Explanation of `ft_strtrim` function
+
+This function, `ft_strtrim`, trims leading and trailing characters from the string `s1` that match any character in the set `set`.
+
+1. **Initialization**:
+   - It initializes variables `init` and `end` to track the indices for trimming.
+
+2. **Trimming Leading Characters**:
+   - It increments the `init` index until it encounters a character in `s1` that is not in the `set` or reaches the end of `s1`.
+
+3. **Check for Empty String**:
+   - If the entire string `s1` consists of characters from the set `set`, it returns an empty string.
+
+4. **Trimming Trailing Characters**:
+   - It decrements the `end` index until it encounters a character in `s1` that is not in the `set`.
+
+5. **Substring Creation**:
+   - It creates a substring using `ft_substr` starting from the index `init` to `end - 1` to exclude the trailing whitespace.
+
+6. **Return Value**:
+   - Returns a pointer to the trimmed string.
+
+This function is commonly used in C programming for removing leading and trailing whitespace or specific characters from strings.
+
+## Explanation of `ft_split` function
+
+This function, `ft_split`, splits the string `s` into an array of strings based on the delimiter `c`.
+
+1. **Initialization**:
+   - It initializes variables `pointers` and `counters` to manage pointers and count information.
+   - `counters.words` stores the number of words in the string `s` based on the delimiter `c`.
+
+2. **Memory Allocation**:
+   - It allocates memory for an array of strings using `malloc`, with the size calculated as `(counters.words + 1) * sizeof(char *)` to accommodate the array of pointers and a null terminator.
+
+3. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+4. **Splitting String**:
+   - It iterates through the string `s` to split it into individual words based on the delimiter `c`.
+   - For each word, it dynamically allocates memory for the word and copies it into the array of strings.
+
+5. **Null Termination**:
+   - It adds a null pointer at the end of the array of strings to indicate the end of the array.
+
+6. **Return Value**:
+   - Returns a pointer to the array of strings.
+
+This function is commonly used in C programming for splitting strings into tokens based on a delimiter.
+
+## Explanation of `ft_itoa` function
+
+This function, `ft_itoa`, converts an integer `n` to a null-terminated string.
+
+1. **Initialization**:
+   - It initializes variables `variables` to manage the integer conversion process.
+
+2. **Memory Allocation**:
+   - It allocates memory for the resulting string using `malloc`, with the size calculated as `(ft_digitcount(n) + 1) * sizeof(char)` to accommodate the digits and a null terminator.
+
+3. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+4. **Sign Handling**:
+   - If the integer `n` is negative, it sets the first character of the resulting string to '-' and converts `n` to its absolute value.
+
+5. **Conversion**:
+   - It iterates through the integer `n` from right to left, converting each digit to its character representation and storing it in the resulting string.
+
+6. **Null Termination**:
+   - It adds a null terminator at the end of the resulting string.
+
+7. **Return Value**:
+   - Returns a pointer to the resulting string representing the integer `n`.
+
+This function is commonly used in C programming for converting integers to strings.
+
+## Explanation of `ft_strmapi` function
+
+This function, `ft_strmapi`, applies the function `f` to each character of the string `s` to create a new string.
+
+1. **Memory Allocation**:
+   - It allocates memory for the new string using `malloc`, with the size calculated as `(ft_strlen(s) + 1) * sizeof(char)` to accommodate the characters and a null terminator.
+
+2. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+3. **Character Mapping**:
+   - It iterates through each character of the string `s`.
+   - For each character, it applies the function `f` with the index `i` and the character `s[i]` as arguments to obtain the new character.
+   - It stores the new character in the corresponding position of the newly allocated string.
+
+4. **Null Termination**:
+   - It adds a null terminator at the end of the newly created string.
+
+5. **Return Value**:
+   - Returns a pointer to the newly created string.
+
+This function allows for mapping each character of a string to a new character based on a given function.
+
+## Explanation of `ft_striteri` function
+
+This function, `ft_striteri`, applies the function `f` to each character of the string `s`, along with its index.
+
+1. **Character Iteration**:
+   - It iterates through each character of the string `s` using a while loop.
+
+2. **Function Application**:
+   - For each character, it calls the function `f` with two arguments: the index `i` and a pointer to the character `s[i]`.
+   - This allows the function `f` to modify the characters of the string `s` or perform any other desired operation based on the character and its index.
+
+This function provides a way to apply a function to each character of a string, along with its index, allowing for flexible manipulation or processing of string elements.
+
+## Explanation of `ft_putchar_fd` function
+
+This function, `ft_putchar_fd`, writes a single character `c` to the specified file descriptor `fd`.
+
+1. **Writing Character**:
+   - It uses the `write` system call to write the character `c` to the file descriptor `fd`.
+   - The `write` function writes `1` byte from the address of the character `c` to the specified file descriptor.
+
+This function is commonly used in C programming to output characters to a specific file descriptor, such as standard output (stdout) or a file.
+
+## Explanation of `ft_putstr_fd` function
+
+This function, `ft_putstr_fd`, writes the string `s` to the specified file descriptor `fd`.
+
+1. **Writing String**:
+   - It uses the `write` system call to write the entire string `s` to the file descriptor `fd`.
+   - The `write` function writes the number of bytes equal to the length of the string `s`, obtained using `ft_strlen`, starting from the address of the string `s`.
+
+This function is commonly used in C programming to output strings to a specific file descriptor, such as standard output (stdout) or a file.
+
+## Explanation of `ft_putendl_fd` function
+
+This function, `ft_putendl_fd`, writes the string `s` followed by a newline character ('\n') to the specified file descriptor `fd`.
+
+1. **Writing String**:
+   - It uses the `write` system call to write the entire string `s` to the file descriptor `fd`.
+   - The `write` function writes the number of bytes equal to the length of the string `s`, obtained using `ft_strlen`, starting from the address of the string `s`.
+
+2. **Writing Newline**:
+   - It writes a single newline character ('\n') to the file descriptor `fd` using the `write` function.
+
+This function is commonly used in C programming to output strings followed by a newline character to a specific file descriptor, such as standard output (stdout) or a file.
+
+## Explanation of `ft_putnbr_fd` function
+
+This function, `ft_putnbr_fd`, writes the integer `n` to the specified file descriptor `fd`.
+
+1. **Handling Negative Numbers**:
+   - It checks if the integer `n` is negative.
+   - If `n` is negative, it writes a minus sign ('-') to the file descriptor `fd` and converts `n` to its absolute value.
+
+2. **Recursive Call**:
+   - It recursively calls `ft_putnbr_fd` with the absolute value of `n` divided by 10 until the quotient becomes 0.
+   - This recursive call processes the digits of the integer in reverse order.
+
+3. **Converting Digits to Characters**:
+   - It calculates the character representation of each digit by taking the remainder of `n` divided by 10 and adding it to ASCII value 48 ('0').
+   - This converts the digit into its character representation.
+
+4. **Writing Characters**:
+   - It writes each digit character to the file descriptor `fd` using the `write` system call.
+
+This function is commonly used in C programming to output integers to a specific file descriptor, such as standard output (stdout) or a file.
+
+## Explanation of `ft_lstnew` function
+
+This function, `ft_lstnew`, creates a new linked list node with the given content pointer `ptr`.
+
+1. **Memory Allocation**:
+   - It allocates memory for a new linked list node using `malloc`, with the size calculated as `sizeof(t_list)`.
+
+2. **Check for Allocation Failure**:
+   - It checks if the memory allocation was successful. If `malloc` returns NULL, indicating failure, it returns NULL.
+
+3. **Node Initialization**:
+   - It assigns the content pointer `ptr` to the `content` member of the newly created node.
+   - It sets the `next` pointer of the node to NULL, indicating that it is the last node in the list.
+
+4. **Return Value**:
+   - Returns a pointer to the newly created linked list node.
+
+This function is commonly used in C programming to create a new node for a linked list.
+
+## Explanation of `ft_lstadd_front` function
+
+This function, `ft_lstadd_front`, adds a new node `new` to the front of the linked list `lst`.
+
+1. **Updating Pointers**:
+   - It assigns the `next` pointer of the new node `new` to the current head of the linked list `lst`.
+   - It updates the pointer `lst` to point to the new node `new`, making it the new head of the list.
+
+This function efficiently inserts a new node at the beginning of a linked list, maintaining the integrity of the list structure.
+
+## Explanation of `ft_lstsize` function
+
+This function, `ft_lstsize`, calculates the number of elements in the linked list `lst`.
+
+1. **Initialization**:
+   - It initializes a counter variable `i` to keep track of the number of elements.
+   - It creates a temporary pointer `sublist` to traverse the linked list.
+
+2. **Counting Elements**:
+   - It iterates through the linked list using a while loop.
+   - For each node encountered, it increments the counter variable `i`.
+   - It updates the `sublist` pointer to point to the next node in the list.
+
+3. **Return Value**:
+   - Returns the total count of elements in the linked list.
+
+This function provides a simple and efficient way to determine the size of a linked list.
+
+## Explanation of `ft_lstlast` function
+
+This function, `ft_lstlast`, returns a pointer to the last element of the linked list `lst`.
+
+1. **Initialization**:
+   - It initializes a pointer `sublist` to traverse the linked list, starting from the head.
+
+2. **Traversing the List**:
+   - It iterates through the linked list using a while loop.
+   - For each node encountered, it checks if the next pointer is NULL.
+   - If the next pointer is NULL, it means the current node is the last node in the list, so it returns a pointer to this node.
+
+3. **Return Value**:
+   - If the linked list is empty, it returns NULL.
+   - Otherwise, it returns a pointer to the last element of the linked list.
+
+This function efficiently finds the last element of a linked list.
+
+## Explanation of `ft_lstadd_back` function
+
+This function, `ft_lstadd_back`, adds a new node `new` to the end of the linked list `lst`.
+
+1. **Initialization**:
+   - It initializes a pointer `sublist` to traverse the linked list, starting from the head.
+
+2. **Adding Node to an Empty List**:
+   - If the linked list is empty (i.e., `*lst` is NULL), it directly assigns the new node `new` to the head of the list (`*lst`) and returns.
+
+3. **Traversing the List**:
+   - It iterates through the linked list using a while loop until it reaches the last node.
+   - For each node encountered, it updates the `sublist` pointer to point to the next node.
+
+4. **Adding Node to the End**:
+   - Once the end of the list is reached (i.e., `sublist->next` is NULL), it assigns the new node `new` to the `next` pointer of the last node, effectively adding it to the end of the list.
+
+This function efficiently appends a new node to the end of a linked list.
+
+## Explanation of `ft_lstdelone` function
+
+This function, `ft_lstdelone`, deletes a single node from the linked list `lst`, applying the provided deletion function `del` to the content of the node.
+
+1. **Content Deletion**:
+   - It applies the deletion function `del` to the content of the node `lst` by passing `lst->content` as an argument.
+   - This deletion function is responsible for deallocating any memory associated with the content of the node.
+
+2. **Node Deallocation**:
+   - It deallocates the memory occupied by the node `lst` using the `free` function.
+
+This function is useful for deleting individual nodes from a linked list while properly deallocating any associated memory. It assumes that the deletion function `del` is responsible for deallocating the memory associated with the content of the node.
+
+## Explanation of `ft_lstclear` function
+
+This function, `ft_lstclear`, clears the entire linked list `lst`, deleting each node and deallocating associated memory using the provided deletion function `del`.
+
+1. **Iterating Through the List**:
+   - It iterates through the linked list using a while loop until the pointer `*lst` becomes NULL (indicating the end of the list).
+   - During each iteration, it temporarily stores the next node in the list in a buffer variable `buffer`.
+
+2. **Deleting Nodes**:
+   - For each node encountered, it calls the `ft_lstdelone` function to delete the node and deallocate associated memory, passing the current node `*lst` and the deletion function `del`.
+
+3. **Moving to the Next Node**:
+   - After deleting the current node, it updates the pointer `*lst` to point to the next node stored in the buffer variable `buffer`, effectively moving to the next node in the list.
+
+4. **Memory Deallocation**:
+   - Once all nodes in the list have been deleted, and the pointer `*lst` becomes NULL, the function exits, leaving the linked list cleared of all nodes and memory deallocated.
+
+This function ensures proper memory management by deleting each node in the linked list and deallocating any associated memory. It relies on the provided deletion function `del` to properly deallocate the memory associated with the content of each node.
+
+## Explanation of `ft_lstiter` function
+
+This function, `ft_lstiter`, iterates through each node of the linked list `lst` and applies the function `f` to the content of each node.
+
+1. **Traversal of the List**:
+   - It initializes a pointer `sublist` to traverse the linked list, starting from the head `lst`.
+
+2. **Iteration and Function Application**:
+   - It iterates through the linked list using a while loop until it reaches the end of the list (i.e., `sublist` becomes NULL).
+   - For each node encountered, it applies the function `f` to the content of the node (`sublist->content`).
+
+3. **Moving to the Next Node**:
+   - After applying the function to the current node, it updates the `sublist` pointer to point to the next node in the list (`sublist->next`), effectively moving to the next node.
+
+This function allows for the application of a specified function to each element of a linked list. It is useful for performing operations on the content of each node without directly accessing the linked list structure.
+
+## Explanation of `ft_lstmap` function
+
+This function, `ft_lstmap`, creates a new linked list resulting from applying the function `f` to each element of the original linked list `lst`.
+
+1. **Initialization**:
+   - It initializes pointers `node`, `sublist`, and `new_list` to manage the creation of the new linked list.
+   - It also initializes a temporary pointer `temp` to hold the result of applying the function `f` to the content of each node.
+
+2. **Processing the Original List**:
+   - It iterates through the original linked list `lst` using a while loop.
+   - For each node encountered, it applies the function `f` to the content of the node, resulting in a new value stored in `temp`.
+   - It creates a new node `node` containing the value of `temp` using the `ft_lstnew` function.
+
+3. **Handling Memory Allocation Errors**:
+   - If memory allocation fails while creating a new node, it deallocates all memory allocated for the new list using `ft_lstclear` and returns NULL.
+
+4. **Building the New List**:
+   - It adds the newly created node `node` to the end of the new linked list `new_list` using the `ft_lstadd_back` function.
+
+5. **Returning the New List**:
+   - After processing all nodes in the original list, it returns a pointer to the head of the new linked list `new_list`.
+
+This function efficiently creates a new linked list by applying a specified function to each element of the original list. It provides error handling to ensure proper memory management in case of memory allocation failures.
 
 ## Explanation of `ft_digitcount` function
 
@@ -759,6 +1332,20 @@ This function counts the number of digits in an integer `n`. Here's a breakdown 
 8. **`return (count);`**: The function returns the value of `count`, which represents the total number of digits in `n`, including the sign if `n` is negative.
 
 In summary, this function calculates the number of digits in an integer `n`, including the sign if `n` is negative, using a `while` loop to repeatedly divide the absolute value of `n` by 10 until there are no more digits left.
+
+## Explanation of `ft_freedoble` function
+
+This function, `ft_freedoble`, is responsible for freeing memory allocated to a double pointer `ptr`, which represents an array of strings.
+
+1. **Iterating Through the Array**:
+   - It iterates through the array of strings using a while loop until it encounters a NULL pointer (indicating the end of the array).
+   - For each non-NULL pointer encountered, it frees the memory allocated to the string using the `free` function.
+
+2. **Freeing the Array Pointer**:
+   - After freeing all individual strings, it frees the memory allocated to the array pointer `ptr` itself using the `free` function.
+
+This function ensures proper memory deallocation for both the array of strings and the array pointer itself. It is useful for freeing memory allocated dynamically to arrays of strings to prevent memory leaks.
+
 
 
 # Ana Zubieta
