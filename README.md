@@ -470,7 +470,8 @@ In your Makefile, add a rule `make bonus` that incorporates the bonus functions 
 - **Authorized Functions:** malloc, free
 - **Description:** Iterates over the list 'lst' and applies the function 'f' to the content of each node. Creates a resulting list from the correct and successive application of the 'f' function to each node. The 'del' function is used to delete the content of a node, if necessary.
 
-### Chapter V
+# Chapter V
+## Detailed explanation of the functions
 
 ## Explanation of `ft_isalpha` function
 
