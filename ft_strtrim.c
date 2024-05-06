@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:35:09 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/27 17:25:21 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:14:28 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,30 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1[init] == '\0')
 		return (ft_strdup(""));
 	while (init < end && ft_strchr(set, s1[end]) != NULL)
-	{
 		end--;
-	}
 	end++;
 	ptr = ft_substr(s1, init, end - init);
 	return (ptr);
 }
 
 /*
-#include <stdio.h>
+This function, ft_strtrim, trims leading and trailing characters from 
+the string s1 that match any character in the set set.
 
-int main(void)
-{
-    char    s1[20] = "aaaaaaaaxxxxcba";
-    char    set[3] = "abc";
-    char    *ptr;
-
-    ptr = ft_strtrim(s1, set);
-    printf("%s", ptr);
-    return (0);
-}
+Initialization:
+It initializes variables init and end to track the indices for trimming.
+Trimming Leading Characters:
+It increments the init index until it encounters a character in s1 that
+is not in the set or reaches the end of s1.
+Check for Empty String:
+If the entire string s1 consists of characters from the set set, it 
+returns an empty string.
+Trimming Trailing Characters:
+It decrements the end index until it encounters a character in s1 that 
+is not in the set.
+Substring Creation:
+It creates a substring using ft_substr starting from the index init to 
+end - 1 to exclude the trailing whitespace.
+Return Value:
+Returns a pointer to the trimmed string.
 */

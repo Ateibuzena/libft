@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 21:32:30 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/04 21:31:17 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:18:08 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,25 @@ char	*ft_itoa(int n)
 }
 
 /*
-#include <stdio.h>
+This function, ft_itoa, converts an integer n to a null-terminated string.
 
-int main(void)
-{
-    int     n;
-    char    *ptr;
-    int     count;
-    n = 2147483646;
-    count = ft_digitcount(n);
-    
-    ptr = ft_itoa(n);
-    printf("%s\n", ptr);
-    return (0);
-}*/
+Initialization:
+It initializes variables variables to manage the integer conversion process.
+Memory Allocation:
+It allocates memory for the resulting string using malloc, with the size
+ calculated as (ft_digitcount(n) + 1) * sizeof(char) to accommodate the 
+ digits and a null terminator.
+Check for Allocation Failure:
+It checks if the memory allocation was successful. If malloc returns 
+NULL, indicating failure, it returns NULL.
+Sign Handling:
+If the integer n is negative, it sets the first character of the 
+resulting string to '-' and converts n to its absolute value.
+Conversion:
+It iterates through the integer n from right to left, converting each 
+digit to its character representation and storing it in the resulting string.
+Null Termination:
+It adds a null terminator at the end of the resulting string.
+Return Value:
+Returns a pointer to the resulting string representing the integer n.
+*/

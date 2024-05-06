@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:33:23 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/25 23:15:18 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:13:20 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,27 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (join);
 }
 
-/*The ft_strjoin function concatenates two strings
- s1 and s2 into a newly allocated string.
-Parameters:
-- s1: Pointer to the first string.
-- s2: Pointer to the second string.
+/*
+This function, ft_strjoin, concatenates two strings s1 and s2 into a 
+newly allocated string.
+
+Memory Allocation:
+It allocates memory for the concatenated string using malloc, with the 
+size calculated as the sum of the lengths of s1 and s2, plus one for 
+the null terminator.
+Check for Allocation Failure:
+It checks if the memory allocation was successful. If malloc returns NULL,
+ indicating failure, it returns NULL.
+Boundary Checks:
+It checks if both s1 and s2 are NULL. If so, it returns NULL.
+Concatenation:
+It iterates through the characters of s1 and copies them into the 
+join string.
+Then, it iterates through the characters of s2 and appends them to 
+the end of the join string.
+Null Termination:
+It adds a null terminator at the end of the concatenated string to 
+ensure proper termination.
 Return Value:
-- A pointer to a newly allocated string which is
-the result of the concatenation of s1 and s2.
-- If memory allocation fails, it returns NULL.
+Returns a pointer to the concatenated string.
 */

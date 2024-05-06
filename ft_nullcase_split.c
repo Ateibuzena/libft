@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 20:54:31 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/28 21:06:29 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:41:11 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,3 +18,7 @@ char	**ft_nullcase_split(char **pointer)
 	ft_freedoble(pointer);
 	return (NULL);
 }
+
+/*
+
+*/

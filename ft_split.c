@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:31:55 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/04 21:35:10 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/06 13:16:39 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,29 @@ char	**ft_split(char const *s, char c)
 	return (pointers.ptr);
 }
 /*
-#include <stdio.h>
-int main(void)
-{
-	char	*ptr = "   lorem   ipsum dolor     sit amet, c";
-	char	**puntero;
+This function, ft_split, splits the string s into an array of strings 
+based on the delimiter c.
 
-	puntero = ft_split(ptr, ' ');
-	for (int i = 0; i < 12; i++)
-	{
-		printf("%s\n", puntero[i]);
-	}
-	printf("%s", ptr);
-	return (0);
-}*/
+Initialization:
+It initializes variables pointers and counters to manage pointers and 
+count information.
+counters.words stores the number of words in the string s based on the 
+delimiter c.
+Memory Allocation:
+It allocates memory for an array of strings using malloc, with the size 
+calculated as (counters.words + 1) * sizeof(char *) to accommodate the 
+array of pointers and a null terminator.
+Check for Allocation Failure:
+It checks if the memory allocation was successful. If malloc returns 
+NULL, indicating failure, it returns NULL.
+Splitting String:
+It iterates through the string s to split it into individual words 
+based on the delimiter c.
+For each word, it dynamically allocates memory for the word and copies 
+it into the array of strings.
+Null Termination:
+It adds a null pointer at the end of the array of strings to indicate 
+the end of the array.
+Return Value:
+Returns a pointer to the array of strings.
+*/

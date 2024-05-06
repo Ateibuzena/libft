@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:57:04 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/25 15:00:53 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/05 22:49:34 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-/* Checks if the given character is an alphabetic character.
-Compares the ASCII value of the character with the ASCII values for uppercase
-and lowercase letters (A-Z and a-z).
-Parameters:
-- c: The character to be checked.
-Returns:
-- 1 if the character is an alphabetic character, 0 otherwise. */
+/* 
+This function checks whether a character c is an alphabetic character 
+(a-z or A-Z). Here's a breakdown of what each part of the function does:
+
+If the ASCII value of c corresponds to an uppercase letter (between 65 and 90) 
+or a lowercase letter (between 97 and 122), the function returns 1.
+If the condition in the if statement is true, meaning c is an alphabetic 
+character, the function returns 1, indicating true.
+If the condition in the if statement is false, meaning c is not an alphabetic 
+character, the function returns 0, indicating false.
+In summary, this function determines whether a character c is an alphabetic 
+character (a-z or A-Z) and returns 1 if it is, or 0 otherwise.
+*/

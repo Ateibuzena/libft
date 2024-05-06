@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:32:13 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/25 15:02:27 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/05/06 12:57:40 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,25 @@ void	*ft_memchr(const void *s, int c, t_size n)
 	return (0);
 }
 
-/* Searches for the first occurrence of the character c (interpreted as an
-unsigned char) in the first n bytes of the memory area pointed to by s.
-Parameters:
-- s: Pointer to the memory area to be searched.
-- c: The character to be searched for.
-- n: Number of bytes to be searched.
-Returns:
-- Pointer to the first occurrence of c in the memory area pointed to by s,
-or NULL if the character is not found within the first n bytes. */
+/*
+This function, ft_memchr, searches for the first occurrence of a byte c in 
+the first n bytes of the memory block pointed to by s.
+
+Initialization:
+It initializes variables ptr and i. ptr is a pointer to an unsigned char 
+representing the memory block s. i is used as a counter to iterate 
+through the memory block.
+Byte Comparison:
+It iterates through the memory block using a while loop until it reaches 
+the end of the block or n bytes, whichever comes first.
+It compares each byte of the memory block with the byte c.
+Matching Byte:
+If a match is found, it returns a pointer to the location of the first 
+occurrence of the byte c in the memory block.
+No Match Found:
+If no match is found after iterating through the entire memory block, 
+it returns NULL.
+Return Value:
+Returns a pointer to the first occurrence of the byte c in the memory 
+block s if found, otherwise returns NULL.
+*/
