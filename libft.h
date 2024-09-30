@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 20:51:58 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/09/30 21:33:28 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -219,6 +219,7 @@ int			ft_atoi(const char *str);
 char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 void		ft_freedouble(char **ptr);
+int			ft_strlen_double(char **str);
 
 // End of LIBFT_H
 #endif
