@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putchar_printf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:22:51 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/02 21:36:14 by azubieta         ###   ########.fr       */
+/*   Created: 2024/06/22 14:48:37 by azubieta          #+#    #+#             */
+/*   Updated: 2024/06/22 14:48:43 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_call_putchar_percent(va_list *args, int fd, int *count)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		f(i, &s[i]);
-		i++;
-	}
+	(void)args;
+	write(fd, "%", 1);
+	*count += 1;
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	s[20] = "hola";
-	ft_striteri(s, ft_ff);
-	printf("%s", s);
-	return (0);
-}*/

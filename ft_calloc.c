@@ -6,12 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:06:55 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/06 13:09:15 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:25:41 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(t_size count, t_size size)
 {
@@ -24,19 +23,13 @@ void	*ft_calloc(t_size count, t_size size)
 	return (ptr);
 }
 
-/*
-This function, ft_calloc, allocates memory for an array of count 
-elements, each of size size bytes, and initializes all the bytes to zero.
-
-Memory Allocation:
-It allocates memory for the array using malloc, with the total size 
-calculated as size * count.
-Check for Allocation Failure:
-It checks if the memory allocation was successful. If malloc returns 
-NULL, indicating failure, it returns NULL.
-Memory Initialization:
-It initializes all the bytes of the allocated memory to zero using 
-ft_memset.
-Return Value:
-Returns a pointer to the allocated and initialized memory block.
-*/
+/* Allocates memory for an array of count elements of size bytes 
+each and initializes the memory to zero.
+Uses malloc to allocate memory for the array.
+If malloc fails to allocate memory, returns NULL.
+Otherwise, uses ft_memset to initialize the allocated memory to zero.
+Parameters:
+- count: Number of elements in the array.
+- size: Size of each element in bytes.
+Returns:
+- Pointer to the allocated memory, or NULL if allocation fails. */

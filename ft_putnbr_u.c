@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: azubieta <azubieta@student.42malaga.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/02 21:52:45 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/04 18:46:31 by azubieta         ###   ########.fr       */
+/*   Created: 2024/06/25 18:16:03 by azubieta          #+#    #+#             */
+/*   Updated: 2024/06/25 18:16:21 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_u(unsigned int i, int fd, int *count)
 {
-	long	i;
-	char	c;
-
-	i = n;
-	if (i < 0)
-	{
-		write(fd, "-", 1);
-		i = -i;
-	}
 	if (i / 10 != 0)
-		ft_putnbr_fd(i / 10, fd);
-	c = i % 10 + 48;
-	write(fd, &c, 1);
+		ft_putnbr_u((i / 10), fd, count);
+	ft_putchar_printf((i % 10 + '0'), fd, count);
+}
+
+void	ft_call_putnbr_u(va_list *args, int fd, int *count)
+{
+	unsigned int	i;
+
+	i = va_arg(*args, unsigned int);
+	ft_putnbr_u(i, fd, count);
 }

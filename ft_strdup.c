@@ -6,12 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:28:48 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/06 13:10:14 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:27:34 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strdup(const char *s1)
 {
@@ -25,22 +24,13 @@ char	*ft_strdup(const char *s1)
 	return (ptr);
 }
 
-/*
-This function, ft_strdup, duplicates a string s1 by allocating memory 
-for a new string and copying the content of s1 into it.
-
-Memory Allocation:
-It allocates memory for the new string using malloc, with the size 
-calculated as ft_strlen(s1) + 1 to accommodate the null terminator.
-Check for Allocation Failure:
-It checks if the memory allocation was successful. If malloc returns 
-NULL, indicating failure, it returns NULL.
-String Copy:
-It copies the content of the original string s1 into the newly allocated
- memory using ft_memcpy.
-Null Termination:
-It ensures that the duplicated string is properly null-terminated by 
-adding a null terminator at the end.
-Return Value:
-Returns a pointer to the duplicated string.
-*/
+/* Duplicates a string s1.
+Allocates memory for the duplicate string using malloc.
+Copies the contents of s1 to the newly allocated memory 
+using ft_memcpy.
+Appends a null terminator to the end of the duplicate string.
+Parameters:
+- s1: Pointer to the string to be duplicated.
+Returns:
+- Pointer to the newly allocated duplicate string, 
+or NULL if memory allocation fails. */

@@ -6,15 +6,53 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/21 15:29:18 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/06 13:05:50 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:19:06 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static struct Counters	ft_struct(t_size o, t_size t, t_size th, t_size f)
+{
+	t_Counters	sign_index;
+
+	sign_index.i = o;
+	sign_index.sign = t;
+	sign_index.n = th;
+	sign_index.words = f;
+	return (sign_index);
+}
+
+static struct Counters	ft_spacesymbols(const char *str, t_Counters *dic)
+{
+	while ((str[dic->i] >= 10 && str[dic->i] < 14)
+		|| (str[dic->i] == 32) || (str[dic->i] == '\t'))
+	{
+		dic->i++;
+		if (str[dic->i] == '-' && ft_isdigit(str[dic->i + 1]) == 0)
+		{
+			dic->n = 0;
+			return (*dic);
+		}
+		if (str[dic->i] == '-' && ft_isdigit(str[dic->i + 1]) == 1)
+		{
+			dic->sign *= -1;
+			dic->i++;
+		}
+		if (str[dic->i] == '+' && (ft_isdigit(str[dic->i + 1]) == 0))
+		{
+			dic->n = 0;
+			return (*dic);
+		}
+		if (str[dic->i] == '+' && (ft_isdigit(str[dic->i + 1]) == 1))
+			dic->i++;
+	}
+	return (*dic);
+}
+
 int	ft_atoi(const char *str)
 {
-	int			num;
+	long int			num;
 	t_Counters	sign_index;
 
 	sign_index = ft_struct(0, 1, 1, 0);
@@ -34,27 +72,25 @@ int	ft_atoi(const char *str)
 		num = (num * 10) + str[sign_index.i] - 48;
 		++sign_index.i;
 	}
-	return (num * sign_index.sign);
+	if (((num * sign_index.sign) >= -2147483648) && ((num * sign_index.sign) <= 2147483647))
+		return (num * sign_index.sign);
+	else
+		return (0);
 }
 
-/*
-This function, ft_atoi, converts a string str to an integer.
-
-Initialization:
-It initializes variables num and sign_index.
-num stores the final integer value.
-sign_index is a structure containing counters and sign information.
-Skip Leading Whitespace and Symbols:
-It skips leading whitespace and symbols by calling the ft_spacesymbols 
-function and updating the sign_index.
-Check Sign:
-It checks if the number is positive or negative based on the presence of
- a leading '+' or '-' sign.
-If a '-' sign is encountered, it updates the sign multiplier accordingly.
-Convert Characters to Integer:
-It iterates through the characters of the string after the optional sign.
-For each digit character, it multiplies the current num by 10 and adds 
-the numerical value of the character.
-Return Value:
-Returns the final integer value, considering the sign.
-*/
+/* The function converts a string of characters into an integer.
+Declaration of local variables.
+Stores the converted number.
+Structure containing the sign and the index of the string.
+Initialization of the structure to store the sign and index.
+Initialization of the number to 0.
+Function to ignore leading spaces and symbols in the string.
+If no number is found after ignoring spaces and symbols,
+it returns 0 or the corresponding sign if it's a plus or minus sign.
+If the first character is a plus sign, the index is incremented.
+If the first character is a minus sign, the sign is multiplied by -1
+and the index is incremented.
+Converts the string into an integer.
+Converts the character to its numeric value and adds it to the existing number.
+Advances to the next character.
+Returns the number multiplied by the corresponding sign. */

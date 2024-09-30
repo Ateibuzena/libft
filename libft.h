@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/05/04 21:36:01 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/09/24 15:18:38 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 // functions and types defined in the "libft" library.
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include <fcntl.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdarg.h>
 
 // Definition of type t_size if not defined
 # ifndef T_SIZE
@@ -28,10 +33,10 @@ typedef unsigned int	t_size;
 
 typedef struct Counters
 {
-	t_size	i;
-	t_size	sign;
-	t_size	n;
-	t_size	words;
+	t_size		i;
+	long int	sign;
+	t_size		n;
+	t_size		words;
 }	t_Counters;
 
 # endif
@@ -60,18 +65,57 @@ typedef struct Itoa
 
 # endif
 
+# ifndef S_LIST_42
+#  define S_LIST_42
+
+typedef struct s_list_42
+{
+	void			*content;
+	struct s_list_42	*next;
+}	t_list_42;
+
+# endif
+
 # ifndef S_LIST
 #  define S_LIST
 
 typedef struct s_list
 {
-	void			*content;
+	char			*buffer;
+	int				fd;
 	struct s_list	*next;
 }	t_list;
 
 # endif
 
-// Function declarations
+# ifndef S_SPECIFIER
+#  define S_SPECIFIER
+
+typedef struct s_Specifier
+{
+	char	key;
+	void	(*ft_ft)();
+}	t_Specifier;
+
+# endif
+
+# ifndef S_PRINTF
+#  define S_PRINTF
+
+typedef struct s_Printf
+{
+	int			count;
+	int			i;
+	t_Specifier	*specifier;
+}	t_Printf;
+
+# endif
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 45
+# endif
+
+// LIBFT FUCTIONS
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isascii(int c);
@@ -107,23 +151,51 @@ void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
 void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
-//BONUS
-t_list		*ft_lstnew(void *ptr);
-void		ft_lstadd_front(t_list **lst, t_list *new);
-int			ft_lstsize(t_list *lst);
-t_list		*ft_lstlast(t_list *lst);
-void		ft_lstadd_back(t_list **lst, t_list *new);
-void		ft_lstdelone(t_list *lst, void (*del)(void *));
-void		ft_lstclear(t_list **lst, void (*del)(void *));
-void		ft_lstiter(t_list *lst, void (*f)(void *));
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-//MINE
-int			ft_digitcount(int n);
-void		ft_freedoble(char **ptr);
-char		**ft_nullcase_split(char **pointer);
-t_Counters	ft_spacesymbols(const char *str, t_Counters *dic);
-t_Counters	ft_struct(t_size one, t_size two, t_size three, t_size four);
-t_size		ft_wordscount(char const *s, char c);
+//LIBFT BONUS
+t_list_42		*ft_lstnew(void *ptr);
+void		ft_lstadd_front(t_list_42 **lst, t_list_42 *new);
+int			ft_lstsize(t_list_42 *lst);
+t_list_42		*ft_lstlast(t_list_42 *lst);
+void		ft_lstadd_back(t_list_42 **lst, t_list_42 *new);
+void		ft_lstdelone(t_list_42 *lst, void (*del)(void *));
+void		ft_lstclear(t_list_42 **lst, void (*del)(void *));
+void		ft_lstiter(t_list_42 *lst, void (*f)(void *));
+t_list_42		*ft_lstmap(t_list_42 *lst, void *(*f)(void *), void (*del)(void *));
+//GET_NEXT_LINE FUCTIONS
+char	*get_next_line(int fd);
+char	*ft_read_fd(int fd, char *buffer);
+char	*ft_strchr(const char *str, int c);
+char	*ft_line(char *line);
+char	*ft_buffer_update(char *buffer);
+char	*ft_strdup(const char *s1);
+char	*ft_free(char *ptr);
+//GET_NEXT_LINE BONUS
+char	*get_next_line(int fd);
+char	*ft_read_fd(int fd, char *buffer);
+char	*ft_line(char *line);
+char	*ft_free(char *ptr);
+char	*ft_buffer_update(char *buffer);
+t_list	*ft_newnode(int fd);
+char	*ft_freenode(t_list **list, int fd);
+char	*ft_strchr(const char *str, int c);
+//PRINTF FUCTIONS
+int					ft_printf(char const *format, ...);
+void				ft_call_putchar_printf(va_list *args, int fd, int *count);
+void				ft_putchar_printf(char c, int fd, int *count);
+void				ft_call_putstr_printf(va_list *args, int fd, int *count);
+void				ft_putstr_printf(char *str, int fd, int *count);
+void				ft_call_putnbr_printf(va_list *args, int fd, int *count);
+void				ft_putnbr_printf(long int i, int fd, int *count);
+void				ft_call_putnbr_u(va_list *args, int fd, int *count);
+void				ft_putnbr_u(unsigned int i, int fd, int *count);
+void				ft_call_puthex_upper(va_list *args, int fd, int *count);
+void				ft_puthex_upper(unsigned int i, int fd, int *count);
+void				ft_call_puthex_lower(va_list *args, int fd, int *count);
+void				ft_puthex_lower(unsigned int i, int fd, int *count);
+void				ft_call_puthex_nil(va_list *args, int fd, int *count);
+void				ft_puthex_nil(unsigned long int i, int fd, int *count);
+void				ft_call_putchar_percent(va_list *args, int fd, int *count);
+t_Specifier			*ft_estructure(void);
 
 // End of LIBFT_H
 #endif

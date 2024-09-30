@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/24 17:33:23 by azubieta          #+#    #+#             */
-/*   Updated: 2024/04/25 23:14:27 by azubieta         ###   ########.fr       */
+/*   Created: 2024/05/07 14:40:33 by azubieta          #+#    #+#             */
+/*   Updated: 2024/05/15 18:34:04 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+t_size	ft_strlen(const char *s)
 {
-	char		*join;
-	t_size		i;
-	t_size		n;
+	t_size	i;
 
-	n = 0;
 	i = 0;
-	join = malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (join == NULL)
-		return (NULL);
-	if (!s1 && !s2)
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strjoin(const char *s1, const char *s2)
+{
+	char	*join;
+	t_size	i;
+	t_size	n;
+
+	i = 0;
+	n = 0;
+	join = malloc ((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
+	if (!join || (!s1 && !s2))
 		return (NULL);
 	while (i < ft_strlen(s1))
 	{
@@ -40,13 +48,28 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (join);
 }
 
-/*The ft_strjoin function concatenates two strings
- s1 and s2 into a newly allocated string.
-Parameters:
-- s1: Pointer to the first string.
-- s2: Pointer to the second string.
-Return Value:
-- A pointer to a newly allocated string which is 
-the result of the concatenation of s1 and s2.
-- If memory allocation fails, it returns NULL.
-*/
+char	*ft_strchr(const char *str, int c)
+{
+	t_size	i;
+	char	*ptr;
+
+	i = 0;
+	while (i <= ft_strlen(str))
+	{
+		if (str[i] == (unsigned char)c)
+		{
+			ptr = (char *)str + i;
+			return (ptr);
+		}
+		i++;
+	}
+	ptr = 0;
+	return (ptr);
+}
+
+char	*ft_free(char *ptr)
+{
+	free(ptr);
+	ptr = NULL;
+	return (ptr);
+}

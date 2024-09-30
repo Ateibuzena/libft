@@ -12,8 +12,11 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c \
 	ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c \
 	ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c \
-	ft_putendl_fd.c ft_putnbr_fd.c\
-	ft_digitcount.c ft_freedoble.c ft_nullcase_split.c ft_spacesymbols.c ft_struct.c ft_wordscount.c\
+	ft_putendl_fd.c ft_putnbr_fd.c get_next_line.c get_next_line_bonus.c \
+	get_next_line_utils.c get_next_line_utils_bonus.c ft_estructure.c \
+	ft_puthex_lower.c ft_putnbr_u.c ft_printf.c	ft_puthex_nil.c	ft_putstr_printf.c \
+	ft_putchar_percent.c ft_puthex_upper.c ft_putchar_printf.c ft_putnbr_printf.c\
+
 
 SRCS_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c\
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c\
@@ -39,9 +42,6 @@ bonus: $(OBJS_BONUS) $(HEADER)
 
 # Rule to compile each source file into an object
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJS_BONUS): %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Rule to remove generated objects
