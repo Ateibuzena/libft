@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 21:32:30 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 17:39:58 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:51:29 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/libft/libft.h"
+#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
 
 static int	ft_digitcount(int n)
 {

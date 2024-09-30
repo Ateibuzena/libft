@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/11 17:44:36 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 17:37:45 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:50:03 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/libft/libft.h"
+#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
 
 int	ft_toupper(int c)
 {

@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/25 18:16:03 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 17:39:07 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/09/30 18:51:22 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/libft/libft.h"
+#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
 
 void	ft_putnbr_u(unsigned int i, int fd, int *count)
 {
