@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:31:55 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 18:51:33 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:50:39 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,9 @@ static t_size	ft_wordscount(char const *s, char c)
 	return (word);
 }
 
-static void	ft_freedoble(char **ptr)
-{
-	int	i;
-
-	i = 0;
-	while (ptr[i])
-	{
-		free(ptr[i]);
-		i++;
-	}
-	free(ptr);
-}
-
 static char	**ft_nullcase_split(char **pointer)
 {
-	ft_freedoble(pointer);
+	ft_freedouble(pointer);
 	return (NULL);
 }
 
