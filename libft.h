@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 21:33:28 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/10/12 15:42:48 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,19 +141,16 @@ void	ft_putnbr_fd(int n, int fd);
 
 char	*get_next_line(int fd);
 char	*ft_read_fd(int fd, char *buffer);
-char	*ft_strchr(const char *str, int c);
 char	*ft_line(char *line);
 char	*ft_buffer_update(char *buffer);
-char	*ft_strdup(const char *s1);
+
 char	*ft_free(char *ptr);
-char	*get_next_line(int fd);
-char	*ft_read_fd(int fd, char *buffer);
+char	*get_next_line_bonus(int fd);
+char	*ft_read_fd_bonus(int fd, char *buffer);
 char	*ft_line(char *line);
-char	*ft_free(char *ptr);
-char	*ft_buffer_update(char *buffer);
+char	*ft_buffer_update_bonus(char *buffer);
 t_list	*ft_newnode(int fd);
 char	*ft_freenode(t_list **list, int fd);
-char	*ft_strchr(const char *str, int c);
 
 /*SRC/D_LISTS/*/
 

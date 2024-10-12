@@ -6,20 +6,13 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 21:47:26 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 18:50:17 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/10/12 15:40:55 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
 
-char	*ft_free(char *ptr)
-{
-	free(ptr);
-	ptr = NULL;
-	return (ptr);
-}
-
-char	*ft_buffer_update(char *buffer)
+char	*ft_buffer_update_bonus(char *buffer)
 {
 	int		i;
 	int		j;
@@ -42,35 +35,7 @@ char	*ft_buffer_update(char *buffer)
 	return (ptr);
 }
 
-char	*ft_line(char *buffer)
-{
-	int		i;
-	char	*line;
-
-	i = 0;
-	if (!buffer[i])
-		return (NULL);
-	while (buffer[i] && buffer[i] != '\n')
-		i++;
-	line = malloc((i + 2) * sizeof(char));
-	if (!line)
-		return (NULL);
-	i = 0;
-	while (buffer[i] && buffer[i] != '\n')
-	{
-		line[i] = buffer[i];
-		i++;
-	}
-	if (buffer[i] == '\n')
-	{
-		line[i] = '\n';
-		i++;
-	}
-	line[i] = '\0';
-	return (line);
-}
-
-char	*ft_read_fd(int fd, char *buffer)
+char	*ft_read_fd_bonus(int fd, char *buffer)
 {
 	char	*ptr;
 	char	*temp;
@@ -96,7 +61,7 @@ char	*ft_read_fd(int fd, char *buffer)
 	return (buffer);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line_bonus(int fd)
 {
 	static t_list	*list;
 	t_list			*current;

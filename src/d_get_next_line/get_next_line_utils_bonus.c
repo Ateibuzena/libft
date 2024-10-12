@@ -6,66 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 14:40:33 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 18:50:21 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/10/12 15:40:38 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
-
-t_size	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strjoin(const char *s1, const char *s2)
-{
-	char	*join;
-	t_size	i;
-	t_size	n;
-
-	i = 0;
-	n = 0;
-	join = malloc ((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (!join || (!s1 && !s2))
-		return (NULL);
-	while (i < ft_strlen(s1))
-	{
-		join[i] = s1[i];
-		i++;
-	}
-	while (n < ft_strlen(s2))
-	{
-		join[i] = s2[n];
-		i++;
-		n++;
-	}
-	join[i] = '\0';
-	return (join);
-}
-
-char	*ft_strchr(const char *str, int c)
-{
-	t_size	i;
-	char	*ptr;
-
-	i = 0;
-	while (i <= ft_strlen(str))
-	{
-		if (str[i] == (unsigned char)c)
-		{
-			ptr = (char *)str + i;
-			return (ptr);
-		}
-		i++;
-	}
-	ptr = 0;
-	return (ptr);
-}
 
 t_list	*ft_newnode(int fd)
 {
