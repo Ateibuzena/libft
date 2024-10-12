@@ -3,7 +3,7 @@ NAME = libft.a
 
 # Compiler and compilation options
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fPIC -fPIE
 
 # Sources
 SRCS = src/d_ascii/ft_isalpha.c src/d_ascii/ft_isdigit.c src/d_ascii/ft_isalnum.c src/d_ascii/ft_isascii.c src/d_ascii/ft_isprint.c src/d_ascii/ft_toupper.c src/d_ascii/ft_tolower.c\
