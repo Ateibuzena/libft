@@ -1,0 +1,30 @@
+name: Doxygen Documentation
+
+on:
+  push:
+    branches:
+      - main  # o la rama en la que trabajas
+
+jobs:
+  doxygen:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout del código
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2. Configurar Doxygen (instalarlo en el entorno de Ubuntu)
+      - name: Set up Doxygen
+        run: sudo apt-get install doxygen
+
+      # 3. Ejecutar Doxygen para generar la documentación
+      - name: Run Doxygen
+        run: doxygen Doxyfile
+
+      # 4. Subir los archivos generados a GitHub Pages
+      - name: Upload Documentation to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./docs/html  # Directorio donde se encuentra la documentación generada
+          github_token: ${{ secrets.GITHUB_TOKEN }}
