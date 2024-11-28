@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/10/12 15:42:48 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:15:54 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdbool.h>
 
 // Definition of type t_size if not defined to libft
 # ifndef T_SIZE
@@ -130,6 +131,7 @@ int		ft_isdigit(int c);
 int		ft_isascii(int c);
 int		ft_isalnum(int c);
 int		ft_isprint(int c);
+bool	ft_isspace(char c);
 
 /*SRC/D_FDS/*/
 void	ft_putchar_fd(char c, int fd);
@@ -194,6 +196,7 @@ void		ft_call_putchar_percent(va_list *args, int fd, int *count);
 
 /*SRC/D_STRINGS/*/
 
+char		*ft_strncpy(char *dest, const char *src, size_t n);
 t_size		ft_strlen(const char *s);
 t_size		ft_strlcpy(char *dst, const char *src, t_size dstsize);
 t_size		ft_strlcat(char *dst, const char *src, t_size dstsize);
@@ -209,6 +212,7 @@ char		*ft_strjoin(const char *s1, const char *s2);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
+int			ft_strcmp(const char *s1, const char *s2);
 
 /*SRC/*/
 int			ft_printf(char const *format, ...);
@@ -216,6 +220,7 @@ int			ft_atoi(const char *str);
 char		**ft_split(char const *s, char c);
 char		*ft_itoa(int n);
 void		ft_freedouble(char **ptr);
+void		ft_freedouble_array(int **pipes, int len);
 int			ft_strlen_double(char **str);
 
 // End of LIBFT_H

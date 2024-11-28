@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_percent.c                               :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/22 14:48:37 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:27:24 by azubieta         ###   ########.fr       */
+/*   Created: 2024/11/22 23:14:23 by azubieta          #+#    #+#             */
+/*   Updated: 2024/11/22 23:14:51 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../libft.h"
+#include <stddef.h>
 
-void	ft_call_putchar_percent(va_list *args, int fd, int *count)
+char *ft_strncpy(char *dest, const char *src, size_t n)
 {
-	(void)args;
-	write(fd, "%", 1);
-	*count += 1;
+    size_t i;
+
+    for (i = 0; i < n && src[i] != '\0'; i++) {
+        dest[i] = src[i];
+    }
+    for (; i < n; i++) {
+        dest[i] = '\0';
+    }
+
+    return dest;
 }

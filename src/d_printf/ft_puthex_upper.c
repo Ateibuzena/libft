@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 14:50:08 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 18:51:17 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/22 21:27:15 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
+#include "../../libft.h"
 
 void	ft_puthex_upper(unsigned int i, int fd, int *count)
 {

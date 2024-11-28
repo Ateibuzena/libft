@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 18:31:55 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 20:50:39 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/22 21:28:59 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
+#include "../libft.h"
 
 static struct Counters	ft_struct(t_size o, t_size t, t_size th, t_size f)
 {

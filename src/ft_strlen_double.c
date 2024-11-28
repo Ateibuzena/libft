@@ -1,4 +1,4 @@
-#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
+#include "../libft.h"
 
 int	ft_strlen_double(char **str)
 {

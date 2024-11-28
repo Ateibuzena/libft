@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 21:09:03 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 18:51:48 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/22 21:28:04 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
+#include "../../libft.h"
 
 t_size	ft_strlcpy(char *dst, const char *src, t_size dstsize)
 {

@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:43:57 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 18:50:57 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/22 21:26:29 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
+#include "../../libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, t_size n)
 {

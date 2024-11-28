@@ -1,20 +1,19 @@
+
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_percent.c                               :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/22 14:48:37 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:27:24 by azubieta         ###   ########.fr       */
+/*   Created: 2024/04/09 14:30:33 by azubieta          #+#    #+#             */
+/*   Updated: 2024/11/22 21:25:18 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-void	ft_call_putchar_percent(va_list *args, int fd, int *count)
+bool ft_isspace(char c)
 {
-	(void)args;
-	write(fd, "%", 1);
-	*count += 1;
+    return (c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r');
 }

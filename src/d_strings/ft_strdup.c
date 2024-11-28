@@ -6,11 +6,11 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:28:48 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 18:51:38 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/22 21:27:52 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "/home/azubieta/sgoinfre/azubieta/utils/libft/libft.h"
+#include "../../libft.h"
 
 char	*ft_strdup(const char *s1)
 {
