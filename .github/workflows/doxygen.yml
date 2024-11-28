@@ -16,10 +16,6 @@ jobs:
     - name: Set up Doxygen
       run: sudo apt-get install doxygen
 
-    - name: Create docs/html folder
-      run: |
-        mkdir -p docs/html  # Crea la carpeta docs/html si no existe
-
     - name: Generate documentation with Doxygen
       run: doxygen Doxyfile  # Asegúrate de que el archivo Doxyfile esté en el repositorio
 
@@ -27,4 +23,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/html  # Asegúrate de que esta ruta sea correcta
+        publish_dir: ./html  # Asegúrate de que esta ruta sea correcta
