@@ -6,9 +6,22 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 13:57:04 by azubieta          #+#    #+#             */
-/*   Updated: 2024/09/30 17:37:15 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:36:11 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @file ft_isalpha.c
+ * @brief Verifica si un carácter es alfabético.
+ *
+ * Comprueba si el carácter proporcionado como argumento es una letra 
+ * del alfabeto (mayúscula o minúscula: A-Z, a-z) comparando su valor ASCII.
+ * 
+ * @param c El carácter a comprobar, representado como un entero.
+ * @return 
+ *        - 1 si el carácter es alfabético.
+ *        - 0 en caso contrario.
+ */
 
 int	ft_isalpha(int c)
 {
@@ -16,11 +29,3 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-
-/* Checks if the given character is an alphabetic character.
-Compares the ASCII value of the character with the ASCII values for uppercase
-and lowercase letters (A-Z and a-z).
-Parameters:
-- c: The character to be checked.
-Returns:
-- 1 if the character is an alphabetic character, 0 otherwise. */

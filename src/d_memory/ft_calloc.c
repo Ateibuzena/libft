@@ -6,9 +6,21 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:06:55 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:25:55 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:54:16 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Asigna memoria y la inicializa a cero.
+ *
+ * Esta función reserva un bloque de memoria del tamaño especificado y lo
+ * inicializa a cero. La memoria reservada se libera mediante `free`.
+ *
+ * @param count El número de elementos a reservar.
+ * @param size El tamaño de cada elemento.
+ * @return Un puntero al bloque de memoria reservado e inicializado a cero,
+ *         o NULL si la asignación falla.
+ */
 
 #include "../../libft.h"
 
@@ -22,14 +34,3 @@ void	*ft_calloc(t_size count, t_size size)
 	ft_memset(ptr, 0, size * count);
 	return (ptr);
 }
-
-/* Allocates memory for an array of count elements of size bytes 
-each and initializes the memory to zero.
-Uses malloc to allocate memory for the array.
-If malloc fails to allocate memory, returns NULL.
-Otherwise, uses ft_memset to initialize the allocated memory to zero.
-Parameters:
-- count: Number of elements in the array.
-- size: Size of each element in bytes.
-Returns:
-- Pointer to the allocated memory, or NULL if allocation fails. */

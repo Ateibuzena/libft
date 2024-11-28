@@ -6,9 +6,27 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 17:33:23 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:27:59 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:58:01 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Une dos cadenas de caracteres en una nueva cadena.
+ *
+ * Esta función concatena las cadenas `s1` y `s2`, creando una nueva cadena
+ * que contiene los caracteres de `s1` seguidos por los caracteres de `s2`.
+ * La nueva cadena se devuelve, y su memoria es gestionada dentro de la función.
+ *
+ * @param s1 La primera cadena de caracteres a concatenar.
+ * @param s2 La segunda cadena de caracteres a concatenar.
+ * 
+ * @return Una nueva cadena con los contenidos de `s1` y `s2` concatenados.
+ *         Si hay un error en la asignación de memoria o si ambas cadenas son NULL,
+ *         la función devuelve NULL.
+ *
+ * @note Si alguna de las cadenas de entrada es NULL, se trata de forma segura,
+ *       y si ambas lo son, se devuelve NULL.
+ */
 
 #include "../../libft.h"
 

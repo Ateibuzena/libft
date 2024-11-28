@@ -6,9 +6,28 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 21:09:03 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:28:04 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:58:50 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Copia una cadena de caracteres desde `src` hacia `dst`, asegurando que la cadena `dst` esté correctamente terminada en `\0`.
+ *
+ * La función copia hasta `dstsize - 1` caracteres de la cadena `src` a `dst`, y garantiza que la cadena `dst` esté siempre
+ * terminada con el carácter nulo `\0`. Si `dstsize` es mayor que la longitud de `src`, se copia toda la cadena `src` en `dst`.
+ * Si `dstsize` es menor o igual a la longitud de `src`, solo se copian `dstsize - 1` caracteres y se asegura que `dst`
+ * esté correctamente terminada en `\0`.
+ *
+ * @param dst La cadena de destino a la que se copiará el contenido de `src`.
+ * @param src La cadena de origen que se copiará a `dst`.
+ * @param dstsize El tamaño máximo de la cadena `dst`, incluyendo el carácter nulo `\0`.
+ *
+ * @return La longitud de la cadena `src`.
+ *         Si `dstsize` es 0, la función devuelve la longitud de `src` sin realizar ninguna copia.
+ *
+ * @note Si `dstsize` es menor o igual a la longitud de `src`, la cadena `dst` no contendrá la cadena completa de `src`,
+ *       pero se garantiza que se copiarán los primeros `dstsize - 1` caracteres y la cadena `dst` estará correctamente terminada.
+ */
 
 #include "../../libft.h"
 

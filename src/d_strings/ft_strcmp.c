@@ -1,3 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/28 21:56:48 by azubieta          #+#    #+#             */
+/*   Updated: 2024/11/28 21:56:57 by azubieta         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/**
+ * @brief Compara dos cadenas de caracteres.
+ *
+ * Esta función compara dos cadenas de caracteres `s1` y `s2` carácter por
+ * carácter. Si las cadenas son idénticas, la función devuelve 1. Si las
+ * cadenas son diferentes, devuelve 0.
+ *
+ * @param s1 La primera cadena que se va a comparar.
+ * @param s2 La segunda cadena que se va a comparar.
+ * @return 1 si las cadenas son iguales, 0 si son diferentes.
+ */
+
 #include "../../libft.h"
 
 int ft_strcmp(const char *s1, const char *s2)

@@ -6,9 +6,23 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 18:43:57 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:26:29 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:54:45 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Compara dos bloques de memoria.
+ *
+ * Compara los primeros `n` bytes de los bloques de memoria apuntados por
+ * `s1` y `s2`. La comparación se realiza byte por byte, y si los bloques
+ * son diferentes, devuelve la diferencia entre los primeros bytes no iguales.
+ *
+ * @param s1 Puntero al primer bloque de memoria a comparar.
+ * @param s2 Puntero al segundo bloque de memoria a comparar.
+ * @param n El número de bytes a comparar.
+ * @return 0 si los bloques son iguales, un valor negativo si `s1` es menor
+ *         que `s2`, o un valor positivo si `s1` es mayor que `s2`.
+ */
 
 #include "../../libft.h"
 
@@ -31,13 +45,3 @@ int	ft_memcmp(const void *s1, const void *s2, t_size n)
 	}
 	return (0);
 }
-
-/* Compares the first n bytes of the memory areas s1 and s2.
-Parameters:
-- s1: Pointer to the first memory area.
-- s2: Pointer to the second memory area.
-- n: Number of bytes to compare.
-Returns:
-- An integer less than, equal to, or greater than zero if the first n bytes of s1
-are found, respectively, to be less than, to match, or be greater than
-the first n bytes of s2. */

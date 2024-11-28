@@ -6,9 +6,25 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 23:35:09 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:28:24 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 22:01:21 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Elimina los caracteres especificados al principio y al final de una cadena.
+ *
+ * La función recorta la cadena `s1` eliminando los caracteres presentes en la cadena `set`
+ * tanto al principio como al final de la cadena `s1`. Si no se encuentran caracteres de `set`
+ * al principio o al final, se devuelve la cadena original.
+ * Si la cadena resultante es vacía, se devuelve una cadena vacía.
+ *
+ * @param s1 La cadena de la cual se eliminarán los caracteres de `set`.
+ * @param set La cadena que contiene los caracteres a eliminar de `s1`.
+ *
+ * @return Una nueva cadena con los caracteres de `set` eliminados al principio y al final.
+ *         Si no se eliminan caracteres, se retorna la cadena original.
+ *         Si la cadena resultante es vacía, se retorna una cadena vacía.
+ */
 
 #include "../../libft.h"
 

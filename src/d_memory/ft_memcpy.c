@@ -6,9 +6,22 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/09 22:53:21 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:26:34 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:54:58 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Copia un bloque de memoria.
+ *
+ * Esta función copia los primeros `n` bytes del bloque de memoria apuntado
+ * por `src` al bloque de memoria apuntado por `dst`. Si ambos bloques se
+ * solapan, el comportamiento es indefinido.
+ *
+ * @param dst Puntero al destino de la copia.
+ * @param src Puntero al origen de la copia.
+ * @param n El número de bytes a copiar.
+ * @return El puntero a `dst`.
+ */
 
 #include "../../libft.h"
 
@@ -30,12 +43,3 @@ void	*ft_memcpy(void *dst, const void *src, t_size n)
 	}
 	return (dst);
 }
-
-/* Copies n bytes from memory area src to memory area dst.
-The memory areas must not overlap.
-Parameters:
-- dst: Pointer to the destination memory area.
-- src: Pointer to the source memory area.
-- n: Number of bytes to copy.
-Returns:
-- Pointer to the destination memory area (dst). */

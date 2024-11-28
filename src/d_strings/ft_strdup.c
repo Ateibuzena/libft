@@ -6,9 +6,21 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:28:48 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:27:52 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/11/28 21:57:18 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/**
+ * @brief Duplica una cadena de caracteres.
+ *
+ * Esta función asigna memoria dinámica para crear una copia de la cadena
+ * de caracteres `s1` y la devuelve. La nueva cadena será terminada en
+ * un carácter nulo (`'\0'`).
+ *
+ * @param s1 La cadena de caracteres que se va a duplicar.
+ * @return Un puntero a la nueva cadena duplicada, o NULL si la memoria
+ *         no puede ser asignada.
+ */
 
 #include "../../libft.h"
 
