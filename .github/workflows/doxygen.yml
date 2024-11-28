@@ -21,6 +21,9 @@ jobs:
     - name: Install Doxygen
       run: sudo apt-get install doxygen
 
+    - name: Create output directory
+      run: mkdir -p docs/html  # Crear docs/html si no existe
+
     # Generar la documentación con Doxygen
     - name: Generate Documentation with Doxygen
       run: doxygen Doxyfile  # Asegúrate de que el archivo Doxyfile está en la raíz del repositorio
