@@ -1,26 +1,33 @@
-name: Generate Documentation
+name: Doxygen Documentation
 
 on:
   push:
     branches:
-      - main  # O la rama en la que estás trabajando
+      - main  # Activar cuando hagas push a la rama principal
+  pull_request:
+    branches:
+      - main  # También para pull requests
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  doxygen:
+    runs-on: ubuntu-latest  # Usa una imagen de Ubuntu para ejecutar el flujo de trabajo
 
     steps:
+    # Checkout del código
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Doxygen
+    # Instalar Doxygen
+    - name: Install Doxygen
       run: sudo apt-get install doxygen
 
-    - name: Generate documentation with Doxygen
-      run: doxygen Doxyfile  # Asegúrate de que el archivo Doxyfile esté en el repositorio
+    # Generar la documentación con Doxygen
+    - name: Generate Documentation with Doxygen
+      run: doxygen Doxyfile  # Asegúrate de que el archivo Doxyfile está en la raíz del repositorio
 
+    # Subir la documentación a GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./html  # Asegúrate de que esta ruta sea correcta
+        publish_dir: ./docs/html  # El directorio donde Doxygen generará los archivos
