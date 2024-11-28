@@ -4,7 +4,9 @@ PROJECT_BRIEF          = "Una biblioteca estándar en C, implementada como parte
 PROJECT_LOGO           = "images/logo.png"  # Si tienes un logo, agrega la ruta aquí.
 OUTPUT_DIRECTORY       = "docs"  # Salida en el directorio docs/
 CREATE_SUBDIRS         = YES  # Crea subdirectorios si es necesario.
-GENERATE_LATEX          = NO  # Si no necesitas un PDF.
+
+GENERATE_LATEX          = SI  # Si no necesitas un PDF.
+
 EXTRACT_ALL            = YES  # Extrae todos los archivos, no solo los comentados.
 EXTRACT_PRIVATE        = YES  # Incluye funciones privadas también.
 EXTRACT_STATIC         = YES  # Incluye funciones estáticas.
