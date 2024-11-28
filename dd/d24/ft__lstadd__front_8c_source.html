@@ -79,23 +79,33 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: azubieta &lt;azubieta@student.42malaga.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2024/05/03 16:40:00 by azubieta          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/22 21:29:58 by azubieta         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/28 21:49:11 by azubieta         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#a1864d10026e54172c0f1954fe9707654">   15</a></span>&#160;<span class="keywordtype">void</span>    <a class="code" href="../../dd/d24/ft__lstadd__front_8c.html#a1864d10026e54172c0f1954fe9707654">ft_lstadd_front</a>(<a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a> **lst, <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a> *<span class="keyword">new</span>)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">new</span>-&gt;next = *lst;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    *lst = <span class="keyword">new</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="ttc" id="aft__lstadd__front_8c_html_a1864d10026e54172c0f1954fe9707654"><div class="ttname"><a href="../../dd/d24/ft__lstadd__front_8c.html#a1864d10026e54172c0f1954fe9707654">ft_lstadd_front</a></div><div class="ttdeci">void ft_lstadd_front(t_list_42 **lst, t_list_42 *new)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d24/ft__lstadd__front_8c_source.html#l00015">ft_lstadd_front.c:15</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @file ft_lstadd_front.c</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @brief Añade un nuevo nodo al principio de la lista.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Esta función agrega el nodo `new` al principio de la lista apuntada por `lst`.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * @param lst Apuntador al primer nodo de la lista.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @param new El nodo que se va a añadir al principio de la lista.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#a1864d10026e54172c0f1954fe9707654">   25</a></span>&#160;<span class="keywordtype">void</span>    <a class="code" href="../../dd/d24/ft__lstadd__front_8c.html#a1864d10026e54172c0f1954fe9707654">ft_lstadd_front</a>(<a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a> **lst, <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a> *<span class="keyword">new</span>)</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">new</span>-&gt;next = *lst;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    *lst = <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="ttc" id="aft__lstadd__front_8c_html_a1864d10026e54172c0f1954fe9707654"><div class="ttname"><a href="../../dd/d24/ft__lstadd__front_8c.html#a1864d10026e54172c0f1954fe9707654">ft_lstadd_front</a></div><div class="ttdeci">void ft_lstadd_front(t_list_42 **lst, t_list_42 *new)</div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d24/ft__lstadd__front_8c_source.html#l00025">ft_lstadd_front.c:25</a></div></div>
 <div class="ttc" id="astructs__list__42_html"><div class="ttname"><a href="../../dc/d48/structs__list__42.html">s_list_42</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00076">libft.h:77</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -79,46 +79,62 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: azubieta &lt;azubieta@student.42malaga.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2024/04/24 15:42:11 by azubieta          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/22 21:28:26 by azubieta         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/28 22:01:43 by azubieta         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#a2eb0fad964f1c1b86fd3b24da8b9cf90">   15</a></span>&#160;<span class="keywordtype">char</span>    *<a class="code" href="../../d1/d82/ft__substr_8c.html#a2eb0fad964f1c1b86fd3b24da8b9cf90">ft_substr</a>(<span class="keywordtype">char</span> <span class="keyword">const</span> *s, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start, <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> len)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">char</span>    *ptr;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">if</span> (!s)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s) &lt; start)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="../../d6/d7e/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup</a>(<span class="stringliteral">&quot;&quot;</span>));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s + start) &lt; len)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        len = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s + start);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ptr = malloc((len + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (!ptr)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a>(ptr, s + start, len + 1);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> (ptr);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/* Allocates and returns a substring of the string s.</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">The substring begins at index start and is of maximum size len.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">Parameters:</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment">- s: Pointer to the string.</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">- start: Index of the starting character of the substring.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">- len: Maximum length of the substring.</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">Returns:</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">- Pointer to the newly allocated substring, or NULL if allocation fails. */</span></div>
-<div class="ttc" id="aft__substr_8c_html_a2eb0fad964f1c1b86fd3b24da8b9cf90"><div class="ttname"><a href="../../d1/d82/ft__substr_8c.html#a2eb0fad964f1c1b86fd3b24da8b9cf90">ft_substr</a></div><div class="ttdeci">char * ft_substr(char const *s, unsigned int start, t_size len)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/ft__substr_8c_source.html#l00015">ft_substr.c:15</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @brief Extrae una subcadena de una cadena dada.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * La función `ft_substr` extrae una subcadena de la cadena `s`, comenzando en el índice</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * `start` y con una longitud máxima de `len` caracteres. Si la longitud de la cadena es menor</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * que el índice de inicio, se retorna una cadena vacía. Si la subcadena extraída es más corta</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * que `len`, se ajusta al tamaño disponible desde la posición `start` hasta el final de la cadena.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @param s La cadena original de la cual se extraerá la subcadena.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @param start El índice de inicio desde donde comenzará la subcadena.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @param len La longitud máxima de la subcadena a extraer.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @return Una nueva cadena con la subcadena extraída, o NULL si ocurre un error de asignación de memoria.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *         Si el índice de inicio es mayor que la longitud de la cadena, se retorna una cadena vacía.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#a2eb0fad964f1c1b86fd3b24da8b9cf90">   31</a></span>&#160;<span class="keywordtype">char</span>    *<a class="code" href="../../d1/d82/ft__substr_8c.html#a2eb0fad964f1c1b86fd3b24da8b9cf90">ft_substr</a>(<span class="keywordtype">char</span> <span class="keyword">const</span> *s, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> start, <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> len)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span>    *ptr;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span> (!s)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s) &lt; start)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> (<a class="code" href="../../d6/d7e/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup</a>(<span class="stringliteral">&quot;&quot;</span>));</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s + start) &lt; len)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        len = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s + start);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    ptr = malloc((len + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (!ptr)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a>(ptr, s + start, len + 1);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> (ptr);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* Allocates and returns a substring of the string s.</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">The substring begins at index start and is of maximum size len.</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">Parameters:</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">- s: Pointer to the string.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">- start: Index of the starting character of the substring.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">- len: Maximum length of the substring.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">Returns:</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">- Pointer to the newly allocated substring, or NULL if allocation fails. */</span></div>
+<div class="ttc" id="aft__substr_8c_html_a2eb0fad964f1c1b86fd3b24da8b9cf90"><div class="ttname"><a href="../../d1/d82/ft__substr_8c.html#a2eb0fad964f1c1b86fd3b24da8b9cf90">ft_substr</a></div><div class="ttdeci">char * ft_substr(char const *s, unsigned int start, t_size len)</div><div class="ttdoc">Extrae una subcadena de una cadena dada.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d82/ft__substr_8c_source.html#l00031">ft_substr.c:31</a></div></div>
 <div class="ttc" id="alibft_8h_html_a0ed7479aab42bd43773f8f647f39acab"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a></div><div class="ttdeci">unsigned int t_size</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00028">libft.h:28</a></div></div>
-<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_aada5f5ba69c0c2c97a1322b4e2554709"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s1)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dcf/ft__strdup_8c_source.html#l00015">ft_strdup.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_adb3c50c05949193724f713ba6bcd7ba0"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a></div><div class="ttdeci">t_size ft_strlcpy(char *dst, const char *src, t_size dstsize)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd7/ft__strlcpy_8c_source.html#l00015">ft_strlcpy.c:15</a></div></div>
+<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdoc">Calcula la longitud de una cadena de caracteres.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00029">ft_strlen.c:29</a></div></div>
+<div class="ttc" id="alibft_8h_html_aada5f5ba69c0c2c97a1322b4e2554709"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup</a></div><div class="ttdeci">char * ft_strdup(const char *s1)</div><div class="ttdoc">Duplica una cadena de caracteres.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/dcf/ft__strdup_8c_source.html#l00027">ft_strdup.c:27</a></div></div>
+<div class="ttc" id="alibft_8h_html_adb3c50c05949193724f713ba6bcd7ba0"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a></div><div class="ttdeci">t_size ft_strlcpy(char *dst, const char *src, t_size dstsize)</div><div class="ttdoc">Copia una cadena de caracteres desde src hacia dst, asegurando que la cadena dst esté correctamente t...</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd7/ft__strlcpy_8c_source.html#l00034">ft_strlcpy.c:34</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

@@ -79,58 +79,77 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: azubieta &lt;azubieta@student.42malaga.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2024/04/10 21:09:03 by azubieta          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/22 21:28:04 by azubieta         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/28 21:58:50 by azubieta         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#adb3c50c05949193724f713ba6bcd7ba0">   15</a></span>&#160;<a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>  <a class="code" href="../../d5/dd7/ft__strlcpy_8c.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a>(<span class="keywordtype">char</span> *dst, <span class="keyword">const</span> <span class="keywordtype">char</span> *src, <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> dstsize)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>  i;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>  srclen;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    i = 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    srclen = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(src);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span> (dstsize == 0)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">return</span> (srclen);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (dstsize &lt;= srclen)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">while</span> (src[i] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; i &lt; dstsize - 1)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            dst[i] = src[i];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            i++;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">while</span> (src[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            dst[i] = src[i];</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            i++;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    dst[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> (srclen);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">/* Copies the NUL-terminated string src to dst </span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">(including the NUL terminator)</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">up to a maximum of dstsize - 1 characters.</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">Parameters:</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">- dst: Pointer to the destination string.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">- src: Pointer to the source string.</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">- dstsize: Size of the destination buffer.</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">Returns:</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">- Total length of the string that would have been created </span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">if there was enough space, excluding the NUL terminator. */</span></div>
-<div class="ttc" id="aft__strlcpy_8c_html_adb3c50c05949193724f713ba6bcd7ba0"><div class="ttname"><a href="../../d5/dd7/ft__strlcpy_8c.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a></div><div class="ttdeci">t_size ft_strlcpy(char *dst, const char *src, t_size dstsize)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd7/ft__strlcpy_8c_source.html#l00015">ft_strlcpy.c:15</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @brief Copia una cadena de caracteres desde `src` hacia `dst`, asegurando que la cadena `dst` esté correctamente terminada en `\0`.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * La función copia hasta `dstsize - 1` caracteres de la cadena `src` a `dst`, y garantiza que la cadena `dst` esté siempre</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * terminada con el carácter nulo `\0`. Si `dstsize` es mayor que la longitud de `src`, se copia toda la cadena `src` en `dst`.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * Si `dstsize` es menor o igual a la longitud de `src`, solo se copian `dstsize - 1` caracteres y se asegura que `dst`</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * esté correctamente terminada en `\0`.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @param dst La cadena de destino a la que se copiará el contenido de `src`.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @param src La cadena de origen que se copiará a `dst`.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @param dstsize El tamaño máximo de la cadena `dst`, incluyendo el carácter nulo `\0`.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * @return La longitud de la cadena `src`.</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> *         Si `dstsize` es 0, la función devuelve la longitud de `src` sin realizar ninguna copia.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * @note Si `dstsize` es menor o igual a la longitud de `src`, la cadena `dst` no contendrá la cadena completa de `src`,</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *       pero se garantiza que se copiarán los primeros `dstsize - 1` caracteres y la cadena `dst` estará correctamente terminada.</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#adb3c50c05949193724f713ba6bcd7ba0">   34</a></span>&#160;<a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>  <a class="code" href="../../d5/dd7/ft__strlcpy_8c.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a>(<span class="keywordtype">char</span> *dst, <span class="keyword">const</span> <span class="keywordtype">char</span> *src, <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> dstsize)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>  i;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>  srclen;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    srclen = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(src);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span> (dstsize == 0)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> (srclen);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span> (dstsize &lt;= srclen)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">while</span> (src[i] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; i &lt; dstsize - 1)</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        {</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            dst[i] = src[i];</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            i++;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">while</span> (src[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            dst[i] = src[i];</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            i++;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    dst[i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> (srclen);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">/* Copies the NUL-terminated string src to dst </span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">(including the NUL terminator)</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">up to a maximum of dstsize - 1 characters.</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">Parameters:</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">- dst: Pointer to the destination string.</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">- src: Pointer to the source string.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">- dstsize: Size of the destination buffer.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">Returns:</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="comment">- Total length of the string that would have been created </span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">if there was enough space, excluding the NUL terminator. */</span></div>
+<div class="ttc" id="aft__strlcpy_8c_html_adb3c50c05949193724f713ba6bcd7ba0"><div class="ttname"><a href="../../d5/dd7/ft__strlcpy_8c.html#adb3c50c05949193724f713ba6bcd7ba0">ft_strlcpy</a></div><div class="ttdeci">t_size ft_strlcpy(char *dst, const char *src, t_size dstsize)</div><div class="ttdoc">Copia una cadena de caracteres desde src hacia dst, asegurando que la cadena dst esté correctamente t...</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd7/ft__strlcpy_8c_source.html#l00034">ft_strlcpy.c:34</a></div></div>
 <div class="ttc" id="alibft_8h_html_a0ed7479aab42bd43773f8f647f39acab"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a></div><div class="ttdeci">unsigned int t_size</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00028">libft.h:28</a></div></div>
-<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdoc">Calcula la longitud de una cadena de caracteres.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00029">ft_strlen.c:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

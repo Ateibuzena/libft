@@ -85,6 +85,7 @@ Include dependency graph for ft_memcmp.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9a8dd240645e18fcf81326d85f88fb24"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d76/ft__memcmp_8c.html#a9a8dd240645e18fcf81326d85f88fb24">ft_memcmp</a> (const void *s1, const void *s2, <a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> n)</td></tr>
+<tr class="memdesc:a9a8dd240645e18fcf81326d85f88fb24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compara dos bloques de memoria.  <a href="../../d5/d76/ft__memcmp_8c.html#a9a8dd240645e18fcf81326d85f88fb24">More...</a><br /></td></tr>
 <tr class="separator:a9a8dd240645e18fcf81326d85f88fb24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -120,25 +121,37 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d76/ft__memcmp_8c_source.html#l00015">15</a> of file <a class="el" href="../../d5/d76/ft__memcmp_8c_source.html">ft_memcmp.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>          i;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *ptrs1;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *ptrs2;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    i = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    ptrs1 = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)s1;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ptrs2 = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)s2;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">while</span> (i &lt; n)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (*ptrs1 != *ptrs2)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">return</span> (*ptrs1 - *ptrs2);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        ptrs1++;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        ptrs2++;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        i++;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<p>Compara dos bloques de memoria. </p>
+<p>Compara los primeros <code>n</code> bytes de los bloques de memoria apuntados por <code>s1</code> y <code>s2</code>. La comparación se realiza byte por byte, y si los bloques son diferentes, devuelve la diferencia entre los primeros bytes no iguales.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s1</td><td>Puntero al primer bloque de memoria a comparar. </td></tr>
+    <tr><td class="paramname">s2</td><td>Puntero al segundo bloque de memoria a comparar. </td></tr>
+    <tr><td class="paramname">n</td><td>El número de bytes a comparar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>0 si los bloques son iguales, un valor negativo si <code>s1</code> es menor que <code>s2</code>, o un valor positivo si <code>s1</code> es mayor que <code>s2</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d76/ft__memcmp_8c_source.html#l00029">29</a> of file <a class="el" href="../../d5/d76/ft__memcmp_8c_source.html">ft_memcmp.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>          i;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *ptrs1;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *ptrs2;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    ptrs1 = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)s1;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    ptrs2 = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)s2;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">while</span> (i &lt; n)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">if</span> (*ptrs1 != *ptrs2)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">return</span> (*ptrs1 - *ptrs2);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        ptrs1++;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        ptrs2++;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        i++;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
 <div class="ttc" id="alibft_8h_html_a0ed7479aab42bd43773f8f647f39acab"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a></div><div class="ttdeci">unsigned int t_size</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00028">libft.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -146,7 +159,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

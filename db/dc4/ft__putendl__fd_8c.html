@@ -73,6 +73,9 @@ $(function() {
 <div class="title">ft_putendl_fd.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Escribe una cadena seguida de una nueva línea en un archivo descriptor.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d7e/libft_8h_source.html">../../libft.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ft_putendl_fd.c:</div>
@@ -87,7 +90,20 @@ Functions</h2></td></tr>
 <tr class="memitem:aeb112152acfc553d58d61a5df38afcde"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dc4/ft__putendl__fd_8c.html#aeb112152acfc553d58d61a5df38afcde">ft_putendl_fd</a> (char *s, int fd)</td></tr>
 <tr class="separator:aeb112152acfc553d58d61a5df38afcde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Escribe una cadena seguida de una nueva línea en un archivo descriptor. </p>
+<p>Esta función escribe la cadena <code>s</code> seguida de un salto de línea en el archivo o descriptor de archivo indicado por <code>fd</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>La cadena de caracteres a escribir. </td></tr>
+    <tr><td class="paramname">fd</td><td>El descriptor de archivo en el que se escribe la cadena y la nueva línea.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>Note</dt><dd>La función utiliza la llamada al sistema <code>write</code> para escribir la cadena y luego un salto de línea. </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="../../db/dc4/ft__putendl__fd_8c_source.html">ft_putendl_fd.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="aeb112152acfc553d58d61a5df38afcde"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb112152acfc553d58d61a5df38afcde">&#9670;&nbsp;</a></span>ft_putendl_fd()</h2>
 
@@ -114,19 +130,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../db/dc4/ft__putendl__fd_8c_source.html#l00015">15</a> of file <a class="el" href="../../db/dc4/ft__putendl__fd_8c_source.html">ft_putendl_fd.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    write(fd, s, <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s));</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    write(fd, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../db/dc4/ft__putendl__fd_8c_source.html#l00029">29</a> of file <a class="el" href="../../db/dc4/ft__putendl__fd_8c_source.html">ft_putendl_fd.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    write(fd, s, <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    write(fd, <span class="stringliteral">&quot;\n&quot;</span>, 1);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdoc">Calcula la longitud de una cadena de caracteres.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00029">ft_strlen.c:29</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

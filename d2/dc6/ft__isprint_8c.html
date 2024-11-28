@@ -73,6 +73,9 @@ $(function() {
 <div class="title">ft_isprint.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Verifica si un carácter es imprimible.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d7e/libft_8h_source.html">../../libft.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ft_isprint.c:</div>
@@ -87,7 +90,25 @@ Functions</h2></td></tr>
 <tr class="memitem:abcdba69692f21146aeea5b3d59b7d0ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dc6/ft__isprint_8c.html#abcdba69692f21146aeea5b3d59b7d0ca">ft_isprint</a> (int c)</td></tr>
 <tr class="separator:abcdba69692f21146aeea5b3d59b7d0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Verifica si un carácter es imprimible. </p>
+<p>Comprueba si el carácter proporcionado como argumento es un carácter imprimible, incluidos los caracteres visibles y el espacio (códigos ASCII del 32 al 126).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>El carácter a comprobar, representado como un entero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>1 si el carácter es imprimible.</li>
+<li>0 en caso contrario.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>La función también verifica si el carácter pertenece al conjunto ASCII utilizando <code>ft_isascii</code>.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d0/d6f/ft__isascii_8c.html#abf60ddbec6479540e81f3648cf71f1f4">ft_isascii</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="../../d2/dc6/ft__isprint_8c_source.html">ft_isprint.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="abcdba69692f21146aeea5b3d59b7d0ca"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abcdba69692f21146aeea5b3d59b7d0ca">&#9670;&nbsp;</a></span>ft_isprint()</h2>
 
@@ -104,23 +125,23 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/dc6/ft__isprint_8c_source.html#l00015">15</a> of file <a class="el" href="../../d2/dc6/ft__isprint_8c_source.html">ft_isprint.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#abf60ddbec6479540e81f3648cf71f1f4">ft_isascii</a>(c) != 0)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span> (c &gt;= 32 &amp;&amp; c &lt;= 126)</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
-<div class="ttc" id="alibft_8h_html_abf60ddbec6479540e81f3648cf71f1f4"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#abf60ddbec6479540e81f3648cf71f1f4">ft_isascii</a></div><div class="ttdeci">int ft_isascii(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d6f/ft__isascii_8c_source.html#l00013">ft_isascii.c:13</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d2/dc6/ft__isprint_8c_source.html#l00034">34</a> of file <a class="el" href="../../d2/dc6/ft__isprint_8c_source.html">ft_isprint.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#abf60ddbec6479540e81f3648cf71f1f4">ft_isascii</a>(c) != 0)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (c &gt;= 32 &amp;&amp; c &lt;= 126)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> (1);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="alibft_8h_html_abf60ddbec6479540e81f3648cf71f1f4"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#abf60ddbec6479540e81f3648cf71f1f4">ft_isascii</a></div><div class="ttdeci">int ft_isascii(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d6f/ft__isascii_8c_source.html#l00026">ft_isascii.c:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

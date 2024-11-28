@@ -79,29 +79,34 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: azubieta &lt;azubieta@student.42malaga.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2024/04/09 21:49:04 by azubieta          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/22 21:26:17 by azubieta         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/28 21:54:01 by azubieta         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#ac552d4c517269fc3b6e804dd75c12a90">   15</a></span>&#160;<span class="keywordtype">void</span>    <a class="code" href="../../dc/d82/ft__bzero_8c.html#ac552d4c517269fc3b6e804dd75c12a90">ft_bzero</a>(<span class="keywordtype">void</span> *array, <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> len)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a>(array, 0, len);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">/* Sets the first len bytes of the memory area pointed to by array to zero.</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">Calls the ft_memset function to achieve this.</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">Parameters:</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">- array: Pointer to the memory area.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">- len: Number of bytes to be set to zero. */</span></div>
-<div class="ttc" id="aft__bzero_8c_html_ac552d4c517269fc3b6e804dd75c12a90"><div class="ttname"><a href="../../dc/d82/ft__bzero_8c.html#ac552d4c517269fc3b6e804dd75c12a90">ft_bzero</a></div><div class="ttdeci">void ft_bzero(void *array, t_size len)</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d82/ft__bzero_8c_source.html#l00015">ft_bzero.c:15</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @brief Llena un bloque de memoria con ceros.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Esta función establece todos los bytes del bloque de memoria apuntado por</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * `array` a cero. Se utiliza principalmente para inicializar arrays o</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * estructuras de datos a valores predeterminados.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @param array Puntero al bloque de memoria a ser modificado.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @param len Longitud del bloque de memoria a modificar.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#ac552d4c517269fc3b6e804dd75c12a90">   26</a></span>&#160;<span class="keywordtype">void</span>    <a class="code" href="../../dc/d82/ft__bzero_8c.html#ac552d4c517269fc3b6e804dd75c12a90">ft_bzero</a>(<span class="keywordtype">void</span> *array, <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> len)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a>(array, 0, len);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="ttc" id="aft__bzero_8c_html_ac552d4c517269fc3b6e804dd75c12a90"><div class="ttname"><a href="../../dc/d82/ft__bzero_8c.html#ac552d4c517269fc3b6e804dd75c12a90">ft_bzero</a></div><div class="ttdeci">void ft_bzero(void *array, t_size len)</div><div class="ttdoc">Llena un bloque de memoria con ceros.</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d82/ft__bzero_8c_source.html#l00026">ft_bzero.c:26</a></div></div>
 <div class="ttc" id="alibft_8h_html_a0ed7479aab42bd43773f8f647f39acab"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a></div><div class="ttdeci">unsigned int t_size</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00028">libft.h:28</a></div></div>
-<div class="ttc" id="alibft_8h_html_a49de95137954a78f9d18180f6680cdcf"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a></div><div class="ttdeci">void * ft_memset(void *array, int value, t_size len)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d51/ft__memset_8c_source.html#l00015">ft_memset.c:15</a></div></div>
+<div class="ttc" id="alibft_8h_html_a49de95137954a78f9d18180f6680cdcf"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a></div><div class="ttdeci">void * ft_memset(void *array, int value, t_size len)</div><div class="ttdoc">Establece un valor específico en un bloque de memoria.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d51/ft__memset_8c_source.html#l00028">ft_memset.c:28</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

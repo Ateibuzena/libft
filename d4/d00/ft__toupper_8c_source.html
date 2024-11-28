@@ -79,31 +79,43 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: azubieta &lt;azubieta@student.42malaga.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2024/04/11 17:44:36 by azubieta          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/22 21:25:29 by azubieta         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/28 21:38:52 by azubieta         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#aef116be7b5bceafff4b59f20a4433d12">   15</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d4/d00/ft__toupper_8c.html#aef116be7b5bceafff4b59f20a4433d12">ft_toupper</a>(<span class="keywordtype">int</span> c)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a>(c) == 1 &amp;&amp; (c &gt;= 97 &amp;&amp; c &lt;= 122))</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> (c - 32);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> (c);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment">/* Converts the given character to uppercase if it is a lowercase letter.</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">Parameters:</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">- c: The character to be converted.</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">Returns:</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">- Uppercase version of the character if it is a lowercase letter,</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment">otherwise returns the character unchanged. */</span></div>
-<div class="ttc" id="aft__toupper_8c_html_aef116be7b5bceafff4b59f20a4433d12"><div class="ttname"><a href="../../d4/d00/ft__toupper_8c.html#aef116be7b5bceafff4b59f20a4433d12">ft_toupper</a></div><div class="ttdeci">int ft_toupper(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d00/ft__toupper_8c_source.html#l00015">ft_toupper.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_ac283963beaa3b8c7d09b78851cda297e"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a></div><div class="ttdeci">int ft_isalpha(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da1/ft__isalpha_8c_source.html#l00013">ft_isalpha.c:13</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @file ft_toupper.c</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @brief Convierte un carácter a mayúscula.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Esta función convierte un carácter alfabético en su versión en mayúscula </span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * si es una letra minúscula (a-z). Si el carácter no es una letra minúscula, </span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * se devuelve tal cual.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @param c El carácter a convertir, representado como un entero.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @return </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> *        - El carácter convertido a mayúscula si es una letra minúscula.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *        - El mismo carácter si no es una letra minúscula.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @note La función utiliza `ft_isalpha` para verificar si el carácter es </span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> *       una letra antes de intentar convertirlo.</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> * @see ft_isalpha</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#aef116be7b5bceafff4b59f20a4433d12">   34</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d4/d00/ft__toupper_8c.html#aef116be7b5bceafff4b59f20a4433d12">ft_toupper</a>(<span class="keywordtype">int</span> c)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a>(c) == 1 &amp;&amp; (c &gt;= 97 &amp;&amp; c &lt;= 122))</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> (c - 32);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> (c);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="ttc" id="aft__toupper_8c_html_aef116be7b5bceafff4b59f20a4433d12"><div class="ttname"><a href="../../d4/d00/ft__toupper_8c.html#aef116be7b5bceafff4b59f20a4433d12">ft_toupper</a></div><div class="ttdeci">int ft_toupper(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d00/ft__toupper_8c_source.html#l00034">ft_toupper.c:34</a></div></div>
+<div class="ttc" id="alibft_8h_html_ac283963beaa3b8c7d09b78851cda297e"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a></div><div class="ttdeci">int ft_isalpha(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da1/ft__isalpha_8c_source.html#l00026">ft_isalpha.c:26</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

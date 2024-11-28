@@ -73,6 +73,9 @@ $(function() {
 <div class="title">ft_tolower.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Convierte un carácter a minúscula.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d7e/libft_8h_source.html">../../libft.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ft_tolower.c:</div>
@@ -87,7 +90,25 @@ Functions</h2></td></tr>
 <tr class="memitem:ab86e5297914753b6c82d7e3c3020ce17"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d23/ft__tolower_8c.html#ab86e5297914753b6c82d7e3c3020ce17">ft_tolower</a> (int c)</td></tr>
 <tr class="separator:ab86e5297914753b6c82d7e3c3020ce17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Convierte un carácter a minúscula. </p>
+<p>Esta función convierte un carácter alfabético en su versión en minúscula si es una letra mayúscula (A-Z). Si el carácter no es una letra mayúscula, se devuelve tal cual.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>El carácter a convertir, representado como un entero. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li>El carácter convertido a minúscula si es una letra mayúscula.</li>
+<li>El mismo carácter si no es una letra mayúscula.</li>
+</ul>
+</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>La función utiliza <code>ft_isalpha</code> para verificar si el carácter es una letra antes de intentar convertirlo.</dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d2/da1/ft__isalpha_8c.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a> </dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="../../dc/d23/ft__tolower_8c_source.html">ft_tolower.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="ab86e5297914753b6c82d7e3c3020ce17"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab86e5297914753b6c82d7e3c3020ce17">&#9670;&nbsp;</a></span>ft_tolower()</h2>
 
@@ -104,20 +125,20 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d23/ft__tolower_8c_source.html#l00015">15</a> of file <a class="el" href="../../dc/d23/ft__tolower_8c_source.html">ft_tolower.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a>(c) == 1 &amp;&amp; (c &gt;= 65 &amp;&amp; c &lt;= 90))</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> (c + 32);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">return</span> (c);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
-<div class="ttc" id="alibft_8h_html_ac283963beaa3b8c7d09b78851cda297e"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a></div><div class="ttdeci">int ft_isalpha(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da1/ft__isalpha_8c_source.html#l00013">ft_isalpha.c:13</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../dc/d23/ft__tolower_8c_source.html#l00034">34</a> of file <a class="el" href="../../dc/d23/ft__tolower_8c_source.html">ft_tolower.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a>(c) == 1 &amp;&amp; (c &gt;= 65 &amp;&amp; c &lt;= 90))</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">return</span> (c + 32);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> (c);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
+<div class="ttc" id="alibft_8h_html_ac283963beaa3b8c7d09b78851cda297e"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ac283963beaa3b8c7d09b78851cda297e">ft_isalpha</a></div><div class="ttdeci">int ft_isalpha(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/da1/ft__isalpha_8c_source.html#l00026">ft_isalpha.c:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

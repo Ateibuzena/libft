@@ -85,6 +85,7 @@ Include dependency graph for ft_bzero.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac552d4c517269fc3b6e804dd75c12a90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d82/ft__bzero_8c.html#ac552d4c517269fc3b6e804dd75c12a90">ft_bzero</a> (void *array, <a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> len)</td></tr>
+<tr class="memdesc:ac552d4c517269fc3b6e804dd75c12a90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Llena un bloque de memoria con ceros.  <a href="../../dc/d82/ft__bzero_8c.html#ac552d4c517269fc3b6e804dd75c12a90">More...</a><br /></td></tr>
 <tr class="separator:ac552d4c517269fc3b6e804dd75c12a90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -114,18 +115,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d82/ft__bzero_8c_source.html#l00015">15</a> of file <a class="el" href="../../dc/d82/ft__bzero_8c_source.html">ft_bzero.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a>(array, 0, len);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="ttc" id="alibft_8h_html_a49de95137954a78f9d18180f6680cdcf"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a></div><div class="ttdeci">void * ft_memset(void *array, int value, t_size len)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d51/ft__memset_8c_source.html#l00015">ft_memset.c:15</a></div></div>
+<p>Llena un bloque de memoria con ceros. </p>
+<p>Esta función establece todos los bytes del bloque de memoria apuntado por <code>array</code> a cero. Se utiliza principalmente para inicializar arrays o estructuras de datos a valores predeterminados.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">array</td><td>Puntero al bloque de memoria a ser modificado. </td></tr>
+    <tr><td class="paramname">len</td><td>Longitud del bloque de memoria a modificar. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d82/ft__bzero_8c_source.html#l00026">26</a> of file <a class="el" href="../../dc/d82/ft__bzero_8c_source.html">ft_bzero.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a>(array, 0, len);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="ttc" id="alibft_8h_html_a49de95137954a78f9d18180f6680cdcf"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a49de95137954a78f9d18180f6680cdcf">ft_memset</a></div><div class="ttdeci">void * ft_memset(void *array, int value, t_size len)</div><div class="ttdoc">Establece un valor específico en un bloque de memoria.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d51/ft__memset_8c_source.html#l00028">ft_memset.c:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

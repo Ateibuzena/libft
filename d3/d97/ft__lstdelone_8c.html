@@ -73,6 +73,9 @@ $(function() {
 <div class="title">ft_lstdelone.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Elimina un único nodo de la lista.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d7e/libft_8h_source.html">../../libft.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ft_lstdelone.c:</div>
@@ -87,7 +90,19 @@ Functions</h2></td></tr>
 <tr class="memitem:a8461e9b692af3aca7621a228e81cf906"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d97/ft__lstdelone_8c.html#a8461e9b692af3aca7621a228e81cf906">ft_lstdelone</a> (<a class="el" href="../../d6/d7e/libft_8h.html#a57abe87f8f0b6fac4c5b33deba9203eb">t_list_42</a> *lst, void(*del)(void *))</td></tr>
 <tr class="separator:a8461e9b692af3aca7621a228e81cf906"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Elimina un único nodo de la lista. </p>
+<p>Esta función elimina el nodo <code>lst</code> y libera su contenido usando la función <code>del</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lst</td><td>El nodo a eliminar. </td></tr>
+    <tr><td class="paramname">del</td><td>Función que se aplica al contenido del nodo para eliminarlo. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition in file <a class="el" href="../../d3/d97/ft__lstdelone_8c_source.html">ft_lstdelone.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a8461e9b692af3aca7621a228e81cf906"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8461e9b692af3aca7621a228e81cf906">&#9670;&nbsp;</a></span>ft_lstdelone()</h2>
 
@@ -114,11 +129,11 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d97/ft__lstdelone_8c_source.html#l00015">15</a> of file <a class="el" href="../../d3/d97/ft__lstdelone_8c_source.html">ft_lstdelone.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    del(lst-&gt;<a class="code" href="../../dc/d48/structs__list__42.html#adaf1eb9f80fb521a9fb9c4444713d66e">content</a>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    free(lst);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d3/d97/ft__lstdelone_8c_source.html#l00025">25</a> of file <a class="el" href="../../d3/d97/ft__lstdelone_8c_source.html">ft_lstdelone.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    del(lst-&gt;<a class="code" href="../../dc/d48/structs__list__42.html#adaf1eb9f80fb521a9fb9c4444713d66e">content</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    free(lst);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="ttc" id="astructs__list__42_html_adaf1eb9f80fb521a9fb9c4444713d66e"><div class="ttname"><a href="../../dc/d48/structs__list__42.html#adaf1eb9f80fb521a9fb9c4444713d66e">s_list_42::content</a></div><div class="ttdeci">void * content</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00078">libft.h:78</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -126,7 +141,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

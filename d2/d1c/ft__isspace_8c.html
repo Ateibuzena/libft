@@ -73,6 +73,9 @@ $(function() {
 <div class="title">ft_isspace.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Verifica si un carácter es un espacio en blanco.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d7e/libft_8h_source.html">../../libft.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ft_isspace.c:</div>
@@ -87,7 +90,23 @@ Functions</h2></td></tr>
 <tr class="memitem:a528ddec020178299ed7d683ccbd09bf5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d1c/ft__isspace_8c.html#a528ddec020178299ed7d683ccbd09bf5">ft_isspace</a> (char c)</td></tr>
 <tr class="separator:a528ddec020178299ed7d683ccbd09bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Verifica si un carácter es un espacio en blanco. </p>
+<p>Comprueba si el carácter proporcionado como argumento es un espacio en blanco, incluyendo espacios, tabulaciones, saltos de línea y otros caracteres de espacio definidos en el estándar C.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>El carácter a comprobar, representado como un carácter (<code>char</code>). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><ul>
+<li><code>true</code> si el carácter es un espacio en blanco.</li>
+<li><code>false</code> en caso contrario. </li>
+</ul>
+</dd></dl>
+
+<p class="definition">Definition in file <a class="el" href="../../d2/d1c/ft__isspace_8c_source.html">ft_isspace.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a528ddec020178299ed7d683ccbd09bf5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a528ddec020178299ed7d683ccbd09bf5">&#9670;&nbsp;</a></span>ft_isspace()</h2>
 
@@ -104,17 +123,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d1c/ft__isspace_8c_source.html#l00016">16</a> of file <a class="el" href="../../d2/d1c/ft__isspace_8c_source.html">ft_isspace.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">return</span> (c == <span class="charliteral">&#39; &#39;</span> || c == <span class="charliteral">&#39;\t&#39;</span> || c == <span class="charliteral">&#39;\n&#39;</span> || c == <span class="charliteral">&#39;\v&#39;</span> || c == <span class="charliteral">&#39;\f&#39;</span> || c == <span class="charliteral">&#39;\r&#39;</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../d2/d1c/ft__isspace_8c_source.html#l00030">30</a> of file <a class="el" href="../../d2/d1c/ft__isspace_8c_source.html">ft_isspace.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> (c == <span class="charliteral">&#39; &#39;</span> || c == <span class="charliteral">&#39;\t&#39;</span> || c == <span class="charliteral">&#39;\n&#39;</span> || c == <span class="charliteral">&#39;\v&#39;</span> || c == <span class="charliteral">&#39;\f&#39;</span> || c == <span class="charliteral">&#39;\r&#39;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

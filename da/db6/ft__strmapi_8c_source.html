@@ -79,52 +79,68 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: azubieta &lt;azubieta@student.42malaga.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2024/05/02 20:54:50 by azubieta          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/22 21:28:10 by azubieta         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/28 21:59:29 by azubieta         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#ad9c0488c57afc864b87fbb0bc604db82">   15</a></span>&#160;<span class="keywordtype">char</span>    *<a class="code" href="../../da/db6/ft__strmapi_8c.html#ad9c0488c57afc864b87fbb0bc604db82">ft_strmapi</a>(<span class="keywordtype">char</span> <span class="keyword">const</span> *s, <span class="keywordtype">char</span> (*f)(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, <span class="keywordtype">char</span>))</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">char</span>    *ptr;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">char</span>    *temp;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span>     i;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">char</span>    c;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    i = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ptr = malloc((<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (!ptr)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    temp = ptr;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        c = f(i, s[i]);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        *temp = c;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        temp++;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        i++;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    *temp = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">return</span> (ptr);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @brief Aplica una función a cada carácter de una cadena, pasando su índice y el carácter actual.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * Esta función recorre la cadena `s`, aplica la función `f` a cada carácter de la cadena junto con su índice, </span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * y devuelve una nueva cadena que contiene los resultados de la aplicación de la función a cada carácter.</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * La nueva cadena tiene el mismo tamaño que la original y se termina con un carácter nulo `\0`.</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * @param s La cadena de caracteres sobre la que se aplicará la función.</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @param f La función que se aplicará a cada carácter de la cadena. Recibe el índice y el carácter, y devuelve un nuevo carácter.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @return Una nueva cadena de caracteres con los resultados de aplicar la función `f` a cada carácter de `s`.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> *         Si la memoria no se puede asignar, la función devuelve `NULL`.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment"> * @note La memoria asignada para la nueva cadena debe ser liberada después de su uso para evitar fugas de memoria.</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#ad9c0488c57afc864b87fbb0bc604db82">   31</a></span>&#160;<span class="keywordtype">char</span>    *<a class="code" href="../../da/db6/ft__strmapi_8c.html#ad9c0488c57afc864b87fbb0bc604db82">ft_strmapi</a>(<span class="keywordtype">char</span> <span class="keyword">const</span> *s, <span class="keywordtype">char</span> (*f)(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>, <span class="keywordtype">char</span>))</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">char</span>    *ptr;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">char</span>    *temp;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">char</span>    c;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">#include &lt;stdio.h&gt;</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">int main(void)</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">{</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    char    ptr[20] = &quot;hola ana que tal&quot;;</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    char    *temp;</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    temp = ft_strmapi(ptr, ft_f);</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">    printf(&quot;%s&quot;, temp);</span></div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">    return (0);</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">}*/</span></div>
-<div class="ttc" id="aft__strmapi_8c_html_ad9c0488c57afc864b87fbb0bc604db82"><div class="ttname"><a href="../../da/db6/ft__strmapi_8c.html#ad9c0488c57afc864b87fbb0bc604db82">ft_strmapi</a></div><div class="ttdeci">char * ft_strmapi(char const *s, char(*f)(unsigned int, char))</div><div class="ttdef"><b>Definition:</b> <a href="../../da/db6/ft__strmapi_8c_source.html#l00015">ft_strmapi.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    ptr = malloc((<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s) + 1) * <span class="keyword">sizeof</span>(<span class="keywordtype">char</span>));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">if</span> (!ptr)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    temp = ptr;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        c = f(i, s[i]);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        *temp = c;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        temp++;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        i++;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    *temp = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> (ptr);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">int main(void)</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">{</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">    char    ptr[20] = &quot;hola ana que tal&quot;;</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">    char    *temp;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">    temp = ft_strmapi(ptr, ft_f);</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">    printf(&quot;%s&quot;, temp);</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">    return (0);</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">}*/</span></div>
+<div class="ttc" id="aft__strmapi_8c_html_ad9c0488c57afc864b87fbb0bc604db82"><div class="ttname"><a href="../../da/db6/ft__strmapi_8c.html#ad9c0488c57afc864b87fbb0bc604db82">ft_strmapi</a></div><div class="ttdeci">char * ft_strmapi(char const *s, char(*f)(unsigned int, char))</div><div class="ttdoc">Aplica una función a cada carácter de una cadena, pasando su índice y el carácter actual.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/db6/ft__strmapi_8c_source.html#l00031">ft_strmapi.c:31</a></div></div>
+<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdoc">Calcula la longitud de una cadena de caracteres.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00029">ft_strlen.c:29</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

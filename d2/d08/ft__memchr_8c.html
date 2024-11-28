@@ -85,6 +85,7 @@ Include dependency graph for ft_memchr.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:accbe8ca0ab2ec7539b4142d3f6a3b0af"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d08/ft__memchr_8c.html#accbe8ca0ab2ec7539b4142d3f6a3b0af">ft_memchr</a> (const void *s, int c, <a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> n)</td></tr>
+<tr class="memdesc:accbe8ca0ab2ec7539b4142d3f6a3b0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un valor específico en un bloque de memoria.  <a href="../../d2/d08/ft__memchr_8c.html#accbe8ca0ab2ec7539b4142d3f6a3b0af">More...</a><br /></td></tr>
 <tr class="separator:accbe8ca0ab2ec7539b4142d3f6a3b0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -120,22 +121,34 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d08/ft__memchr_8c_source.html#l00015">15</a> of file <a class="el" href="../../d2/d08/ft__memchr_8c_source.html">ft_memchr.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *ptr;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>          i;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    i = 0;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    ptr = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)s;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">while</span> (i &lt; n)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (*ptr == (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)c)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            <span class="keywordflow">return</span> (ptr);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        ptr++;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        i++;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
+<p>Busca un valor específico en un bloque de memoria. </p>
+<p>Esta función recorre un bloque de memoria en busca de un byte cuyo valor coincida con el especificado por <code>c</code>. Si lo encuentra, devuelve un puntero a la primera aparición de dicho valor. Si no lo encuentra, devuelve NULL.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Puntero al bloque de memoria en el que buscar. </td></tr>
+    <tr><td class="paramname">c</td><td>El valor que se desea encontrar. </td></tr>
+    <tr><td class="paramname">n</td><td>El número de bytes a buscar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Un puntero a la primera aparición del valor buscado, o NULL si no se encuentra. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d08/ft__memchr_8c_source.html#l00029">29</a> of file <a class="el" href="../../d2/d08/ft__memchr_8c_source.html">ft_memchr.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>   *ptr;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>          i;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ptr = (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)s;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">while</span> (i &lt; n)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (*ptr == (<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>)c)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> (ptr);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        ptr++;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        i++;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="ttc" id="alibft_8h_html_a0ed7479aab42bd43773f8f647f39acab"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a></div><div class="ttdeci">unsigned int t_size</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00028">libft.h:28</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -143,7 +156,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

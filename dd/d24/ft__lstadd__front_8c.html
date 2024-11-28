@@ -73,6 +73,9 @@ $(function() {
 <div class="title">ft_lstadd_front.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Añade un nuevo nodo al principio de la lista.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="../../d6/d7e/libft_8h_source.html">../../libft.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ft_lstadd_front.c:</div>
@@ -87,7 +90,19 @@ Functions</h2></td></tr>
 <tr class="memitem:a1864d10026e54172c0f1954fe9707654"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d24/ft__lstadd__front_8c.html#a1864d10026e54172c0f1954fe9707654">ft_lstadd_front</a> (<a class="el" href="../../d6/d7e/libft_8h.html#a57abe87f8f0b6fac4c5b33deba9203eb">t_list_42</a> **lst, <a class="el" href="../../d6/d7e/libft_8h.html#a57abe87f8f0b6fac4c5b33deba9203eb">t_list_42</a> *new)</td></tr>
 <tr class="separator:a1864d10026e54172c0f1954fe9707654"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Añade un nuevo nodo al principio de la lista. </p>
+<p>Esta función agrega el nodo <code>new</code> al principio de la lista apuntada por <code>lst</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lst</td><td>Apuntador al primer nodo de la lista. </td></tr>
+    <tr><td class="paramname">new</td><td>El nodo que se va a añadir al principio de la lista. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition in file <a class="el" href="../../dd/d24/ft__lstadd__front_8c_source.html">ft_lstadd_front.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a1864d10026e54172c0f1954fe9707654"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1864d10026e54172c0f1954fe9707654">&#9670;&nbsp;</a></span>ft_lstadd_front()</h2>
 
@@ -114,18 +129,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dd/d24/ft__lstadd__front_8c_source.html#l00015">15</a> of file <a class="el" href="../../dd/d24/ft__lstadd__front_8c_source.html">ft_lstadd_front.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">new</span>-&gt;next = *lst;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    *lst = <span class="keyword">new</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<p class="definition">Definition at line <a class="el" href="../../dd/d24/ft__lstadd__front_8c_source.html#l00025">25</a> of file <a class="el" href="../../dd/d24/ft__lstadd__front_8c_source.html">ft_lstadd_front.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">new</span>-&gt;next = *lst;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    *lst = <span class="keyword">new</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

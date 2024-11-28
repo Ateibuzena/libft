@@ -79,48 +79,62 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*   By: azubieta &lt;azubieta@student.42malaga.com    +#+  +:+       +#+        */</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/*                                                +#+#+#+#+#+   +#+           */</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">/*   Created: 2024/05/04 16:43:18 by azubieta          #+#    #+#             */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/22 21:30:16 by azubieta         ###   ########.fr       */</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">/*   Updated: 2024/11/28 21:50:14 by azubieta         ###   ########.fr       */</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/*                                                                            */</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">/* ************************************************************************** */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#a96aca6ee20992fc6640f02d1c4c16ef5">   15</a></span>&#160;<a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *<a class="code" href="../../d1/d9f/ft__lstmap_8c.html#a96aca6ee20992fc6640f02d1c4c16ef5">ft_lstmap</a>(<a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a> *lst, <span class="keywordtype">void</span> *(*f)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> (*del)(<span class="keywordtype">void</span> *))</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *nodo;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span>    *temp;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *sublist;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *new_list;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    sublist = lst;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    new_list = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (!lst)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">while</span> (sublist)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        temp = f(sublist-&gt;<a class="code" href="../../dc/d48/structs__list__42.html#adaf1eb9f80fb521a9fb9c4444713d66e">content</a>);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        nodo = <a class="code" href="../../d6/d7e/libft_8h.html#ae1771637be0303e8ec432dd3032bc8f5">ft_lstnew</a>(temp);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (!nodo)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="../../d6/d7e/libft_8h.html#ae68a6cfbd7ee6ddf37e9c8acd90db032">ft_lstclear</a>(&amp;new_list, del);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="../../d6/d7e/libft_8h.html#a87b09ad8d0d19887e4165df13c807ce2">ft_lstadd_back</a>(&amp;new_list, nodo);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        sublist = sublist-&gt;<a class="code" href="../../dc/d48/structs__list__42.html#a43070cdffcb5aca44df426eec3645758">next</a>;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">return</span> (new_list);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="ttc" id="aft__lstmap_8c_html_a96aca6ee20992fc6640f02d1c4c16ef5"><div class="ttname"><a href="../../d1/d9f/ft__lstmap_8c.html#a96aca6ee20992fc6640f02d1c4c16ef5">ft_lstmap</a></div><div class="ttdeci">t_list_42 * ft_lstmap(t_list_42 *lst, void *(*f)(void *), void(*del)(void *))</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d9f/ft__lstmap_8c_source.html#l00015">ft_lstmap.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_a87b09ad8d0d19887e4165df13c807ce2"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a87b09ad8d0d19887e4165df13c807ce2">ft_lstadd_back</a></div><div class="ttdeci">void ft_lstadd_back(t_list_42 **lst, t_list_42 *new)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dac/ft__lstadd__back_8c_source.html#l00015">ft_lstadd_back.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_ae1771637be0303e8ec432dd3032bc8f5"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ae1771637be0303e8ec432dd3032bc8f5">ft_lstnew</a></div><div class="ttdeci">t_list_42 * ft_lstnew(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dca/ft__lstnew_8c_source.html#l00015">ft_lstnew.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_ae68a6cfbd7ee6ddf37e9c8acd90db032"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ae68a6cfbd7ee6ddf37e9c8acd90db032">ft_lstclear</a></div><div class="ttdeci">void ft_lstclear(t_list_42 **lst, void(*del)(void *))</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2f/ft__lstclear_8c_source.html#l00015">ft_lstclear.c:15</a></div></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * @file ft_lstmap.c</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * @brief Crea una nueva lista aplicando una función a cada elemento.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * Esta función recorre la lista y aplica la función `f` a cada elemento,</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> * creando una nueva lista con los resultados. Si hay algún error en la creación</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="comment"> * de un nodo, se elimina la lista resultante utilizando la función `del`.</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment"> * </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment"> * @param lst La lista de nodos a recorrer.</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="comment"> * @param f La función que se aplica a cada nodo para crear el nuevo contenido.</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"> * @param del Función para eliminar el contenido de un nodo en caso de error.</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"> * @return La nueva lista con los elementos modificados, o NULL si ocurre un error.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;../../libft.h&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d6/d7e/libft_8h.html#a96aca6ee20992fc6640f02d1c4c16ef5">   29</a></span>&#160;<a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *<a class="code" href="../../d1/d9f/ft__lstmap_8c.html#a96aca6ee20992fc6640f02d1c4c16ef5">ft_lstmap</a>(<a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a> *lst, <span class="keywordtype">void</span> *(*f)(<span class="keywordtype">void</span> *), <span class="keywordtype">void</span> (*del)(<span class="keywordtype">void</span> *))</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *nodo;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span>    *temp;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *sublist;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../dc/d48/structs__list__42.html">t_list_42</a>   *new_list;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    sublist = lst;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    new_list = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">if</span> (!lst)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">while</span> (sublist)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        temp = f(sublist-&gt;<a class="code" href="../../dc/d48/structs__list__42.html#adaf1eb9f80fb521a9fb9c4444713d66e">content</a>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        nodo = <a class="code" href="../../d6/d7e/libft_8h.html#ae1771637be0303e8ec432dd3032bc8f5">ft_lstnew</a>(temp);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">if</span> (!nodo)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <a class="code" href="../../d6/d7e/libft_8h.html#ae68a6cfbd7ee6ddf37e9c8acd90db032">ft_lstclear</a>(&amp;new_list, del);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="../../d6/d7e/libft_8h.html#a87b09ad8d0d19887e4165df13c807ce2">ft_lstadd_back</a>(&amp;new_list, nodo);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        sublist = sublist-&gt;<a class="code" href="../../dc/d48/structs__list__42.html#a43070cdffcb5aca44df426eec3645758">next</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> (new_list);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="ttc" id="aft__lstmap_8c_html_a96aca6ee20992fc6640f02d1c4c16ef5"><div class="ttname"><a href="../../d1/d9f/ft__lstmap_8c.html#a96aca6ee20992fc6640f02d1c4c16ef5">ft_lstmap</a></div><div class="ttdeci">t_list_42 * ft_lstmap(t_list_42 *lst, void *(*f)(void *), void(*del)(void *))</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d9f/ft__lstmap_8c_source.html#l00029">ft_lstmap.c:29</a></div></div>
+<div class="ttc" id="alibft_8h_html_a87b09ad8d0d19887e4165df13c807ce2"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a87b09ad8d0d19887e4165df13c807ce2">ft_lstadd_back</a></div><div class="ttdeci">void ft_lstadd_back(t_list_42 **lst, t_list_42 *new)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/dac/ft__lstadd__back_8c_source.html#l00028">ft_lstadd_back.c:28</a></div></div>
+<div class="ttc" id="alibft_8h_html_ae1771637be0303e8ec432dd3032bc8f5"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ae1771637be0303e8ec432dd3032bc8f5">ft_lstnew</a></div><div class="ttdeci">t_list_42 * ft_lstnew(void *ptr)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dca/ft__lstnew_8c_source.html#l00026">ft_lstnew.c:26</a></div></div>
+<div class="ttc" id="alibft_8h_html_ae68a6cfbd7ee6ddf37e9c8acd90db032"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#ae68a6cfbd7ee6ddf37e9c8acd90db032">ft_lstclear</a></div><div class="ttdeci">void ft_lstclear(t_list_42 **lst, void(*del)(void *))</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d2f/ft__lstclear_8c_source.html#l00027">ft_lstclear.c:27</a></div></div>
 <div class="ttc" id="astructs__list__42_html"><div class="ttname"><a href="../../dc/d48/structs__list__42.html">s_list_42</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00076">libft.h:77</a></div></div>
 <div class="ttc" id="astructs__list__42_html_a43070cdffcb5aca44df426eec3645758"><div class="ttname"><a href="../../dc/d48/structs__list__42.html#a43070cdffcb5aca44df426eec3645758">s_list_42::next</a></div><div class="ttdeci">struct s_list_42 * next</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00079">libft.h:79</a></div></div>
 <div class="ttc" id="astructs__list__42_html_adaf1eb9f80fb521a9fb9c4444713d66e"><div class="ttname"><a href="../../dc/d48/structs__list__42.html#adaf1eb9f80fb521a9fb9c4444713d66e">s_list_42::content</a></div><div class="ttdeci">void * content</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00078">libft.h:78</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

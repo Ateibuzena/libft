@@ -85,6 +85,7 @@ Include dependency graph for ft_strcmp.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1f2ff2312e5994560c9537cd9173be94"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d16/ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94">ft_strcmp</a> (const char *s1, const char *s2)</td></tr>
+<tr class="memdesc:a1f2ff2312e5994560c9537cd9173be94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compara dos cadenas de caracteres.  <a href="../../df/d16/ft__strcmp_8c.html#a1f2ff2312e5994560c9537cd9173be94">More...</a><br /></td></tr>
 <tr class="separator:a1f2ff2312e5994560c9537cd9173be94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -114,29 +115,40 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/d16/ft__strcmp_8c_source.html#l00003">3</a> of file <a class="el" href="../../df/d16/ft__strcmp_8c_source.html">ft_strcmp.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordtype">int</span> j;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    i = 0;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    j = 0;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">while</span> (s1[i] &amp;&amp; s2[j] &amp;&amp; (s1[i] == s2[j]))</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        i++;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        j++;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordflow">if</span> (s1[i] == <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; s2[j] == <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keywordflow">return</span> (1);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
+<p>Compara dos cadenas de caracteres. </p>
+<p>Esta función compara dos cadenas de caracteres <code>s1</code> y <code>s2</code> carácter por carácter. Si las cadenas son idénticas, la función devuelve 1. Si las cadenas son diferentes, devuelve 0.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s1</td><td>La primera cadena que se va a comparar. </td></tr>
+    <tr><td class="paramname">s2</td><td>La segunda cadena que se va a comparar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>1 si las cadenas son iguales, 0 si son diferentes. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d16/ft__strcmp_8c_source.html#l00027">27</a> of file <a class="el" href="../../df/d16/ft__strcmp_8c_source.html">ft_strcmp.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> j;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    j = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">while</span> (s1[i] &amp;&amp; s2[j] &amp;&amp; (s1[i] == s2[j]))</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        i++;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        j++;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (s1[i] == <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; s2[j] == <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">return</span> (1);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> (0);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

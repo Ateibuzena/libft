@@ -85,6 +85,7 @@ Include dependency graph for ft_strdup.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aada5f5ba69c0c2c97a1322b4e2554709"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dcf/ft__strdup_8c.html#aada5f5ba69c0c2c97a1322b4e2554709">ft_strdup</a> (const char *s1)</td></tr>
+<tr class="memdesc:aada5f5ba69c0c2c97a1322b4e2554709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplica una cadena de caracteres.  <a href="../../de/dcf/ft__strdup_8c.html#aada5f5ba69c0c2c97a1322b4e2554709">More...</a><br /></td></tr>
 <tr class="separator:aada5f5ba69c0c2c97a1322b4e2554709"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -104,26 +105,36 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../de/dcf/ft__strdup_8c_source.html#l00015">15</a> of file <a class="el" href="../../de/dcf/ft__strdup_8c_source.html">ft_strdup.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">char</span>    *ptr;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ptr = malloc((<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s1) + 1) * 1);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">if</span> (ptr == NULL)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a9fe84e6139c8cc8fd9fcf51aa6d9f659">ft_memcpy</a>(ptr, s1, <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s1));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    ptr[<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s1)] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> (ptr);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_a9fe84e6139c8cc8fd9fcf51aa6d9f659"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a9fe84e6139c8cc8fd9fcf51aa6d9f659">ft_memcpy</a></div><div class="ttdeci">void * ft_memcpy(void *dst, const void *src, t_size n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dee/ft__memcpy_8c_source.html#l00015">ft_memcpy.c:15</a></div></div>
+<p>Duplica una cadena de caracteres. </p>
+<p>Esta función asigna memoria dinámica para crear una copia de la cadena de caracteres <code>s1</code> y la devuelve. La nueva cadena será terminada en un carácter nulo (&lsquo;&rsquo;\0'`).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s1</td><td>La cadena de caracteres que se va a duplicar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Un puntero a la nueva cadena duplicada, o NULL si la memoria no puede ser asignada. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../de/dcf/ft__strdup_8c_source.html#l00027">27</a> of file <a class="el" href="../../de/dcf/ft__strdup_8c_source.html">ft_strdup.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">char</span>    *ptr;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    ptr = malloc((<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s1) + 1) * 1);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (ptr == NULL)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> (NULL);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a9fe84e6139c8cc8fd9fcf51aa6d9f659">ft_memcpy</a>(ptr, s1, <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s1));</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ptr[<a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(s1)] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> (ptr);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdoc">Calcula la longitud de una cadena de caracteres.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00029">ft_strlen.c:29</a></div></div>
+<div class="ttc" id="alibft_8h_html_a9fe84e6139c8cc8fd9fcf51aa6d9f659"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a9fe84e6139c8cc8fd9fcf51aa6d9f659">ft_memcpy</a></div><div class="ttdeci">void * ft_memcpy(void *dst, const void *src, t_size n)</div><div class="ttdoc">Copia un bloque de memoria.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dee/ft__memcpy_8c_source.html#l00028">ft_memcpy.c:28</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

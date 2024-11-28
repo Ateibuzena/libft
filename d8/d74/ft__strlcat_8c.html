@@ -85,6 +85,7 @@ Include dependency graph for ft_strlcat.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac2d16730db76214390b93376f4bcbc39"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d74/ft__strlcat_8c.html#ac2d16730db76214390b93376f4bcbc39">ft_strlcat</a> (char *dst, const char *src, <a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> dstsize)</td></tr>
+<tr class="memdesc:ac2d16730db76214390b93376f4bcbc39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Concatena una cadena de caracteres al final de otra, asegurando que no se exceda el tamaño máximo de destino.  <a href="../../d8/d74/ft__strlcat_8c.html#ac2d16730db76214390b93376f4bcbc39">More...</a><br /></td></tr>
 <tr class="separator:ac2d16730db76214390b93376f4bcbc39"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -120,34 +121,47 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d74/ft__strlcat_8c_source.html#l00015">15</a> of file <a class="el" href="../../d8/d74/ft__strlcat_8c_source.html">ft_strlcat.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>      i;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>      dstlen;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>      srclen;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    i = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    dstlen = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(dst);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    srclen = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(src);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span> (dstlen &gt;= dstsize)</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">return</span> (dstsize + srclen);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">while</span> (src[i] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; i &lt; dstsize - dstlen - 1)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        dst[dstlen + i] = src[i];</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        i++;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    dst[dstlen + i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">return</span> (dstlen + srclen);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;}</div>
+<p>Concatena una cadena de caracteres al final de otra, asegurando que no se exceda el tamaño máximo de destino. </p>
+<p>La función concatena hasta <code>dstsize - 1</code> caracteres de la cadena <code>src</code> al final de la cadena <code>dst</code>, y garantiza que la cadena resultante esté siempre terminada en <code>\0</code> (carácter nulo). Si la longitud de <code>dst</code> es mayor o igual a <code>dstsize</code>, no se realiza la concatenación y la longitud total esperada de la cadena concatenada es <code>dstsize + srclen</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dst</td><td>La cadena de destino a la que se le añadirá el contenido de <code>src</code>. </td></tr>
+    <tr><td class="paramname">src</td><td>La cadena de origen que se añadirá a <code>dst</code>. </td></tr>
+    <tr><td class="paramname">dstsize</td><td>El tamaño total disponible para la cadena <code>dst</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>La longitud total de la cadena concatenada (es decir, la longitud de <code>dst</code> más la longitud de <code>src</code>). Si el tamaño de destino <code>dstsize</code> es menor o igual a la longitud de <code>dst</code>, la función devuelve <code>dstsize + srclen</code>.</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Si la longitud de <code>dst</code> es mayor o igual a <code>dstsize</code>, la concatenación no se realiza y la cadena <code>dst</code> se mantiene intacta. Si <code>dstsize</code> es menor que la longitud de <code>dst</code>, se devuelve <code>dstsize + srclen</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d74/ft__strlcat_8c_source.html#l00033">33</a> of file <a class="el" href="../../d8/d74/ft__strlcat_8c_source.html">ft_strlcat.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>      i;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>      dstlen;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>      srclen;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    dstlen = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(dst);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    srclen = <a class="code" href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a>(src);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordflow">if</span> (dstlen &gt;= dstsize)</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> (dstsize + srclen);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">while</span> (src[i] != <span class="charliteral">&#39;\0&#39;</span> &amp;&amp; i &lt; dstsize - dstlen - 1)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        dst[dstlen + i] = src[i];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        i++;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    dst[dstlen + i] = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> (dstlen + srclen);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="ttc" id="alibft_8h_html_a0ed7479aab42bd43773f8f647f39acab"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a></div><div class="ttdeci">unsigned int t_size</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00028">libft.h:28</a></div></div>
-<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00015">ft_strlen.c:15</a></div></div>
+<div class="ttc" id="alibft_8h_html_a61e657849c5781bc5d356039dffddc4d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a></div><div class="ttdeci">t_size ft_strlen(const char *s)</div><div class="ttdoc">Calcula la longitud de una cadena de caracteres.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d85/ft__strlen_8c_source.html#l00029">ft_strlen.c:29</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>

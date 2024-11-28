@@ -85,6 +85,7 @@ Include dependency graph for ft_strlen.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a61e657849c5781bc5d356039dffddc4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d85/ft__strlen_8c.html#a61e657849c5781bc5d356039dffddc4d">ft_strlen</a> (const char *s)</td></tr>
+<tr class="memdesc:a61e657849c5781bc5d356039dffddc4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calcula la longitud de una cadena de caracteres.  <a href="../../d7/d85/ft__strlen_8c.html#a61e657849c5781bc5d356039dffddc4d">More...</a><br /></td></tr>
 <tr class="separator:a61e657849c5781bc5d356039dffddc4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -104,22 +105,33 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d7/d85/ft__strlen_8c_source.html#l00015">15</a> of file <a class="el" href="../../d7/d85/ft__strlen_8c_source.html">ft_strlen.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> i;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    i = 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        i++;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> (i);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<p>Calcula la longitud de una cadena de caracteres. </p>
+<p>La función recorre la cadena <code>s</code> hasta encontrar el carácter nulo <code>\0</code> que indica el final de la cadena, y devuelve el número de caracteres antes de dicho carácter nulo.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>La cadena de caracteres cuya longitud se va a calcular.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>La longitud de la cadena <code>s</code> (número de caracteres antes del carácter nulo).</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Si la cadena es vacía, es decir, si <code>s</code> apunta a una cadena que comienza con el carácter <code>\0</code>, la función devolverá 0. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/d85/ft__strlen_8c_source.html#l00029">29</a> of file <a class="el" href="../../d7/d85/ft__strlen_8c_source.html">ft_strlen.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> i;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">while</span> (s[i] != <span class="charliteral">&#39;\0&#39;</span>)</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        i++;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">return</span> (i);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 17:34:46 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
