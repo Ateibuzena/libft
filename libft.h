@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 23:15:54 by azubieta         ###   ########.fr       */
+/*   Updated: 2024/12/28 15:25:35 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdbool.h>
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 // Definition of type t_size if not defined to libft
 # ifndef T_SIZE
@@ -52,20 +55,6 @@ typedef struct Pointers
 	char		**ptr;
 	char		*temp;
 }	t_Pointers;
-
-# endif
-
-// Struct to ft_itoa
-# ifndef ITOA
-#  define ITOA
-
-typedef struct Itoa
-{
-	long	i;
-	char	*ptr;
-	char	*temp;
-	int		index;
-}	t_Itoa;
 
 # endif
 
@@ -122,6 +111,20 @@ typedef struct s_Printf
 // Buffer to get_next_line
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 45
+# endif
+
+// Struct to ft_itoa
+# ifndef ITOA
+#  define ITOA
+
+typedef struct Itoa
+{
+	long	i;
+	char	*ptr;
+	char	*temp;
+	int		index;
+}	t_Itoa;
+
 # endif
 
 /*SRC/D_ASCII/*/
@@ -197,6 +200,7 @@ void		ft_call_putchar_percent(va_list *args, int fd, int *count);
 /*SRC/D_STRINGS/*/
 
 char		*ft_strncpy(char *dest, const char *src, size_t n);
+long int	ft_strtol(const char *str, char **endptr, int base);
 t_size		ft_strlen(const char *s);
 t_size		ft_strlcpy(char *dst, const char *src, t_size dstsize);
 t_size		ft_strlcat(char *dst, const char *src, t_size dstsize);
@@ -222,6 +226,7 @@ char		*ft_itoa(int n);
 void		ft_freedouble(char **ptr);
 void		ft_freedouble_array(int **pipes, int len);
 int			ft_strlen_double(char **str);
+long int	ft_strtol(const char *str, char **endptr, int base);
 
 // End of LIBFT_H
 #endif
