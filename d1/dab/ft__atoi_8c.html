@@ -84,10 +84,6 @@ Include dependency graph for ft_atoi.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4b4e3c1f8130f0c8bcfec204d1211cc1"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="../../d7/dc5/structCounters.html">Counters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dab/ft__atoi_8c.html#a4b4e3c1f8130f0c8bcfec204d1211cc1">ft_struct</a> (<a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> o, <a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> t, <a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> th, <a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a> f)</td></tr>
-<tr class="separator:a4b4e3c1f8130f0c8bcfec204d1211cc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a19aecc61be0ba928e2f466b19323db09"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="../../d7/dc5/structCounters.html">Counters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dab/ft__atoi_8c.html#a19aecc61be0ba928e2f466b19323db09">ft_spacesymbols</a> (const char *str, <a class="el" href="../../d6/d7e/libft_8h.html#ae137d78daf7dac1ffb11edcdf00f4147">t_Counters</a> *dic)</td></tr>
-<tr class="separator:a19aecc61be0ba928e2f466b19323db09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afad2ec371b4188602da9a94db687cb16"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dab/ft__atoi_8c.html#afad2ec371b4188602da9a94db687cb16">ft_atoi</a> (const char *str)</td></tr>
 <tr class="separator:afad2ec371b4188602da9a94db687cb16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -108,170 +104,43 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d1/dab/ft__atoi_8c_source.html#l00053">53</a> of file <a class="el" href="../../d1/dab/ft__atoi_8c_source.html">ft_atoi.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">long</span> <span class="keywordtype">int</span>            num;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="../../d7/dc5/structCounters.html">t_Counters</a>  sign_index;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    sign_index = <a class="code" href="../../d1/dab/ft__atoi_8c.html#a4b4e3c1f8130f0c8bcfec204d1211cc1">ft_struct</a>(0, 1, 1, 0);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    num = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d1/dab/ft__atoi_8c.html#a19aecc61be0ba928e2f466b19323db09">ft_spacesymbols</a>(str, &amp;sign_index);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span> (sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a181336e5b4c7945911ccf739bb219930">n</a> == 0)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keywordflow">return</span> (sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a181336e5b4c7945911ccf739bb219930">n</a>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span> (str[0] == <span class="charliteral">&#39;+&#39;</span>)</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>++;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">if</span> (str[0] == <span class="charliteral">&#39;-&#39;</span>)</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    {</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a567077daa5aa4797a3ffee52be378ab8">sign</a> *= -1;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>++;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">while</span> (<a class="code" href="../../d6/d7e/libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a>(str[sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>]) == 1)</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        num = (num * 10) + str[sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] - 48;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        ++sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (((num * sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a567077daa5aa4797a3ffee52be378ab8">sign</a>) &gt;= -2147483648) &amp;&amp; ((num * sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a567077daa5aa4797a3ffee52be378ab8">sign</a>) &lt;= 2147483647))</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">return</span> (num * sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a567077daa5aa4797a3ffee52be378ab8">sign</a>);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordflow">return</span> (0);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="ttc" id="aft__atoi_8c_html_a19aecc61be0ba928e2f466b19323db09"><div class="ttname"><a href="../../d1/dab/ft__atoi_8c.html#a19aecc61be0ba928e2f466b19323db09">ft_spacesymbols</a></div><div class="ttdeci">static struct Counters ft_spacesymbols(const char *str, t_Counters *dic)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dab/ft__atoi_8c_source.html#l00001">ft_atoi.c:26</a></div></div>
-<div class="ttc" id="aft__atoi_8c_html_a4b4e3c1f8130f0c8bcfec204d1211cc1"><div class="ttname"><a href="../../d1/dab/ft__atoi_8c.html#a4b4e3c1f8130f0c8bcfec204d1211cc1">ft_struct</a></div><div class="ttdeci">static struct Counters ft_struct(t_size o, t_size t, t_size th, t_size f)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dab/ft__atoi_8c_source.html#l00001">ft_atoi.c:15</a></div></div>
-<div class="ttc" id="alibft_8h_html_a2cf15b8a1a277d1e2ce3654101a2003d"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a></div><div class="ttdeci">int ft_isdigit(int c)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/dd6/ft__isdigit_8c_source.html#l00026">ft_isdigit.c:26</a></div></div>
-<div class="ttc" id="astructCounters_html"><div class="ttname"><a href="../../d7/dc5/structCounters.html">Counters</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00036">libft.h:37</a></div></div>
-<div class="ttc" id="astructCounters_html_a112430b24cb9a397ccd37bf541cf0972"><div class="ttname"><a href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">Counters::i</a></div><div class="ttdeci">t_size i</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00038">libft.h:38</a></div></div>
-<div class="ttc" id="astructCounters_html_a181336e5b4c7945911ccf739bb219930"><div class="ttname"><a href="../../d7/dc5/structCounters.html#a181336e5b4c7945911ccf739bb219930">Counters::n</a></div><div class="ttdeci">t_size n</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00040">libft.h:40</a></div></div>
-<div class="ttc" id="astructCounters_html_a567077daa5aa4797a3ffee52be378ab8"><div class="ttname"><a href="../../d7/dc5/structCounters.html#a567077daa5aa4797a3ffee52be378ab8">Counters::sign</a></div><div class="ttdeci">long int sign</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00039">libft.h:39</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a19aecc61be0ba928e2f466b19323db09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19aecc61be0ba928e2f466b19323db09">&#9670;&nbsp;</a></span>ft_spacesymbols()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static struct <a class="el" href="../../d7/dc5/structCounters.html">Counters</a> ft_spacesymbols </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/d7e/libft_8h.html#ae137d78daf7dac1ffb11edcdf00f4147">t_Counters</a> *&#160;</td>
-          <td class="paramname"><em>dic</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d1/dab/ft__atoi_8c_source.html#l00001">1</a> of file <a class="el" href="../../d1/dab/ft__atoi_8c_source.html">ft_atoi.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">while</span> ((str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] &gt;= 10 &amp;&amp; str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] &lt; 14)</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        || (str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] == 32) || (str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] == <span class="charliteral">&#39;\t&#39;</span>))</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    {</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>++;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">if</span> (str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; <a class="code" href="../../d6/d7e/libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a>(str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a> + 1]) == 0)</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a181336e5b4c7945911ccf739bb219930">n</a> = 0;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">return</span> (*dic);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span> (str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] == <span class="charliteral">&#39;-&#39;</span> &amp;&amp; <a class="code" href="../../d6/d7e/libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a>(str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a> + 1]) == 1)</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a567077daa5aa4797a3ffee52be378ab8">sign</a> *= -1;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>++;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        }</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">if</span> (str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] == <span class="charliteral">&#39;+&#39;</span> &amp;&amp; (<a class="code" href="../../d6/d7e/libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a>(str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a> + 1]) == 0))</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a181336e5b4c7945911ccf739bb219930">n</a> = 0;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">return</span> (*dic);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">if</span> (str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>] == <span class="charliteral">&#39;+&#39;</span> &amp;&amp; (<a class="code" href="../../d6/d7e/libft_8h.html#a2cf15b8a1a277d1e2ce3654101a2003d">ft_isdigit</a>(str[dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a> + 1]) == 1))</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            dic-&gt;<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a>++;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> (*dic);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a4b4e3c1f8130f0c8bcfec204d1211cc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b4e3c1f8130f0c8bcfec204d1211cc1">&#9670;&nbsp;</a></span>ft_struct()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static struct <a class="el" href="../../d7/dc5/structCounters.html">Counters</a> ft_struct </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>&#160;</td>
-          <td class="paramname"><em>o</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>&#160;</td>
-          <td class="paramname"><em>t</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>&#160;</td>
-          <td class="paramname"><em>th</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="../../d6/d7e/libft_8h.html#a0ed7479aab42bd43773f8f647f39acab">t_size</a>&#160;</td>
-          <td class="paramname"><em>f</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d1/dab/ft__atoi_8c_source.html#l00001">1</a> of file <a class="el" href="../../d1/dab/ft__atoi_8c_source.html">ft_atoi.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d1/dab/ft__atoi_8c_source.html#l00015">15</a> of file <a class="el" href="../../d1/dab/ft__atoi_8c_source.html">ft_atoi.c</a>.</p>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="../../d7/dc5/structCounters.html">t_Counters</a>  sign_index;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a112430b24cb9a397ccd37bf541cf0972">i</a> = o;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a567077daa5aa4797a3ffee52be378ab8">sign</a> = t;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    sign_index.<a class="code" href="../../d7/dc5/structCounters.html#a181336e5b4c7945911ccf739bb219930">n</a> = th;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    sign_index.<a class="code" href="../../d7/dc5/structCounters.html#ad19993d03fa168a5fd413bf6e1505fcb">words</a> = f;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> (sign_index);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="ttc" id="astructCounters_html_ad19993d03fa168a5fd413bf6e1505fcb"><div class="ttname"><a href="../../d7/dc5/structCounters.html#ad19993d03fa168a5fd413bf6e1505fcb">Counters::words</a></div><div class="ttdeci">t_size words</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00041">libft.h:41</a></div></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span>     i;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span>     sign;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">long</span>    result;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    i = 0;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    sign = 1;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    result = 0;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">while</span> (str[i] == <span class="charliteral">&#39; &#39;</span> || (str[i] &gt;= 9 &amp;&amp; str[i] &lt;= 13))</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        i++;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;-&#39;</span> || str[i] == <span class="charliteral">&#39;+&#39;</span>)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (str[i] == <span class="charliteral">&#39;-&#39;</span>)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            sign = -1;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        i++;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">while</span> (str[i] &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; str[i] &lt;= <span class="charliteral">&#39;9&#39;</span>)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        result = result * 10 + (str[i] - <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        i++;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordflow">if</span> (result * sign &gt; <a class="code" href="../../d6/d7e/libft_8h.html#a9ec306f36d50c7375e74f0d1c55a3a67">INT_MAX</a>)</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="../../d6/d7e/libft_8h.html#a9ec306f36d50c7375e74f0d1c55a3a67">INT_MAX</a>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (result * sign &lt; <a class="code" href="../../d6/d7e/libft_8h.html#a21658776274b3d146c674318b635a334">INT_MIN</a>)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">return</span> (<a class="code" href="../../d6/d7e/libft_8h.html#a21658776274b3d146c674318b635a334">INT_MIN</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">return</span> ((<span class="keywordtype">int</span>)(result * sign));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="ttc" id="alibft_8h_html_a21658776274b3d146c674318b635a334"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a21658776274b3d146c674318b635a334">INT_MIN</a></div><div class="ttdeci">#define INT_MIN</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00025">libft.h:25</a></div></div>
+<div class="ttc" id="alibft_8h_html_a9ec306f36d50c7375e74f0d1c55a3a67"><div class="ttname"><a href="../../d6/d7e/libft_8h.html#a9ec306f36d50c7375e74f0d1c55a3a67">INT_MAX</a></div><div class="ttdeci">#define INT_MAX</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d7e/libft_8h_source.html#l00024">libft.h:24</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 28 2024 21:02:49 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+Generated on Sat Dec 28 2024 14:26:21 for Libft by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
 </small></address>
 </body>
 </html>
