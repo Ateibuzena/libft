@@ -21,10 +21,9 @@ SRCS_BONUS = src/d_lists/ft_lstnew.c src/d_lists/ft_lstadd_front.c src/d_lists/f
 # Header
 HEADER = libft.h
 
-# Colors
-RED     			= \033[0;31m
-GREEN   			= \033[0;32m
-YELLOW  			= \033[0;33m
+# Colors (Lilas and Blues)
+LILAC   			= \033[0;35m
+DARK_BLUE   		= \033[0;34m
 CYAN    			= \033[0;36m
 WHITE   			= \033[0;37m
 RESET   			= \033[0m
@@ -38,28 +37,28 @@ OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS) $(HEADER)
-	@printf "$(CYAN)[Building Library]$(RESET) $(YELLOW)$(NAME)$(RESET)\n"
+	@printf "$(CYAN)[Building Library]$(RESET) $(LILAC)$(NAME)$(RESET)\n"
 	@ar rcs $(NAME) $(OBJS)
-	@printf "$(GREEN)[Success] $(NAME) created successfully!\n$(RESET)"
+	@printf "$(DARK_BLUE)[Success] $(NAME) created successfully!\n$(RESET)"
 
 bonus: $(OBJS_BONUS) $(HEADER)
 	@printf "$(CYAN)[Adding Bonus] Compiling bonus files...\n$(RESET)"
 	@ar rcs $(NAME) $(OBJS_BONUS)
-	@printf "$(GREEN)[Success] Bonus objects added to $(NAME)!\n$(RESET)"
+	@printf "$(DARK_BLUE)[Success] Bonus objects added to $(NAME)!\n$(RESET)"
 
 %.o: %.c
-	@printf "$(YELLOW)[Compiling]$(RESET) $<\n"
+	@printf "$(LILAC)[Compiling]$(RESET) $<\n"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@printf "$(RED)[Cleaning] Removing object files...\n$(RESET)"
+	@printf "$(DARK_BLUE)[Cleaning] Removing object files...\n$(RESET)"
 	@rm -f $(OBJS) $(OBJS_BONUS)
-	@printf "$(GREEN)[Cleaned] Object files removed successfully!\n$(RESET)"
+	@printf "$(CYAN)[Cleaned] Object files removed successfully!\n$(RESET)"
 
 fclean: clean
-	@printf "$(RED)[Full Clean] Removing $(NAME)...\n$(RESET)"
+	@printf "$(DARK_BLUE)[Full Clean] Removing $(NAME)...\n$(RESET)"
 	@rm -f $(NAME)
-	@printf "$(GREEN)[Cleaned] $(NAME) removed successfully!\n$(RESET)"
+	@printf "$(CYAN)[Cleaned] $(NAME) removed successfully!\n$(RESET)"
 
 re: fclean all
 
