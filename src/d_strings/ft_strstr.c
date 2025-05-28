@@ -1,20 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_percent.c                               :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/22 14:48:37 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:27:24 by azubieta         ###   ########.fr       */
+/*   Created: 2025/01/10 19:01:00 by azubieta          #+#    #+#             */
+/*   Updated: 2025/03/31 19:03:47 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-void	ft_call_putchar_percent(va_list *args, int fd, int *count)
+char	*ft_strstr(const char *haystack, const char *needle)
 {
-	(void)args;
-	write(fd, "%", 1);
-	*count += 1;
+	const char	*h;
+	const char	*n;
+
+	if (!*needle)
+		return ((char *)haystack);
+	while (*haystack)
+	{
+		if (*haystack == *needle)
+		{
+			h = haystack;
+			n = needle;
+			while (*h && *n && *h == *n)
+			{
+				h++;
+				n++;
+			}
+			if (!*n)
+				return ((char *)haystack);
+		}
+		haystack++;
+	}
+	return (NULL);
 }

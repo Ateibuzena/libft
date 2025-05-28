@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_printf.c                                :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/22 14:48:37 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:31:08 by azubieta         ###   ########.fr       */
+/*   Created: 2025/01/10 17:09:20 by azubieta          #+#    #+#             */
+/*   Updated: 2025/04/13 14:30:21 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-void	ft_putchar_printf(char c, int fd, int *count)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	write(fd, &c, 1);
-	*count += 1;
-}
+	char	*ptr;
+	size_t	len;
 
-void	ft_call_putchar_printf(va_list *args, int fd, int *count)
-{
-	char	c;
-
-	c = (char)va_arg(*args, int);
-	ft_putchar_printf(c, fd, count);
+	if (!s1)
+		return (NULL);
+	len = ft_strlen(s1);
+	if (len > n)
+		len = n;
+	ptr = malloc((len + 1) * sizeof(char));
+	if (!ptr)
+		return (NULL);
+	ft_memcpy(ptr, s1, len);
+	ptr[len] = '\0';
+	return (ptr);
 }

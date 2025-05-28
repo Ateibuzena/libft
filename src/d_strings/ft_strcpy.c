@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azubieta <azubieta@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/25 18:16:03 by azubieta          #+#    #+#             */
-/*   Updated: 2024/11/22 21:27:36 by azubieta         ###   ########.fr       */
+/*   Created: 2025/01/11 13:32:40 by azubieta          #+#    #+#             */
+/*   Updated: 2025/03/31 18:58:11 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-void	ft_putnbr_u(unsigned int i, int fd, int *count)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	if (i / 10 != 0)
-		ft_putnbr_u((i / 10), fd, count);
-	ft_putchar_printf((i % 10 + '0'), fd, count);
-}
+	t_size	i;
 
-void	ft_call_putnbr_u(va_list *args, int fd, int *count)
-{
-	unsigned int	i;
-
-	i = va_arg(*args, unsigned int);
-	ft_putnbr_u(i, fd, count);
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
