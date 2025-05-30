@@ -52,5 +52,5 @@ The library is compiled into a static .a archive which can be included in other 
 
 - Ana Zubieta
 - Student at 42 Málaga - Fundación Telefónica
-- GitHub: azubieta
+- GitHub: ateibuzena
 - Email: ena.ateibuz@gmail.com
