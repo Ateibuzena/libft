@@ -46,14 +46,14 @@ typedef struct s_split
 # endif
 
 //Struct to libft_bonus
-# ifndef S_LIST_42
-#  define S_LIST_42
+# ifndef S_LIST
+#  define S_LIST
 
-typedef struct s_list_42
+typedef struct s_list
 {
 	void				*content;
-	struct s_list_42	*next;
-}	t_list_42;
+	struct s_list	*next;
+}	t_list;
 
 # endif
 
