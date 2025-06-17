@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2025/05/18 22:15:17 by azubieta         ###   ########.fr       */
+/*   Updated: 2025/06/17 19:04:52 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ typedef struct s_numbers
 	int	w;
 	int	i;
 	int	j;
-	int n;
-	int s;
-	int t;
+	int	n;
+	int	s;
+	int	t;
 }	t_numbers;
 
 # endif
@@ -71,7 +71,7 @@ typedef struct s_split
 typedef struct s_list
 {
 	void				*content;
-	struct s_list	*next;
+	struct s_list		*next;
 }	t_list;
 
 # endif
@@ -96,9 +96,9 @@ typedef struct Itoa
 
 typedef struct s_format
 {
-    char				id;
-    int					(*func)(va_list args);
-    struct s_format		*next;
+	char				id;
+	int					(*func)(va_list args);
+	struct s_format		*next;
 }	t_format;
 
 # endif
@@ -120,7 +120,6 @@ typedef struct s_fdnode
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 45
 # endif
-
 
 /*SRC/D_ASCII/*/
 int			ft_isalpha(int c);
@@ -166,18 +165,18 @@ void		*ft_calloc(t_size count, t_size size);
 
 /*SRC/D_PRINTF/*/
 int			ft_printf(const char *format, ...);
-int         ft_init_handlers(t_format **head);
-int         ft_add_handler(t_format **lst, char id, int (*func)(va_list));
+int			ft_init_handlers(t_format **head);
+int			ft_add_handler(t_format **lst, char id, int (*func)(va_list));
 void		ft_free_handlers(t_format *list);
 int			ft_call_handler(t_format *formats, char id, va_list args);
-int         ft_putchar_printf(char c);
+int			ft_putchar_printf(char c);
 int			ft_handle_char(va_list args);
-int         ft_putstr_printf(char *s);
+int			ft_putstr_printf(char *s);
 int			ft_handle_string(va_list args);
 int			ft_handle_digits(va_list args);
 int			ft_handle_integer(va_list args);
 int			ft_handle_unsigned(va_list args);
-int         ft_puthex_printf(unsigned long n, int uppercase);
+int			ft_puthex_printf(unsigned long n, int uppercase);
 int			ft_handle_hex_lower(va_list args);
 int			ft_handle_hex_upper(va_list args);
 int			ft_handle_pointer(va_list args);
