@@ -1,21 +1,18 @@
-NAME = libft.a
+NAME = cub3D
 
-CC = gcc
+CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -I.
+CFLAGS = -Wall -Wextra -Werror -Iinclude -IMLX42/include -I$(LIBFT_DIR) -g
+LDFLAGS = -LMLX42/build -lmlx42 -lglfw -lm -ldl -pthread
 
-AR = ar rcs
-RM = rm -f
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
 
-# 📂 Code and object directories
-SRCDIR = src
-OBJDIR = obj
+SRC_DIR = src
+OBJ_DIR = obj
 
-# 🔍 Find source files in subdirectories
-SRCS := $(shell find $(SRCDIR) -type f -name "*.c")
-OBJS := $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
-
-HEADERS = libft.h
+SRCS := $(shell find $(SRC_DIR) -type f -name "*.c")
+OBJS = $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
 # 🎨 Colors
 RED      = \033[0;31m
@@ -26,50 +23,49 @@ CYAN     = \033[0;36m
 WHITE    = \033[0;37m
 RESET    = \033[0m
 
-# 🚀 Main compilation
 all: $(NAME)
+	
+$(LIBFT):
+	@$(MAKE) -C $(LIBFT_DIR)
 
-# 🔨 Create .a archive (libft.a)
-$(NAME): $(OBJDIR) $(OBJS)
-	@echo "$(CYAN)🔗 Creating $(NAME)...$(RESET)"
-	@$(AR) $(NAME) $(OBJS)
-	@echo "$(GREEN)✅ $(NAME) successfully created.$(RESET)"
+MLX42/build/libmlx42.a:
+	@cmake -S MLX42 -B MLX42/build -DMLX42_BUILD_EXAMPLES=OFF
+	@cmake --build MLX42/build --parallel
 
-# 📂 Create object directory
-$(OBJDIR):
+$(NAME): $(OBJ_DIR) $(OBJS) $(LIBFT) MLX42/build/libmlx42.a
+	@echo "$(CYAN)🔨 Building $(NAME)...$(RESET)"
+	@$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LIBFT) MLX42/build/libmlx42.a -o $(NAME)
+	@echo "$(GREEN)✅ Build complete: $(NAME)$(RESET)"
+
+$(OBJ_DIR):
 	@echo "$(CYAN)📂 Creating object directories...$(RESET)"
-	@mkdir -p $(OBJDIR)
+	@mkdir -p $(OBJ_DIR)
 	@echo "$(GREEN)✅ Object directories created.$(RESET)"
 
-# 🏗 Compile `.c` files into `.o`, keeping subdirectory structure
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADERS) | $(OBJDIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
 	@mkdir -p $(dir $@)
 	@echo "$(YELLOW)🔹 Compiling $< -> $@$(RESET)"
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(GREEN)✅ Compiled: $@$(RESET)"
 
-# 🧹 Clean object files
 clean:
+	@echo "$(RED)🧹 Cleaning libft...$(RESET)"
+	@make -C libft clean
+	@echo "$(RED)🧹 Cleaning cub3d...$(RESET)"
 	@echo "$(RED)🗑️  Deleting object files...$(RESET)"
-	@$(RM) -rf $(OBJDIR)
-	@$(RM) $(OBJS)
+	@$(RM) -rf $(OBJ_DIR)
 	@echo "$(MAGENTA)✅ Object cleanup complete.$(RESET)"
-	@if [ -f "$(OBJDIR)" ]; then \
-		echo "$(RED)🚮 Deleting object directory...$(RESET)"; \
-		$(RM) -rf $(OBJDIR); \
-		echo "$(MAGENTA)✅ Object directory removed.$(RESET)"; \
-	fi
 
-# 🧹 Full cleanup (removes objects and .a file)
-fclean: clean
-	@if [ -f "$(NAME)" ]; then \
-		echo "$(RED)🚮 Deleting file $(NAME)...$(RESET)"; \
-		$(RM) $(NAME); \
-		echo "$(MAGENTA)✅ $(NAME) removed.$(RESET)"; \
-	fi
+fclean:
+	@echo "$(RED)🧹 Cleaning libft...$(RESET)"
+	@make -C libft fclean
+	@echo "$(RED)🧹 Cleaning cub3d...$(RESET)"
+	@echo "$(RED)🚮 Deleting file $(NAME)...$(RESET)"
+	@$(RM) -f $(NAME)
+	@echo "$(MAGENTA)✅ $(NAME) removed.$(RESET)"
+	@$(RM) -rf $(OBJ_DIR)
+	@echo "$(MAGENTA)✅ Object directory removed.$(RESET)"
 
-# 🔄 Full recompilation
 re: fclean all
 
 .PHONY: all clean fclean re
-
