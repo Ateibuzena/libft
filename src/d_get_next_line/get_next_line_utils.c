@@ -12,7 +12,6 @@
 
 #include "../../libft.h"
 
-
 char	*ft_strjoin_getnextline(char *s1, char *s2)
 {
 	char	*join;
@@ -39,6 +38,13 @@ char	*ft_strjoin_getnextline(char *s1, char *s2)
 	}
 	join[i + j] = '\0';
 	return (join);
+}
+
+char	*ft_free(char *ptr)
+{
+	free(ptr);
+	ptr = NULL;
+	return (ptr);
 }
 
 t_fdnode	*ft_newnode(int fd)

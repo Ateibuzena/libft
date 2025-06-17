@@ -12,13 +12,6 @@
 
 #include "../../libft.h"
 
-char	*ft_free(char *ptr)
-{
-	free(ptr);
-	ptr = NULL;
-	return (ptr);
-}
-
 static char	*ft_buffer_update(char *buffer)
 {
 	int		i;
@@ -94,7 +87,7 @@ static char	*ft_read_fd(int fd, char *buffer)
 		}
 		ptr[bytes] = '\0';
 		temp = buffer;
-		buffer = ft_strjoin(buffer, ptr);
+		buffer = ft_strjoin_getnextline(buffer, ptr);
 		free(temp);
 		if (!buffer)
 			return (ft_free(ptr));
@@ -103,7 +96,7 @@ static char	*ft_read_fd(int fd, char *buffer)
 	return (buffer);
 }
 
-char	*get_next_line_bonus(int fd)
+char	*get_next_line(int fd)
 {
 	static t_fdnode	*list;
 	t_fdnode		*current;
