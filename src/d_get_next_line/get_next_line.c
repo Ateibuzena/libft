@@ -122,6 +122,5 @@ char	*get_next_line(int fd)
 	current->buffer = ft_buffer_update(current->buffer);
 	if (!current->buffer)
 		ft_freenode(&list, fd);
-	ft_freenode(&current, fd);
 	return (line);
 }
