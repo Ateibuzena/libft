@@ -94,7 +94,6 @@ Efficient file reading utility that:
 ### Building the Library
 ```bash
 make        # Compile the basic library
-make bonus  # Compile with bonus functions
 make clean  # Remove object files
 make fclean # Remove all generated files
 make re     # Rebuild everything
