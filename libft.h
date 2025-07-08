@@ -6,7 +6,7 @@
 /*   By: azubieta <azubieta@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/08 14:13:53 by azubieta          #+#    #+#             */
-/*   Updated: 2025/06/17 19:04:52 by azubieta         ###   ########.fr       */
+/*   Updated: 2025/07/08 13:10:38 by azubieta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,8 +138,9 @@ void		ft_putnbr_fd(int n, int fd);
 /*SRC/D_GET_NEXT_LINE/*/
 
 char		*get_next_line(int fd);
-t_fdnode	*ft_newnode(int fd);
+void		ft_free_all_nodes(t_fdnode **list);
 char		*ft_freenode(t_fdnode **list, int fd);
+t_fdnode	*ft_newnode(int fd);
 char		*ft_strjoin_getnextline(char *s1, char *s2);
 char		*ft_free(char *ptr);
 
