@@ -1,4 +1,5 @@
 #include <limits.h>
+#include <stdlib.h>
 
 static const char *ft_skip_spaces(const char *str)
 {
@@ -103,11 +104,6 @@ static long	ft_conversion(const char **str, int base, int *error, int sign)
 	return (result);
 }
 
-/*#include <limits.h>
-#include <stdio.h>    // Incluye NULL indirectamente
-#include <stdlib.h>   // También define NULL
-
-
 long ft_strtol(const char *str, char **endptr, int base, int *error)
 {
     int sign;
@@ -133,6 +129,8 @@ long ft_strtol(const char *str, char **endptr, int base, int *error)
         *endptr = (char *)str;
     return (result * sign);
 }
+
+/*#include <stdio.h>
 
 void test(const char *input)
 {
@@ -172,5 +170,4 @@ int main(void)
 	test("00");				 
 	test("18446744073709551614");	//tiene que ser un error;
     return 0;
-}
-*/
+}*/

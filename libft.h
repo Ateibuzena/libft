@@ -19,8 +19,8 @@
 # include <stdarg.h>
 # include <stdbool.h>
 
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
+//# define INT_MAX 2147483647
+//# define INT_MIN -2147483648
 
 // Definition of type t_size if not defined to libft
 # ifndef T_SIZE
@@ -215,7 +215,7 @@ void		ft_freedouble(char **ptr);
 void		ft_freedouble_array(int **array, int len);
 void		ft_free_partialdouble(char **arr, int size);
 int			ft_strlen_double(char **str);
-long int	ft_strtol(const char *str, char **endptr, int base);
+long 		ft_strtol(const char *str, char **endptr, int base, int *error);
 void		*ft_realloc(void *ptr, size_t old_size, size_t new_size);
 char		*ft_strclean(const char *str, char to_clean);
 char		**ft_clean_double(char **original, char to_clean);
