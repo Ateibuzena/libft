@@ -18,9 +18,7 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdbool.h>
-
-//# define INT_MAX 2147483647
-//# define INT_MIN -2147483648
+# include <limits.h>
 
 // Definition of type t_size if not defined to libft
 # ifndef T_SIZE
